@@ -25,12 +25,4 @@ public class CharacterMovement : MonoBehaviour
         transform.position = transform.position + movement * acceleration * Time.deltaTime;
     }
 
-    //dash qui ne prend pas en compte les colisions, à modifier (button 1 = O)
-    public void Dash()
-    {
-        if (Input.GetButton("Dash"))
-        {
-            
-        }
-    }
 }
