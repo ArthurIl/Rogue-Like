@@ -17,11 +17,16 @@ public class GameHandler : MonoBehaviour
     private Image uiBar = default;
 
     private bool immuned = false;
+    public GameObject player;
+    public GameObject ennemi;
+    //ARG faut que je fasse un tableau d'ennemis et que je récupère leur transforme mais je vois pas comment faire
+
+   
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -37,7 +42,7 @@ public class GameHandler : MonoBehaviour
 
     public void healthUp()
     {
-        if (health < healthMax && Input.GetButton("Drain"))
+        if (health < healthMax && Input.GetButton("Drain") && Vector2.Distance(player.transform.position, ennemi.transform.position) < 0.15f)
         {
             health += .01f;
             healthbar.setSize(health);
