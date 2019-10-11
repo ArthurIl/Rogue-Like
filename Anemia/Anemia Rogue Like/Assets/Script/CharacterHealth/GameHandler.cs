@@ -51,7 +51,7 @@ public class GameHandler : MonoBehaviour
                 health = healthMax;
             }
         }
-        else if (Input.GetButton("Drain") && !immuned)
+        if (health == healthMax && !immuned)
         {
             StartCoroutine(ImmunedRoutine(5.0f));
         }
