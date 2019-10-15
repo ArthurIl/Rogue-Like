@@ -31,7 +31,6 @@ public class CharacterMovement : MonoBehaviour
         }
         else
              Move(movement);
-       //dash(movement);
     }
 
     //mouvement du joueur en récupérant les axes du stick de la manette + accélération modifiable dans l'inspector
