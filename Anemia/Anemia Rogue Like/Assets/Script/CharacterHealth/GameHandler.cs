@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class GameHandler : MonoBehaviour
 {
     [SerializeField]
-    private HealthBar healthbar;
-    [SerializeField]
     private float health = 1;
     [SerializeField]
     private int healthMax = 1;
@@ -19,14 +17,16 @@ public class GameHandler : MonoBehaviour
     private bool immuned = false;
     public GameObject player;
     public GameObject ennemi;
+    public GameObject ennemiD;
     //ARG faut que je fasse un tableau d'ennemis et que je récupère leur transforme mais je vois pas comment faire
 
-   
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Instantiate(ennemi);
+        Instantiate(ennemiD);
     }
 
     void Update()
@@ -37,15 +37,32 @@ public class GameHandler : MonoBehaviour
     void FixedUpdate()
     {
         healthDown();
-        healthUp();
+        healthUpEnnemi();
     }
 
-    public void healthUp()
+    public void healthUpEnnemi()
     {
         if (health < healthMax && Input.GetButton("Drain") && Vector2.Distance(player.transform.position, ennemi.transform.position) < 0.15f)
         {
             health += .01f;
-            healthbar.setSize(health);
+            uiBar.fillAmount = health;
+            if (health >= healthMax)
+            {
+                health = healthMax;
+            }
+        }
+        if (health == healthMax && !immuned)
+        {
+            StartCoroutine(ImmunedRoutine(5.0f));
+        }
+
+    }
+    public void healthUpEnnemiD()
+    {
+        if (health < healthMax && Input.GetButton("Drain") && Vector2.Distance(player.transform.position, ennemiD.transform.position) < 0.15f)
+        {
+            health += .01f;
+            uiBar.fillAmount = health;
             if (health >= healthMax)
             {
                 health = healthMax;
@@ -62,7 +79,7 @@ public class GameHandler : MonoBehaviour
         if (health > 0 && !immuned)
         {
             health -= .001f;
-            healthbar.setSize(health);
+            uiBar.fillAmount = health;
             if (health <= healthMin)
             {
                 health = healthMin;
