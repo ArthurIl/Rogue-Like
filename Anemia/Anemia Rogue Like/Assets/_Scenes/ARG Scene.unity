@@ -154,8 +154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 52, y: -213}
-  m_SizeDelta: {x: 87.7, y: 91.100006}
+  m_AnchoredPosition: {x: 62.700012, y: -254.5}
+  m_SizeDelta: {x: 116, y: 115.6}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &37329338
 MonoBehaviour:
@@ -330,10 +330,10 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1911007961}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
-    OrthographicSize: 0.8
+    OrthographicSize: 1.7
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -354,7 +354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601696678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.149, y: -0.286, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1531622100}
@@ -2601,8 +2601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18.799927, y: -240.70001}
-  m_SizeDelta: {x: 175.3, y: 182.1}
+  m_AnchoredPosition: {x: 18.799927, y: -289.7}
+  m_SizeDelta: {x: 231.8, y: 231.1}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1340177863
 MonoBehaviour:
@@ -2867,8 +2867,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 53, y: -105.5}
-  m_SizeDelta: {x: 43.799988, y: 45.5}
+  m_AnchoredPosition: {x: 64, y: -118.100006}
+  m_SizeDelta: {x: 57.9, y: 57.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &1574373165
 ParticleSystemRenderer:
@@ -7740,7 +7740,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 0.8
+  orthographic size: 1.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7764,7 +7764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723879377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.149, y: -0.286, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 0.9504269, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7837,8 +7837,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 1
-  dashSpeed: 1.5
+  dashSpeed: 2
   dashTime: 0.25
+  dashCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 8.151774
+      outSlope: 8.151774
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.09044543
+      value: 0.73729074
+      inSlope: 3.670584
+      outSlope: 3.670584
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.81060636
+      outSlope: -0.81060636
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &1911007960
 SpriteRenderer:
   m_ObjectHideFlags: 0
