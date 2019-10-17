@@ -5,12 +5,12 @@ using UnityEngine;
 public class ARGEnnemiFollow : MonoBehaviour
 {
     public float speed;
-    public GameObject target;
+    private GameObject target;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
