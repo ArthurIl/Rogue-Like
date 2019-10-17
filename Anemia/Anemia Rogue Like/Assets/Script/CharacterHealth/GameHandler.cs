@@ -18,8 +18,7 @@ public class GameHandler : MonoBehaviour
     public GameObject player;
     public GameObject ennemi;
     public GameObject ennemiD;
-    public Transform[] ennemisTrans;
-    public int numberEnnemi;
+
     //ARG faut que je fasse un tableau d'ennemis et que je récupère leur transforme mais je vois pas comment faire
 
 
@@ -27,10 +26,7 @@ public class GameHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int p = 0; p < numberEnnemi; p++)
-        {
-            Instantiate(ennemi, new Vector3(0 + p * 0.5f, 0 + p * 0.5f, 5), Quaternion.identity);
-        }
+
     }
 
     void Update()
