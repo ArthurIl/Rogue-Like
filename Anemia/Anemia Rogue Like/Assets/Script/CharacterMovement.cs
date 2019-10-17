@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
     private float dashCooldown;
     private int direction;
     [SerializeField]
-    private bool canMove = true;
+    protected bool canMove = true;
 
     Vector3 movement;
 
