@@ -6,13 +6,19 @@ public class CharacterMovement : MonoBehaviour
 {
     [SerializeField]
     private float acceleration;
+
+    private Rigidbody2D playerRb;
+
     [SerializeField]
     private float dashSpeed;
-    private Rigidbody2D playerRb;
     [SerializeField]
     private float dashTime;
+    [SerializeField]
+    private float dashCooldown;
     private int direction;
-    private bool canMove;
+    [SerializeField]
+    private bool canMove = true;
+
     Vector3 movement;
 
     [SerializeField]
@@ -28,18 +34,18 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         movement = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0f).normalized;
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash") && canMove)
         {
-            isDashing(movement);
+            Dashing(movement);
         }
         else
              Move(movement);
     }
 
     //mouvement du joueur en récupérant les axes du stick de la manette + accélération modifiable dans l'inspector
-    public void Move(Vector3 movement)
+    public void Move(Vector3 direction)
     {
-       transform.position = transform.position + movement * acceleration * Time.deltaTime;
+       transform.position = transform.position + direction * acceleration * Time.deltaTime;
     }
 
     //IEnumerator dash(Vector3 movement)
@@ -52,15 +58,15 @@ public class CharacterMovement : MonoBehaviour
     //    playerRb.velocity = Vector2.zero;
     //    canMove = true;
     //}
-    public void isDashing(Vector3 movement)
+    public void Dashing(Vector3 direction)
     {
         //StartCoroutine("dash", movement);
-        StartCoroutine(SmoothDash(movement));
+        StartCoroutine(SmoothDash(direction));
     }
 
     IEnumerator SmoothDash(Vector3 direction)
     {
-        float timer = 0.0f;
+        float timer = 0.0f;  
         canMove = false;
 
         while (timer < dashTime)
@@ -72,6 +78,10 @@ public class CharacterMovement : MonoBehaviour
         }
 
         playerRb.velocity = Vector2.zero;
+        
+
+        yield return new WaitForSeconds(dashCooldown);
         canMove = true;
+
     }
 }

@@ -37,6 +37,7 @@ public class GameHandler : MonoBehaviour
     {
         healthDown();
         healthUpEnnemi();
+        healthUpEnnemiD();
     }
 
     public void healthUpEnnemi()
