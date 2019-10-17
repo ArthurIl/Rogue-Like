@@ -25,6 +25,7 @@ public class RoomTemplates : MonoBehaviour
                 {
                     Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
                     spawnedBoss = true;
+                    
                 }
             }
         }

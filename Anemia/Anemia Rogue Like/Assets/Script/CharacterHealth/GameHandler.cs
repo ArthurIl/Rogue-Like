@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameHandler : MonoBehaviour
 {
     [SerializeField]
-    private float health = 1;
+    protected float health = 1;
     [SerializeField]
     private int healthMax = 1;
     [SerializeField]

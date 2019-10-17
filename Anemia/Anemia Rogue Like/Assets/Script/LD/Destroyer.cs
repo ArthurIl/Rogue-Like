@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(collision.gameObject);
+        Destroy(other.gameObject);
     }
 }
