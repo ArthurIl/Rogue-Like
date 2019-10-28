@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class GameHandler : MonoBehaviour
     void FixedUpdate()
     {
         healthDown();
-            healthUpEnnemi();
+        healthUpEnnemi();
     }
 
     public void healthUpEnnemi()
@@ -81,6 +82,7 @@ public class GameHandler : MonoBehaviour
             if (health <= healthMin)
             {
                 health = healthMin;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //reload la scene une fois la vie tomber à 0
             }
         }
     }
@@ -97,6 +99,12 @@ public class GameHandler : MonoBehaviour
         yield return new WaitForSeconds(_duration);
 
         immuned = false;
+    }
+
+    public void TakeDamage(float amout)
+    {
+        health -= amout;
+        BarRenderer();
     }
 }
 

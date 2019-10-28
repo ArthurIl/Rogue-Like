@@ -99,6 +99,8 @@ MonoBehaviour:
   acceleration: 1
   dashSpeed: 2
   dashTime: 0.25
+  dashCooldown: 0
+  canMove: 1
   dashCurve:
     serializedVersion: 2
     m_Curve:
@@ -145,7 +147,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0211946, y: -0.004075974}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -156,7 +158,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.2056499, y: 0.3116228}
   m_EdgeRadius: 0
 --- !u!50 &4631194136078393721
 Rigidbody2D:
@@ -196,7 +198,5 @@ MonoBehaviour:
   healthMin: 0
   uiBar: {fileID: 0}
   player: {fileID: 4631194136078393715}
-  ennemi: {fileID: 7496328363864952621, guid: 42ed3af53371b9b469cf110d4a6a3835, type: 3}
   ennemiD: {fileID: 1794774561005668627, guid: fd3b9240e7af23d448835ff95e2ba854, type: 3}
-  ennemisTrans: []
-  numberEnnemi: 2
+  testScript: {fileID: 0}

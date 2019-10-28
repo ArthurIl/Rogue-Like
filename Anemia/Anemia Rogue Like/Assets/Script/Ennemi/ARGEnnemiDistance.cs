@@ -14,6 +14,9 @@ public class ARGEnnemiDistance : MonoBehaviour
     public float startTimeBtwShot;
 
     public GameObject projectile;
+
+    private bool canShoot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,22 +35,26 @@ public class ARGEnnemiDistance : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            canShoot = false;
+
 
         }
         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
 
             transform.position = this.transform.position;
+            canShoot = true;
 
         }
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            canShoot = false;
         }
     }
     void Shoot()
     {
-        if (timeBtwShots <+0)
+        if (timeBtwShots <+0 && canShoot == true)
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShot;

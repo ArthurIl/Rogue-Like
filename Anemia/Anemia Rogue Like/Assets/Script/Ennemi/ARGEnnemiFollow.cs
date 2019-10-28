@@ -6,6 +6,7 @@ public class ARGEnnemiFollow : MonoBehaviour
 {
     public float speed;
     private GameObject target;
+    float damage = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,5 +21,12 @@ public class ARGEnnemiFollow : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("collision");
+        other.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+                
     }
 }
