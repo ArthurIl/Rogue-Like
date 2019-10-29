@@ -21,16 +21,24 @@ public class GameHandler : MonoBehaviour
     public GameObject ennemiD;
     public GameObject testScript; //ARG récupère le test scrip
 
+    public GameObject drain;
+    bool canDrain;
+
+    [SerializeField]
+    protected float drainDammage = 1f;
+
 
     // Start is called before the first frame update
     void Start()
     {
         testScript.GetComponent<ARGEnnemiSpawn>();//.ennemies[].transform.position; ARG j'en peux plus putain
+        
     }
 
     void Update()
     {
         BarRenderer();
+        canDrain = drain.GetComponent<ARGDrainColliderScript>().canDrain;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -41,27 +49,11 @@ public class GameHandler : MonoBehaviour
 
     public void healthUpEnnemi()
     {
-        if (health < healthMax && Input.GetButton("Drain")) //&& Vector2.Distance(player.transform.position, ennemi[0].transform.position) < 0.15f) ARG c'est le truc qu'il faut changer
+        if (health < healthMax && Input.GetButton("Drain") && canDrain == true) 
         {
             health += .01f;
             uiBar.fillAmount = health;
-            if (health >= healthMax)
-            {
-                health = healthMax;
-            }
-        }
-        if (health == healthMax && !immuned)
-        {
-            StartCoroutine(ImmunedRoutine(5.0f));
-        }
-
-    }
-    public void healthUpEnnemiD()
-    {
-        if (health < healthMax && Input.GetButton("Drain") && Vector2.Distance(player.transform.position, ennemiD.transform.position) < 0.15f)
-        {
-            health += .01f;
-            uiBar.fillAmount = health;
+            //gameObject.GetComponent<ARGEnnemiFollow>().EnnemisTakeDamage(drainDammage);
             if (health >= healthMax)
             {
                 health = healthMax;
@@ -104,7 +96,6 @@ public class GameHandler : MonoBehaviour
     public void TakeDamage(float amout)
     {
         health -= amout;
-        BarRenderer();
     }
 }
 

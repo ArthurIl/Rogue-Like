@@ -8,6 +8,7 @@ public class ARGProjectile : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
+    float damage = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class ARGProjectile : MonoBehaviour
     {
         if (other.CompareTag("Player")) {
             DestroyProjectile();
-
+            other.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
         }
     }
     
