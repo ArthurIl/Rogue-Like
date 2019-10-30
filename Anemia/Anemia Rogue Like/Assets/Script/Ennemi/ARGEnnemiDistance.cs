@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ARGEnnemiDistance : MonoBehaviour
+public class ARGEnnemiDistance : ARGEnnemi
 {
-    public float speed;
     public float stoppingDistance;
     public float retreatDistance;
-
-    private Transform player;
 
     private float timeBtwShots;
     public float startTimeBtwShot;
@@ -20,7 +17,6 @@ public class ARGEnnemiDistance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -32,23 +28,23 @@ public class ARGEnnemiDistance : MonoBehaviour
 
     void Follow()
     {
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+        if (Vector2.Distance(transform.position, target.transform.position) > stoppingDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
             canShoot = false;
 
 
         }
-        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+        else if (Vector2.Distance(transform.position, target.transform.position) < stoppingDistance && Vector2.Distance(transform.position, target.transform.position) > retreatDistance)
         {
 
             transform.position = this.transform.position;
             canShoot = true;
 
         }
-        else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
+        else if (Vector2.Distance(transform.position, target.transform.position) < retreatDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, -speed * Time.deltaTime);
             canShoot = false;
         }
     }

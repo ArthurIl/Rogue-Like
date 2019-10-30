@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7496328363864952616}
   - component: {fileID: 7496328363864952623}
   - component: {fileID: 7496328363864952622}
-  - component: {fileID: -8543641370613659450}
   - component: {fileID: 174296696904563442}
   - component: {fileID: 5625920347063467492}
+  - component: {fileID: 7610273039245697361}
   m_Layer: 0
   m_Name: Ennemi
   m_TagString: Ennemi
@@ -97,32 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
---- !u!61 &-8543641370613659450
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7496328363864952621}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 0.31}
-    newSize: {x: 0.1, y: 0.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.31}
-  m_EdgeRadius: 0
+  target: {fileID: 0}
+  damage: 0.05
+  ennemiHealth: 1
 --- !u!61 &174296696904563442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,3 +147,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7610273039245697361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496328363864952621}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc04e2a6aef43974f8c780237ba12476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  target: {fileID: 0}
+  damage: 0.05
+  ennemiHealth: 1

@@ -5,7 +5,9 @@ using UnityEngine;
 public class ARGDrainColliderScript : MonoBehaviour
 {
     public bool canDrain;
+    bool alreadyInList;
     public GameObject Player;
+    public List<GameObject> ennemiesDrainables = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +18,6 @@ public class ARGDrainColliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,7 +25,21 @@ public class ARGDrainColliderScript : MonoBehaviour
         if (collision.gameObject.tag == "Ennemi")
         {
             canDrain = true;
-            //collision.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+            foreach (GameObject ennemi in ennemiesDrainables)
+            {
+                if (collision.gameObject == ennemi)
+                {
+                    alreadyInList = true;
+                }                
+            }
+            if (!alreadyInList)
+            {
+                ennemiesDrainables.Add(collision.gameObject);
+                alreadyInList = false;
+            }
+                
+
+
         }
     }
 

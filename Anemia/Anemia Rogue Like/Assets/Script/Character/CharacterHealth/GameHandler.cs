@@ -18,42 +18,51 @@ public class GameHandler : MonoBehaviour
     private bool immuned = false;
     public GameObject player;
 
-    public GameObject ennemiD;
     public GameObject testScript; //ARG récupère le test scrip
+    List<GameObject> ennemiesDrainables;
+    float minDistance = 100f;
+    float distanceActive;
+    int ennemiProche;
 
     public GameObject drain;
+    public GameObject ennemi;
     bool canDrain;
 
-    [SerializeField]
-    protected float drainDammage = 1f;
+    public float drainDammage = 1f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        testScript.GetComponent<ARGEnnemiSpawn>();//.ennemies[].transform.position; ARG j'en peux plus putain
-        
+        ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
     }
+    
+        
+    
 
     void Update()
     {
         BarRenderer();
-        canDrain = drain.GetComponent<ARGDrainColliderScript>().canDrain;
+        canDrain = GetComponentInChildren<ARGDrainColliderScript>().canDrain;
+
+
+
     }
     // Update is called once per frame
     void FixedUpdate()
     {
         healthDown();
-        healthUpEnnemi();
+        CanDrain();
+
     }
 
-    public void healthUpEnnemi()
+    public void healthUpEnnemi(GameObject ennemis)
     {
         if (health < healthMax && Input.GetButton("Drain") && canDrain == true) 
         {
             health += .01f;
             uiBar.fillAmount = health;
-            //gameObject.GetComponent<ARGEnnemiFollow>().EnnemisTakeDamage(drainDammage);
+            ennemis.GetComponent<ARGEnnemi>().EnnemisTakeDamage(drainDammage);//ARG ALED + DÉGAT + BOUGER
             if (health >= healthMax)
             {
                 health = healthMax;
@@ -93,9 +102,25 @@ public class GameHandler : MonoBehaviour
         immuned = false;
     }
 
-    public void TakeDamage(float amout)
+    public void TakeDamage(float amout) //prend des dégats
     {
         health -= amout;
     }
+
+     public void CanDrain()
+    {
+        
+        for (int i = 0; i < ennemiesDrainables.Count; i++)
+        {
+            distanceActive = Vector2.Distance(transform.position, ennemiesDrainables[i].transform.position);
+
+              if (distanceActive < minDistance)
+            {
+                minDistance = distanceActive;
+                  ennemiProche = i;
+                  healthUpEnnemi(ennemiesDrainables[ennemiProche]);
+              }
+          }
+      }
 }
 

@@ -2,18 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ARGEnnemiFollow : MonoBehaviour
+public class ARGEnnemiFollow : ARGEnnemi
 {
-    public float speed;
-    private GameObject target;
-    [SerializeField]
-    protected float ennemiHealth = 1;
-    float damage = 0.05f;
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.FindGameObjectWithTag("Player");//ARG ALED
     }
 
     // Update is called once per frame
@@ -23,11 +18,7 @@ public class ARGEnnemiFollow : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
-
-        if (ennemiHealth <= 0)
-        {
-            Destroy(this.gameObject);
-        }
+        Death();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,8 +30,5 @@ public class ARGEnnemiFollow : MonoBehaviour
            
     }
 
-    public void EnnemisTakeDamage(float amout)
-    {
-        ennemiHealth -= amout;
-    }
+
 }
