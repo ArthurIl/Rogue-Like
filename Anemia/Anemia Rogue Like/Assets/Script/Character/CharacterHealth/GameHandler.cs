@@ -28,7 +28,7 @@ public class GameHandler : MonoBehaviour
     public GameObject ennemi;
     bool canDrain;
 
-    public float drainDammage = 1f;
+    public float drainDammage;
 
 
     // Start is called before the first frame update
@@ -36,8 +36,6 @@ public class GameHandler : MonoBehaviour
     {
         ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
     }
-    
-        
     
 
     void Update()
@@ -62,11 +60,15 @@ public class GameHandler : MonoBehaviour
         {
             health += .01f;
             uiBar.fillAmount = health;
-            ennemis.GetComponent<ARGEnnemi>().EnnemisTakeDamage(drainDammage);//ARG ALED + DÉGAT + BOUGER
+            ennemis.GetComponent<ARGEnnemi>().EnnemisTakeDamage(drainDammage);
             if (health >= healthMax)
             {
                 health = healthMax;
             }
+        }
+        else
+        {
+            ennemis.GetComponent<ARGEnnemi>().ennemiCanMove = true;
         }
         if (health == healthMax && !immuned)
         {
@@ -83,7 +85,7 @@ public class GameHandler : MonoBehaviour
             if (health <= healthMin)
             {
                 health = healthMin;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //reload la scene une fois la vie tomber à 0
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //reload la scene une fois la vie tomber à 0
             }
         }
     }
@@ -117,9 +119,14 @@ public class GameHandler : MonoBehaviour
               if (distanceActive < minDistance)
             {
                 minDistance = distanceActive;
-                  ennemiProche = i;
-                  healthUpEnnemi(ennemiesDrainables[ennemiProche]);
+                ennemiProche = i;
+                healthUpEnnemi(ennemiesDrainables[ennemiProche]);
               }
+            else
+            {
+                minDistance = 10f;
+            }
+
           }
       }
 }

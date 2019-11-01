@@ -18,6 +18,7 @@ public class ARGDrainColliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ennemiesDrainables.RemoveAll(list_item => list_item == null); ennemiesDrainables.RemoveAll(list_item => list_item == null);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
