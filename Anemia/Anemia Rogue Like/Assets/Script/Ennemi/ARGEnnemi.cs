@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class ARGEnnemi : MonoBehaviour
 {
+    public bool ennemiCanMove;
+    public bool canShoot;
     public float speed;
+   [HideInInspector]
     public GameObject target;
-    public float damage = 0.05f;
-    [SerializeField]
-    protected float ennemiHealth = 1;
-
+    public float damage ;
+    public float ennemiHealth;
 
     public void EnnemisTakeDamage(float amout)
     {
         ennemiHealth -= amout;
+        ennemiCanMove = false;
+        canShoot = false;
+
     }
 
     public void Death()

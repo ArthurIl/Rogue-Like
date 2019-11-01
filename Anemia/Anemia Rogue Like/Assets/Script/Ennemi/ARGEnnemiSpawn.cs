@@ -16,7 +16,7 @@ public class ARGEnnemiSpawn : MonoBehaviour
     {
         for (int p = 0; p < numberEnnemiC; p++)
         {
-            GameObject goTmp = Instantiate(ennemi, new Vector3(0 + p * 0.5f, 0 + p * 0.5f, 0), Quaternion.identity); //ARG garder les instance dans un gameobject temporaire
+            GameObject goTmp = Instantiate(ennemi, new Vector3(0 + p * 0.1f, 0 + p * 0.1f, 0), Quaternion.identity); //ARG garder les instance dans un gameobject temporaire
             goTmp.transform.SetParent(ennemiesParent.transform); //ARG set ces gamesobject "fille" d'un autre gameobject dans la scène
             ennemies.Add(goTmp); //ARG ajouter un ennemis dans la liste
         }
