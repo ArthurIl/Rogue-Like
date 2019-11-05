@@ -23,7 +23,7 @@ public class ARGEnnemiSpawn : MonoBehaviour
 
         for (int p = 0; p < numberEnnemiD; p++)
         { 
-            GameObject goTmp1 = Instantiate(ennemiD, new Vector3(0 + p, 0 + p, 0), Quaternion.identity);
+            GameObject goTmp1 = Instantiate(ennemiD, new Vector3(0 + p * 0.1f, 0 + p * 0.1f, 0), Quaternion.identity);
             goTmp1.transform.SetParent(ennemiesParent.transform);
             ennemies.Add(goTmp1);
         }
