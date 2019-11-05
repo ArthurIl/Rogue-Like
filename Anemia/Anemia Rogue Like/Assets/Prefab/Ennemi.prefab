@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7496328363864952616}
   - component: {fileID: 7496328363864952623}
   - component: {fileID: 7496328363864952622}
+  - component: {fileID: 4602721642159381122}
   m_Layer: 0
   m_Name: Ennemi
   m_TagString: Ennemi
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: ff73f35a9dd7b984fa0eab17bb2b73ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7b3922bfd30bc24e951dcd7e42623b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,4 +95,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  target: {fileID: 4631194136078393715, guid: 2b9daea02f432d94fba420e8d2a3e41a, type: 3}
+--- !u!95 &4602721642159381122
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496328363864952621}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3dce23916e785a4284b617974b31688, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
