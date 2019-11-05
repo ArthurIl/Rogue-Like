@@ -6,22 +6,25 @@ public class Projectile_Pieu_Droit : MonoBehaviour
 {
     [SerializeField]
     private float speed = 1f;
+    public float damage;
 
     private void Update()
     {
-
         transform.Translate(Vector2.right * speed* Time.deltaTime);
     }
 
-    void OnCollisionEnter2D(Collider2D other)
+    void OnTriggerEnter2D (Collider2D col)
     {
-        GameObject Player = GameObject.Find("Player");
-        GameHandler health = Player.GetComponent<GameHandler>();
-
-        if (other.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
-            health.Damage();
+            col.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+
+        if (col.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

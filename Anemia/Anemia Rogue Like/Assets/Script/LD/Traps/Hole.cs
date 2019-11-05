@@ -6,13 +6,18 @@ public class Hole : MonoBehaviour
 {
     public GameObject player;
     public GameObject spawnPoint;
+    public float damage;
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject Player = GameObject.Find("Player");
-        GameHandler health = Player.GetComponent<GameHandler>();
+
         if (collision.gameObject.name == "Player")
         {
-            health.Damage();
+            collision.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
             player.transform.position = spawnPoint.transform.position;
 
         }

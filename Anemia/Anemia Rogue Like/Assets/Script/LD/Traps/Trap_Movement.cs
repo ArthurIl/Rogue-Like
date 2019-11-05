@@ -21,9 +21,11 @@ public class Trap_Movement : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            health.Damage();
+            collision.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
         }
-        speed = -speed;
+            speed = -speed;
+
+        
     }
 
   
