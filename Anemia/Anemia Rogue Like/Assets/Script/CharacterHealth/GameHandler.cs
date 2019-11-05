@@ -6,18 +6,18 @@ using UnityEngine.UI;
 public class GameHandler : MonoBehaviour
 {
     [SerializeField]
-    protected float health = 1;
+    private float health = 1;
     [SerializeField]
     private int healthMax = 1;
     [SerializeField]
     private int healthMin = 0;
     [SerializeField]
     private Image uiBar = default;
-
     private bool immuned = false;
     public GameObject player;
     public GameObject ennemi;
     public GameObject ennemiD;
+
     //ARG faut que je fasse un tableau d'ennemis et que je récupère leur transforme mais je vois pas comment faire
 
 
@@ -99,6 +99,14 @@ public class GameHandler : MonoBehaviour
         yield return new WaitForSeconds(_duration);
 
         immuned = false;
+    }
+
+    public void Damage()
+    {
+        //Debug.Log("VU!");
+        float damage = 0.5f;
+        health -= damage;
+
     }
 }
 

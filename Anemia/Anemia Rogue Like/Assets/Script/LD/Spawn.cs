@@ -13,8 +13,11 @@ public class Spawn : MonoBehaviour
     private RoomTemplates templates;
     private int rand;
     private bool spawned = false;
+
+    public float waitTime = 4f; 
     private void Start()
     {
+        Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         Invoke("Spawning", 0.1f);
     }
@@ -51,7 +54,7 @@ public class Spawn : MonoBehaviour
         }
       
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Spawner"))
         {

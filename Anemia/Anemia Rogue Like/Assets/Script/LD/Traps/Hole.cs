@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damaging : MonoBehaviour
+public class Hole : MonoBehaviour
 {
-    [SerializeField]
-    private float  damage = 0.5f;
-    
+    public GameObject player;
+    public GameObject spawnPoint;
     private void OnTriggerEnter2D(Collider2D collision)
-    {              
+    {
         GameObject Player = GameObject.Find("Player");
         GameHandler health = Player.GetComponent<GameHandler>();
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.name == "Player")
         {
-           health.Damage();
-        }        
+            health.Damage();
+            player.transform.position = spawnPoint.transform.position;
+
+        }
     }
 }
