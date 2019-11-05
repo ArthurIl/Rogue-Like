@@ -25,11 +25,18 @@ public class GameHandler : MonoBehaviour
     int ennemiProche;
 
     public GameObject drain;
-    public GameObject ennemi;
     bool canDrain;
 
     public float drainDammage;
+    public float attackDammage;
 
+    private float timeBtwAttack;
+    public float startTimeBtwAttack;
+
+    public Transform attackPos;
+    public LayerMask whatIsEnnemy;
+    public float attackRangeX;
+    public float attackRangeY;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +83,35 @@ public class GameHandler : MonoBehaviour
         }
 
     }
+
+    public void Attaque()
+    {
+        if (timeBtwAttack <= 0)
+        {
+            if (Input.GetButton("attaque"))
+            {
+                Collider2D[] ennemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnnemy);
+                for (int i = 0; i < ennemiesToDamage.Length; i++)
+                {
+                    ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(attackDammage);
+                    Debug.Log("Damage Taken!");
+                }
+            }
+
+            timeBtwAttack = startTimeBtwAttack;
+        }
+        else
+        {
+            timeBtwAttack = Time.deltaTime;   
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(attackPos.position, new Vector3(attackRangeX, attackRangeY, 1));
+    }
+
     public void healthDown()
     {
         if (health > 0 && !immuned)

@@ -31,10 +31,10 @@ public class ARGEnnemiDistance : ARGEnnemi
 
     void Follow()
     {
-        Debug.Log( target.transform.position);
+        //Debug.Log( target.transform.position);
         if (Vector2.Distance(transform.position, target.transform.position) > shootDistance && ennemiCanMove)
         {
-            Debug.Log("Je ne suis pas en range");
+            //Debug.Log("Je ne suis pas en range");
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
             canShoot = false;
 
@@ -42,14 +42,14 @@ public class ARGEnnemiDistance : ARGEnnemi
         }
         else if (Vector2.Distance(transform.position, target.transform.position) < shootDistance && Vector2.Distance(transform.position, target.transform.position) > retreatDistance && ennemiCanMove)
         {
-            Debug.Log("Je suis en range");
+            //Debug.Log("Je suis en range");
             transform.position = this.transform.position;
             canShoot = true;
 
         }
         else if (Vector2.Distance(transform.position, target.transform.position) < retreatDistance && ennemiCanMove)
         {
-            Debug.Log("Je fuis");
+            //Debug.Log("Je fuis");
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, -speed * Time.deltaTime);
             canShoot = false;
         }

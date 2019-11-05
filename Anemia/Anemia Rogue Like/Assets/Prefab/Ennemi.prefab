@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 174296696904563442}
   - component: {fileID: 5625920347063467492}
   - component: {fileID: 7610273039245697361}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ennemi
   m_TagString: Ennemi
   m_Icon: {fileID: 0}
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ennemiCanMove: 0
+  canShoot: 0
   speed: 0.1
   target: {fileID: 0}
   damage: 0.1
@@ -161,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ennemiCanMove: 0
+  canShoot: 0
   speed: 0
   target: {fileID: 0}
   damage: 0.05
