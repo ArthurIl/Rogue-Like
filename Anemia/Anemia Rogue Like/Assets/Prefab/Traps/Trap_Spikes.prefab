@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5222473416744803634}
   - component: {fileID: 5222473416744803637}
   - component: {fileID: 5222473416744803636}
-  - component: {fileID: 5222473416744803639}
+  - component: {fileID: 2769287673327666224}
   m_Layer: 0
   m_Name: Trap_Spikes
   m_TagString: Ennemi
@@ -108,7 +108,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5222473416744803639
+--- !u!114 &2769287673327666224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5222473416744803638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98d885b2003799c469def77b1044375a, type: 3}
+  m_Script: {fileID: 11500000, guid: d2cc356b9cfd01c44b4bae5d1edffa8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0.1
+  damage: 0.5
