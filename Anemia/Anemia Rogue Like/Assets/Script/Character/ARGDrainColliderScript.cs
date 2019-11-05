@@ -12,7 +12,6 @@ public class ARGDrainColliderScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Player.GetComponent<GameHandler>().drainDammage;
     }
 
     // Update is called once per frame

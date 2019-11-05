@@ -14,7 +14,8 @@ public class GameHandler : MonoBehaviour
     private int healthMin = 0;
     [SerializeField]
     private Image uiBar = default;
-    public float attrition = .001f;
+    public float attrition;
+    public float drainHeal;
 
     private bool immuned = false;
     public GameObject player;
@@ -66,7 +67,7 @@ public class GameHandler : MonoBehaviour
     {
         if (health < healthMax && Input.GetButton("Drain") && canDrain == true) 
         {
-            health += .01f;
+            health += drainHeal;
             uiBar.fillAmount = health;
             ennemis.GetComponent<ARGEnnemi>().EnnemisTakeDamage(drainDammage);
             if (health >= healthMax)
@@ -135,7 +136,7 @@ public class GameHandler : MonoBehaviour
     private IEnumerator ImmunedRoutine(float _duration)
     {
         immuned = true;
-
+       
         yield return new WaitForSeconds(_duration);
 
         immuned = false;
