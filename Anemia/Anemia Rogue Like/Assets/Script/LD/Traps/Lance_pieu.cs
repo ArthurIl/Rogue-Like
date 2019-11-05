@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class Lance_pieu : MonoBehaviour
 {
-    private float timeBtwShots;
+    protected float timeBtwShots;
     public float startTimeBtwShot;
-    public Transform player;
     public GameObject projectile;
-    public float lookSpeed;
-    void Shoot()
+    protected void Shoot()
     {
         if (timeBtwShots < +0)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            Instantiate(projectile, transform.position, transform.rotation);
             timeBtwShots = startTimeBtwShot;
         }
         else
@@ -22,17 +20,9 @@ public class Lance_pieu : MonoBehaviour
         }
     }
 
-    private void LookAtTarget ()
-    {
-        // get a rotation that points Z axis forward, and the Y axis towards the target
-        Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, (player.position - transform.position));
-
-        // rotate toward the target rotation, never rotating farther than "lookSpeed" in one frame.
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, lookSpeed);
-    }
     private void Update()
     {
         Shoot();
-        LookAtTarget();
+
     }
 }

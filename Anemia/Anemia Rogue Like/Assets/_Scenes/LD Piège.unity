@@ -524,7 +524,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655704736}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -699,7 +699,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4872280102874565498, guid: 9879cbd719c9d9140af391cfb2b89c64,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1793184425605257402, guid: 144e26fb807e29d42bdf366d2308d5b6,
+        type: 3}
+    - target: {fileID: 4872280102874565498, guid: 9879cbd719c9d9140af391cfb2b89c64,
+        type: 3}
+      propertyPath: lookSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872280102874565498, guid: 9879cbd719c9d9140af391cfb2b89c64,
+        type: 3}
+      propertyPath: startTimeBtwShot
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872280102874565498, guid: 9879cbd719c9d9140af391cfb2b89c64,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1655704739}
+    m_RemovedComponents:
+    - {fileID: 7178165792091486541, guid: 9879cbd719c9d9140af391cfb2b89c64, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9879cbd719c9d9140af391cfb2b89c64, type: 3}
 --- !u!1 &1956168305
 GameObject:
@@ -784,12 +806,12 @@ PrefabInstance:
     - target: {fileID: 4226868139286980195, guid: e2872f5c6f469144fa32c5626bedde3b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4226868139286980195, guid: e2872f5c6f469144fa32c5626bedde3b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4226868139286980195, guid: e2872f5c6f469144fa32c5626bedde3b,
         type: 3}
@@ -809,22 +831,12 @@ PrefabInstance:
     - target: {fileID: 4226868139286980195, guid: e2872f5c6f469144fa32c5626bedde3b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 4226868139286980196, guid: e2872f5c6f469144fa32c5626bedde3b,
+    - target: {fileID: 4226868139286980198, guid: e2872f5c6f469144fa32c5626bedde3b,
         type: 3}
-      propertyPath: m_Color.b
-      value: 0.5945892
-      objectReference: {fileID: 0}
-    - target: {fileID: 4226868139286980196, guid: e2872f5c6f469144fa32c5626bedde3b,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4226868139286980196, guid: e2872f5c6f469144fa32c5626bedde3b,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.8862745
+      propertyPath: startTimeBtwShot
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2872f5c6f469144fa32c5626bedde3b, type: 3}
