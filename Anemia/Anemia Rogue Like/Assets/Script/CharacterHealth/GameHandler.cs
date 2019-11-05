@@ -13,6 +13,7 @@ public class GameHandler : MonoBehaviour
     private int healthMin = 0;
     [SerializeField]
     private Image uiBar = default;
+    public float attrition = .001f;
     private bool immuned = false;
     public GameObject player;
     public GameObject ennemi;
@@ -78,7 +79,7 @@ public class GameHandler : MonoBehaviour
     {
         if (health > 0 && !immuned)
         {
-            health -= .001f;
+            health -= attrition;
             uiBar.fillAmount = health;
             if (health <= healthMin)
             {
