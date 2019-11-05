@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class ARGLittleSpawned : ARGEnnemi
 {
+    private Rigidbody2D littleSpawnedRb;
     public float dashDTriggeristance;
     public float playerDashDistance;
-    private bool canDash;
+    public bool canDash = true;
+    [SerializeField]
+    private float dashSpeed;
 
     [SerializeField]
     private AnimationCurve dashCurve;
+    [SerializeField]
+    private float startDashTime;
     [SerializeField]
     private float dashTime;
 
     // Start is called before the first frame update
     void Start()
     {
+        littleSpawnedRb = GetComponent<Rigidbody2D>();
         ennemiCanMove = true;
         target = GameObject.FindGameObjectWithTag("Player");
     }
@@ -32,13 +38,10 @@ public class ARGLittleSpawned : ARGEnnemi
          {
              transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
          }
-         else if (Vector2.Distance(transform.position, target.transform.position) < dashDTriggeristance && Vector2.Distance(transform.position, target.transform.position) > playerDashDistance && ennemiCanMove && canDash)
+         else if (Vector2.Distance(transform.position, target.transform.position) < dashDTriggeristance && Vector2.Distance(transform.position, target.transform.position) > playerDashDistance && ennemiCanMove && canDash == true)
          {
-             transform.position = this.transform.position;
              StartCoroutine("Dash");
-            EnnemiDash();
-
-        }
+         }
          else if (Vector2.Distance(transform.position, target.transform.position) < playerDashDistance && ennemiCanMove)
          {
              transform.position = Vector2.MoveTowards(transform.position, target.transform.position, -speed * Time.deltaTime);
@@ -47,16 +50,19 @@ public class ARGLittleSpawned : ARGEnnemi
 
     IEnumerator Dash()
     {
+        ennemiCanMove = false;
         canDash = false;
-        Debug.Log("la coroutine a démaré" + canDash);
-        yield return new WaitForSeconds(5f);
-
-        canDash = true;
-    }
-
-    void EnnemiDash()
-    {
         float timer = 0.0f;
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * dashCurve.Evaluate(timer / dashTime) * Time.deltaTime);
+
+        yield return new WaitForSeconds(startDashTime);
+
+        while (timer < dashTime)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime) * dashSpeed * dashCurve.Evaluate(timer / dashTime);
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+        ennemiCanMove = true;
     }
 }

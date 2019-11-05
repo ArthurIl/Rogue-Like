@@ -405,7 +405,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: cf2e602edcf93c2448280a89c2adb783, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -425,7 +425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245122363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.164, y: -0.19832811, z: 0}
+  m_LocalPosition: {x: -2.064, y: -0.843, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -451,23 +451,25 @@ MonoBehaviour:
   ennemiHealth: 1
   dashDTriggeristance: 2
   playerDashDistance: 1
+  canDash: 1
+  dashSpeed: 1.1
   dashCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
+      inSlope: 2.4377818
+      outSlope: 2.4377818
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.4788437
+      value: 1.1673164
+      inSlope: 0.09896159
+      outSlope: 0.09896159
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -475,8 +477,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -2
-      outSlope: -2
+      inSlope: -2.2398586
+      outSlope: -2.2398586
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -484,7 +486,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  dashTime: 0.01
+  startDashTime: 0.5
+  dashTime: 2
 --- !u!1 &601696678
 GameObject:
   m_ObjectHideFlags: 0
