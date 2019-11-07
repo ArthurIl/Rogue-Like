@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    //Statement déplacement
     [SerializeField]
     private float acceleration;
 
     private Rigidbody2D playerRb;
 
+    //Statement Dash
     [SerializeField]
     private float dashSpeed;
     [SerializeField]
@@ -45,7 +47,7 @@ public class CharacterMovement : MonoBehaviour
     //mouvement du joueur en récupérant les axes du stick de la manette + accélération modifiable dans l'inspector
     public void Move(Vector3 direction)
     {
-       transform.position = transform.position + direction * acceleration * Time.deltaTime;
+      playerRb.velocity = direction.normalized * acceleration * Time.deltaTime;
     }
 
     //IEnumerator dash(Vector3 movement)

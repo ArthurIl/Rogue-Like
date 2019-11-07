@@ -50,7 +50,7 @@ public class GameHandler : MonoBehaviour
     {
         BarRenderer();
         canDrain = GetComponentInChildren<ARGDrainColliderScript>().canDrain;
-
+        Attaque();
 
 
     }
@@ -59,7 +59,6 @@ public class GameHandler : MonoBehaviour
     {
         healthDown();
         CanDrain();
-
     }
 
     public void healthUpEnnemi(GameObject ennemis)
@@ -89,17 +88,18 @@ public class GameHandler : MonoBehaviour
     {
         if (timeBtwAttack <= 0)
         {
-            if (Input.GetButton("attaque"))
+            if (Input.GetButton("Attaque"))
             {
                 Collider2D[] ennemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnnemy);
                 for (int i = 0; i < ennemiesToDamage.Length; i++)
                 {
-                    ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(attackDammage);
-                    Debug.Log("Damage Taken!");
+                   ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(5f);
+                   Debug.Log("Damage Taken!");
                 }
+                timeBtwAttack = startTimeBtwAttack;
             }
 
-            timeBtwAttack = startTimeBtwAttack;
+           
         }
         else
         {
