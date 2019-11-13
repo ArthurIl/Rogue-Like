@@ -20,6 +20,14 @@ public class Timed_Spikes : MonoBehaviour
     {
         spikes.enabled = !spikes.enabled;
         Debug.Log("Collider.enabled = " + spikes.enabled);
+        if (spikes.enabled == false)
+        {
+            GetComponent<SpriteRenderer>().color = Color.green;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
