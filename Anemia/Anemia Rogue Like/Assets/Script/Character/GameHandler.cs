@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameHandler : MonoBehaviour
 {
@@ -50,9 +51,16 @@ public class GameHandler : MonoBehaviour
     void Update()
     {
         BarRenderer();
+        Attaque();
         canDrain = GetComponentInChildren<ARGDrainColliderScript>().canDrain;
-
-
+        ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
+        //Debug.Log("EMP : " + Input.GetAxis("MoveHorizontal"));
+        Debug.Log("EMP2 : " + Input.GetAxis("MoveVertical"));
+        //if (Input.GetAxis("MoveHorizontal") != 0 && Input.GetAxis("MoveHorizontal") <= Math.Sqrt(2) / 2)
+        if(Input.GetAxis("MoveHorizontal") != 0 || Input.GetAxis("MoveVertical") != 0)
+        {
+            attackPos.localPosition = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0).normalized*0.2f;
+        }
 
     }
     // Update is called once per frame
@@ -60,7 +68,6 @@ public class GameHandler : MonoBehaviour
     {
         healthDown();
         CanDrain();
-
     }
 
     public void healthUpEnnemi(GameObject ennemis)
@@ -90,17 +97,18 @@ public class GameHandler : MonoBehaviour
     {
         if (timeBtwAttack <= 0)
         {
-            if (Input.GetButton("attaque"))
+            if (Input.GetButton("Attaque"))
             {
                 Collider2D[] ennemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnnemy);
                 for (int i = 0; i < ennemiesToDamage.Length; i++)
                 {
-                    ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(attackDammage);
-                    Debug.Log("Damage Taken!");
+                   ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(5f);
+                   Debug.Log("Damage Taken!");
                 }
+                timeBtwAttack = startTimeBtwAttack;
             }
 
-            timeBtwAttack = startTimeBtwAttack;
+           
         }
         else
         {

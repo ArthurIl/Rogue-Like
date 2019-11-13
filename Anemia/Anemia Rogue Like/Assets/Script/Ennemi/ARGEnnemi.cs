@@ -12,9 +12,9 @@ public class ARGEnnemi : MonoBehaviour
     public float damage ;
     public float ennemiHealth;
 
-    public void EnnemisTakeDamage(float amout)
+    public void EnnemisTakeDamage(float amount)
     {
-        ennemiHealth -= amout;
+        ennemiHealth -= amount;
         ennemiCanMove = false;
         canShoot = false;
 
