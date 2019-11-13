@@ -19,35 +19,59 @@ public class CharacterMovement : MonoBehaviour
     private float dashCooldown;
     private int direction;
     [SerializeField]
-    protected bool canMove = true;
+    protected bool canDash = true;
+    protected bool canMoove;
 
     Vector3 movement;
 
     [SerializeField]
     private AnimationCurve dashCurve;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        movement = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0f).normalized;
-        if (Input.GetButtonDown("Dash") && canMove)
+        movement = new Vector3(Input.GetAxisRaw("MoveHorizontal"), Input.GetAxisRaw("MoveVertical"), 0f).normalized;
+        if (Input.GetButtonDown("Dash") && canDash)
         {
             Dashing(movement);
         }
         else
-             Move(movement);
+        {
+            Move(movement);
+            WalkAnimation();
+        }
+
+
     }
+
 
     //mouvement du joueur en récupérant les axes du stick de la manette + accélération modifiable dans l'inspector
     public void Move(Vector3 direction)
     {
       playerRb.velocity = direction.normalized * acceleration * Time.deltaTime;
+    }
+
+    public void WalkAnimation()
+    {
+        if (playerRb.velocity != Vector2.zero)
+        {
+            anim.SetFloat("MoveX", Input.GetAxisRaw("MoveHorizontal"));
+            anim.SetFloat("MoveY", Input.GetAxisRaw("MoveVertical"));
+            anim.SetBool("Moving", true);
+        }
+        else
+        {
+            anim.SetBool("Moving", false);
+        }
     }
 
     //IEnumerator dash(Vector3 movement)
@@ -69,7 +93,7 @@ public class CharacterMovement : MonoBehaviour
     IEnumerator SmoothDash(Vector3 direction)
     {
         float timer = 0.0f;  
-        canMove = false;
+        canDash = false;
 
         while (timer < dashTime)
         {
@@ -83,7 +107,7 @@ public class CharacterMovement : MonoBehaviour
         
 
         yield return new WaitForSeconds(dashCooldown);
-        canMove = true;
+        canDash = true;
 
     }
 }

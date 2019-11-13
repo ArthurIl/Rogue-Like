@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameHandler : MonoBehaviour
 {
@@ -49,9 +50,16 @@ public class GameHandler : MonoBehaviour
     void Update()
     {
         BarRenderer();
-        canDrain = GetComponentInChildren<ARGDrainColliderScript>().canDrain;
         Attaque();
-
+        canDrain = GetComponentInChildren<ARGDrainColliderScript>().canDrain;
+        ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
+        //Debug.Log("EMP : " + Input.GetAxis("MoveHorizontal"));
+        Debug.Log("EMP2 : " + Input.GetAxis("MoveVertical"));
+        //if (Input.GetAxis("MoveHorizontal") != 0 && Input.GetAxis("MoveHorizontal") <= Math.Sqrt(2) / 2)
+        if(Input.GetAxis("MoveHorizontal") != 0 || Input.GetAxis("MoveVertical") != 0)
+        {
+            attackPos.localPosition = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0).normalized*0.2f;
+        }
 
     }
     // Update is called once per frame

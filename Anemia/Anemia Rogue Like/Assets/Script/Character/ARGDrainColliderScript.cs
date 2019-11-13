@@ -21,7 +21,7 @@ public class ARGDrainColliderScript : MonoBehaviour
         ennemiesDrainables.RemoveAll(list_item => list_item == null); ennemiesDrainables.RemoveAll(list_item => list_item == null);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ennemi")
         {
