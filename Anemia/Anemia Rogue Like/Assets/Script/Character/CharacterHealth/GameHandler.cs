@@ -111,7 +111,7 @@ public class GameHandler : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(attackPos.position, new Vector3(attackRangeX, attackRangeY, 1));
+        /*Gizmos.DrawWireCube(attackPos.position, new Vector3(attackRangeX, attackRangeY, 1));*/
     }
 
     public void healthDown()

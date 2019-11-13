@@ -17,7 +17,9 @@ public class ARGLittleSpawned : ARGEnnemi
     private float startDashTime;
     [SerializeField]
     private float dashTime;
+    private Vector2 positionTarget;
 
+    public GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,7 @@ public class ARGLittleSpawned : ARGEnnemi
          else if (Vector2.Distance(transform.position, target.transform.position) < dashDTriggeristance && Vector2.Distance(transform.position, target.transform.position) > playerDashDistance && ennemiCanMove && canDash == true)
          {
              StartCoroutine("Dash");
+            
          }
          else if (Vector2.Distance(transform.position, target.transform.position) < playerDashDistance && ennemiCanMove)
          {
@@ -55,14 +58,24 @@ public class ARGLittleSpawned : ARGEnnemi
         float timer = 0.0f;
 
         yield return new WaitForSeconds(startDashTime);
+        positionTarget = new Vector2(target.transform.position.x, target.transform.position.y);
 
         while (timer < dashTime)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime) * dashSpeed * dashCurve.Evaluate(timer / dashTime);
+            transform.position = Vector2.MoveTowards(transform.position, positionTarget, dashSpeed * Time.deltaTime * dashCurve.Evaluate(timer / dashTime));
             timer += Time.deltaTime;
-
+            
             yield return null;
+
+            if (transform.position.x == positionTarget.x && transform.position.y == positionTarget.y)
+            {
+                Instantiate(explosion, new Vector3(positionTarget.x,transform.position.y,0), Quaternion.identity);
+                Destroy(this.gameObject);
+            }
         }
-        ennemiCanMove = true;
+
+
+       
     }
+
 }
