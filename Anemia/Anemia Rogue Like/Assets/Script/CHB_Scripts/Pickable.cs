@@ -9,6 +9,7 @@ public class Pickable : MonoBehaviour
     public Item item;
     public GameObject itemIcon;
     private int wishedSlot;
+    private bool inPickupRange = false;
     private void Start()
     {
         inventory = player.GetComponent<Inventory>();
@@ -20,12 +21,25 @@ public class Pickable : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (inventory.isFull[wishedSlot] == false)
-            {
-                inventory.isFull[wishedSlot] = true;
-                Instantiate(itemIcon, inventory.slots[wishedSlot].transform, false);
-                Destroy(gameObject);
-            }
+            inPickupRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            inPickupRange = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && inventory.isFull[wishedSlot] == false && inPickupRange == true)
+        {
+            inventory.isFull[wishedSlot] = true;
+            Instantiate(itemIcon, inventory.slots[wishedSlot].transform, false);
+            Destroy(gameObject);
         }
     }
 }
