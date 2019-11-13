@@ -32,6 +32,7 @@ public class ARGLittleSpawned : ARGEnnemi
     void Update()
     {
         Follow();
+        Death();
     }
 
   void Follow()

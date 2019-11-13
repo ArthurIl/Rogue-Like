@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ARGEnnemiSpawner : MonoBehaviour
+public class ARGEnnemiSpawner : ARGEnnemi
 {
     public GameObject little;
     public GameObject target;
@@ -22,6 +22,7 @@ public class ARGEnnemiSpawner : MonoBehaviour
         {
             StartCoroutine("Invoke");
         }
+        Death();
     }
 
     IEnumerator Invoke()

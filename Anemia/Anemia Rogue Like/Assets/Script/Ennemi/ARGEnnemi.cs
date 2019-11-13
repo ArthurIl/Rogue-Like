@@ -19,7 +19,10 @@ public class ARGEnnemi : MonoBehaviour
         canShoot = false;
 
     }
-
+    public void EnnemisGetHit(float dammage)
+    {
+        ennemiHealth -= dammage;
+    }
     public void Death()
     {
         if (ennemiHealth <= 0)

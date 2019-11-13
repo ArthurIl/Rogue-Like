@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7094833819595425417}
   - component: {fileID: 7094833819595425416}
   - component: {fileID: 7094833819595425419}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ennemi Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ff73f35a9dd7b984fa0eab17bb2b73ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,6 +93,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8776a9943efa047b3403b0df04540b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  little: {fileID: 0}
+  ennemiCanMove: 0
+  canShoot: 0
+  speed: 0
+  target: {fileID: 0}
+  damage: 0
+  ennemiHealth: 10
+  little: {fileID: 4064409870711424298, guid: 5a56392bfafbbda449aa9fc1eb4a69a3, type: 3}
   target: {fileID: 0}
   canInvoke: 1

@@ -55,7 +55,7 @@ public class GameHandler : MonoBehaviour
         canDrain = GetComponentInChildren<ARGDrainColliderScript>().canDrain;
         ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
         //Debug.Log("EMP : " + Input.GetAxis("MoveHorizontal"));
-        Debug.Log("EMP2 : " + Input.GetAxis("MoveVertical"));
+        //Debug.Log("EMP2 : " + Input.GetAxis("MoveVertical"));
         //if (Input.GetAxis("MoveHorizontal") != 0 && Input.GetAxis("MoveHorizontal") <= Math.Sqrt(2) / 2)
         if(Input.GetAxis("MoveHorizontal") != 0 || Input.GetAxis("MoveVertical") != 0)
         {
@@ -97,29 +97,28 @@ public class GameHandler : MonoBehaviour
     {
         if (timeBtwAttack <= 0)
         {
-            if (Input.GetButton("Attaque"))
+            if (Input.GetButtonDown("Attaque"))
             {
                 Collider2D[] ennemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnnemy);
                 for (int i = 0; i < ennemiesToDamage.Length; i++)
                 {
-                   ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(5f);
-                   Debug.Log("Damage Taken!");
+                    ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisGetHit(attackDammage);
+                    Debug.Log("Damage Taken!");
                 }
                 timeBtwAttack = startTimeBtwAttack;
             }
-
-           
+         
         }
         else
         {
-            timeBtwAttack = Time.deltaTime;   
+            timeBtwAttack -= Time.deltaTime;   
         }
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        /*Gizmos.DrawWireCube(attackPos.position, new Vector3(attackRangeX, attackRangeY, 1));*/
+        Gizmos.DrawWireCube(attackPos.position, new Vector3(attackRangeX, attackRangeY, 1));
     }
 
     public void healthDown()

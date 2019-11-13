@@ -47,7 +47,7 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             Move(movement);
-            WalkAnimation();
+            //WalkAnimation();
         }
 
 
@@ -60,19 +60,16 @@ public class CharacterMovement : MonoBehaviour
       playerRb.velocity = direction.normalized * acceleration * Time.deltaTime;
     }
 
-    public void WalkAnimation()
+   /* public void WalkAnimation()
     {
         if (playerRb.velocity != Vector2.zero)
         {
             anim.SetFloat("MoveX", Input.GetAxisRaw("MoveHorizontal"));
             anim.SetFloat("MoveY", Input.GetAxisRaw("MoveVertical"));
             anim.SetBool("Moving", true);
-        }
-        else
-        {
-            anim.SetBool("Moving", false);
-        }
-    }
+      
+  
+    }*/
 
     //IEnumerator dash(Vector3 movement)
     //{
