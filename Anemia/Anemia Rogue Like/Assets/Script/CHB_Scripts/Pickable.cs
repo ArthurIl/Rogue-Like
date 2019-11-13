@@ -7,13 +7,15 @@ public class Pickable : MonoBehaviour
     public GameObject player;
     private Inventory inventory;
     public Item item;
+    private ItemType thisType;
     public GameObject itemIcon;
     private int wishedSlot;
     private bool inPickupRange = false;
     private void Start()
     {
         inventory = player.GetComponent<Inventory>();
-        wishedSlot = (int)item.type;
+        thisType = item.WhatType();
+        wishedSlot = (int)thisType;
     }
 
 
