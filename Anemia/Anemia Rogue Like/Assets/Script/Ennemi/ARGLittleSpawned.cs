@@ -44,7 +44,6 @@ public class ARGLittleSpawned : ARGEnnemi
          else if (Vector2.Distance(transform.position, target.transform.position) < dashDTriggeristance && Vector2.Distance(transform.position, target.transform.position) > playerDashDistance && ennemiCanMove && canDash == true)
          {
              StartCoroutine("Dash");
-            
          }
          else if (Vector2.Distance(transform.position, target.transform.position) < playerDashDistance && ennemiCanMove)
          {

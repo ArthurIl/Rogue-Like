@@ -21,7 +21,6 @@ public class GameHandler : MonoBehaviour
     private bool immuned = false;
     public GameObject player;
 
-    public GameObject testScript; //ARG récupère le test scrip
     List<GameObject> ennemiesDrainables;
     float minDistance = 100f;
     float distanceActive;

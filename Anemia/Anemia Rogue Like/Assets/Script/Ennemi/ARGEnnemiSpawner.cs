@@ -5,9 +5,9 @@ using UnityEngine;
 public class ARGEnnemiSpawner : ARGEnnemi
 {
     public GameObject little;
-    public GameObject target;
     private float waitTime = 5f;
     public bool canInvoke = true;
+    public float timeBetweenInvoke;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class ARGEnnemiSpawner : ARGEnnemi
         canInvoke = false;
         Instantiate(little, transform.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(timeBetweenInvoke);
 
         canInvoke = true;
     }
