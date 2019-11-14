@@ -40,7 +40,7 @@ public class Pickable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && inventory.isFull[wishedSlot] == false && inPickupRange == true)
         {
             inventory.isFull[wishedSlot] = true;
-            Instantiate(itemIcon, inventory.slots[wishedSlot].transform, false);
+            Instantiate(itemIcon, inventory.slots[wishedSlot].transform, true);
             Destroy(gameObject);
         }
     }
