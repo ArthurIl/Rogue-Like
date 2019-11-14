@@ -11,16 +11,14 @@ public class Teleporter : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        entrance = GameObject.FindGameObjectWithTag("Teleporter");
+        entrance = GameObject.FindGameObjectWithTag("Teleporter");       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         player.transform.position = entrance.transform.position;
         room = GameObject.FindGameObjectWithTag("Rooms");
-        Destroy(room.gameObject);
-        GetComponent<RoomCreation>().spawned = false;
-
+        Destroy(room.gameObject);        
     }
 
 }
