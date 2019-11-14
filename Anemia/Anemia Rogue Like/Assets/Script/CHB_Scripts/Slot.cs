@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    public GameObject player;
+    //public GameObject player;
     private Inventory inventory;
     public int i;
     
     // Start is called before the first frame update
     void Start()
     {
-        inventory = player.GetComponent<Inventory>();
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        //Spoiler, find with tag  c'est dégueu, vivement le manager qui transmet le player
+
     }
 
     // Update is called once per frame

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pickable : MonoBehaviour
 {
-    public GameObject player;
+    //public GameObject player;
     private Inventory inventory;
     public Item item;
     private ItemType thisType;
@@ -13,7 +13,9 @@ public class Pickable : MonoBehaviour
     private bool inPickupRange = false;
     private void Start()
     {
-        inventory = player.GetComponent<Inventory>();
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        //Spoiler, find with tag  c'est dégueu, vivement le manager qui transmet le player
+
         //CHB:
         //Get item type and target correponding inventory slot
         thisType = item.WhatType();

@@ -5,11 +5,18 @@ using UnityEngine;
 public class DropSpawn : MonoBehaviour
 {
     public GameObject itemToSpawn;
-    public Transform player;
-    
+    private Transform player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //Spoiler, find with tag  c'est dégueu, vivement le manager qui transmet le player
+
+    }
+
     public void SpawnDroppedItem()
     {
-        Vector2 playerPos = new Vector2(player.position.x - 3, player.position.y - 3);
+        Vector2 playerPos = new Vector2(player.position.x - 1.1f, player.position.y - 2.3f);
         Instantiate(itemToSpawn, playerPos, Quaternion.identity);
     }
 }
