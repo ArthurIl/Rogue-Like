@@ -14,6 +14,8 @@ public class Pickable : MonoBehaviour
     private void Start()
     {
         inventory = player.GetComponent<Inventory>();
+        //CHB:
+        //Get item type and target correponding inventory slot
         thisType = item.WhatType();
         wishedSlot = (int)thisType;
     }
@@ -37,11 +39,23 @@ public class Pickable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && inventory.isFull[wishedSlot] == false && inPickupRange == true)
+        if (Input.GetKeyDown(KeyCode.F) && inPickupRange == true)
         {
-            inventory.isFull[wishedSlot] = true;
-            Instantiate(itemIcon, inventory.slots[wishedSlot].transform, true);
-            Destroy(gameObject);
+            if (inventory.isFull[wishedSlot] == false)
+            {
+                inventory.isFull[wishedSlot] = true;
+                Instantiate(itemIcon, inventory.slots[wishedSlot].transform, true);
+                Destroy(gameObject);
+            }
+            else
+            {
+                //CHB:
+                //Call destroying item currently held and spawning corresponding collectible
+                inventory.slots[wishedSlot].GetComponent<Slot>().DropItem();
+                Instantiate(itemIcon, inventory.slots[wishedSlot].transform, true);
+                Destroy(gameObject);
+            }
+
         }
     }
 }

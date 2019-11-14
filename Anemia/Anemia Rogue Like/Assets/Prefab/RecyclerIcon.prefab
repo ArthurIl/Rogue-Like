@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4525049758888288464}
   - component: {fileID: 2686719651378200652}
+  - component: {fileID: 8147732766968151239}
   m_Layer: 5
   m_Name: RecyclerIcon
   m_TagString: Untagged
@@ -80,3 +81,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8147732766968151239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4237423187808968619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90298c290e8ab1c41880107b07502b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToSpawn: {fileID: 1011203845638817941, guid: 9dbe488c4e0285e4ea7799b85a15ef6c,
+    type: 3}
+  player: {fileID: 4631194136078393724, guid: 2b9daea02f432d94fba420e8d2a3e41a, type: 3}
