@@ -8,21 +8,24 @@ public class ProjectilPieuSuivi : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
-    float damage = 0.05f;
+    public float damage;
+    RaycastHit2D hitInfo;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        target = new Vector2(player.position.x, player.position.y);
+        //target = new Vector2(player.position.x, player.position.y);
+        int layer_mask = LayerMask.GetMask("Wall");
+        Debug.DrawLine(transform.position, player.position, Color.red, 10f);
+        hitInfo = Physics2D.Raycast(transform.position, player.position, Mathf.Infinity, layer_mask);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        if (transform.position.x == target.x && transform.position.y == target.y) //ARG Check RayCast
+        transform.position = Vector2.MoveTowards(transform.position, hitInfo.transform.position, speed * Time.deltaTime);
+        if (transform.position.x == hitInfo.transform.position.x && transform.position.y == hitInfo.transform.position.y) //ARG Check RayCast
         {
             DestroyProjectile();
         }
@@ -42,6 +45,6 @@ public class ProjectilPieuSuivi : MonoBehaviour
 
     void DestroyProjectile()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

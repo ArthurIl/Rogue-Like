@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class ARGBrute : ARGEnnemi
 {
+    public float slameRange;
+    public float chargeRange;
+    public float chargeSpeed;
+    public float followRange;
+    private bool ennemiCanCharge;
+    private bool isActive;
+    private bool isTouchingAWall;
+    private Vector2 positionTarget;
+    RaycastHit2D hitInfo;
     void Start()
     {
+        isActive = false;
         ennemiCanMove = true;
+        isTouchingAWall = false;
+        ennemiCanCharge = true;
+
         target = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -15,6 +28,11 @@ public class ARGBrute : ARGEnnemi
     {
         Follow();
         Death();
+
+        if (isActive == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, positionTarget, 2 * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -23,24 +41,76 @@ public class ARGBrute : ARGEnnemi
         {
             other.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
         }
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            StartCoroutine("Stun");
+
+        }
     }
 
     public void Follow()
     {
-        if (Vector2.Distance(transform.position, target.transform.position) > 0.15f && ennemiCanMove)
+        if (Vector2.Distance(transform.position, target.transform.position) < followRange && ennemiCanMove && isActive == false)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            Debug.Log("Follow");
+        }
+
+        if (Vector2.Distance(transform.position, target.transform.position) < slameRange && isActive == false)
+        {
+            StartCoroutine("Slam");
+        }
+
+        if (Vector2.Distance(transform.position, target.transform.position) > chargeRange && ennemiCanMove && ennemiCanCharge)
+        {
+            StartCoroutine("Charge");
         }
     }
 
-    public void Slam()
+    IEnumerator Slam()
     {
+        yield return null;
+    }
+
+    IEnumerator Charge()
+    {
+        ennemiCanCharge = false;
+        int layer_mask = LayerMask.GetMask("Wall");
+        Debug.DrawLine(transform.position, target.transform.position, Color.red, 10f);
+        hitInfo = Physics2D.Raycast(transform.position, target.transform.position, Mathf.Infinity, layer_mask);
+        positionTarget = new Vector2(hitInfo.point.x * 0.92f, hitInfo.point.y * 0.92f);
+        isActive = true;
+        if (isActive == true)
+            
+        {
+
+            if (isTouchingAWall)
+            {
+                yield return new WaitForSeconds(1f);
+                ennemiCanCharge = true;
+                isActive = false;
+            }
+            else
+            {
+                yield return new WaitForSeconds(4f);
+                ennemiCanCharge = true;
+                isActive = false;
+            }            
+
+        }
 
     }
 
-    public void Charge()
+    IEnumerator Stun()
     {
-
+        isTouchingAWall = true;
+        yield return new WaitForSeconds(1f);
+        isTouchingAWall = false;
+        yield return null;
     }
+
 }

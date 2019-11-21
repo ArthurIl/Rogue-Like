@@ -16,7 +16,6 @@ public class ARGDrainColliderScript : MonoBehaviour
     void Update()
     {
         ennemiesDrainables.RemoveAll(list_item => list_item == null);
-        Debug.Log(alreadyInList);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

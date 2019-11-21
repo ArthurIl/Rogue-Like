@@ -39,6 +39,7 @@ public class GameHandler : MonoBehaviour
     public LayerMask whatIsEnnemy;
     public float attackRangeX;
     public float attackRangeY;
+    public int soulsCount;
 
     // Start is called before the first frame update
     void Start()
@@ -129,7 +130,8 @@ public class GameHandler : MonoBehaviour
             if (health <= healthMin)
             {
                 health = healthMin;
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //reload la scene une fois la vie tomber à 0
+                GameManager.Instance.soulsCount = 0;
+                //SceneManager.LoadScene("ARG HUB"); //retourne à la scène HUB
             }
         }
     }
