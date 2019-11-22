@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lance_pieu_aim : Lance_pieu
 {
-    public GameObject player;
+    GameObject player;
     public float lookSpeed;
 
     private void Start()

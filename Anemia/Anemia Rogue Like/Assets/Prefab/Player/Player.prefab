@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4631194136078393715}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.196, y: -0.289, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7906407382081205940}
@@ -244,6 +244,7 @@ MonoBehaviour:
     m_Bits: 512
   attackRangeX: 0.2
   attackRangeY: 0.2
+  soulsCount: 0
 --- !u!95 &6786507952811797820
 Animator:
   serializedVersion: 3
@@ -431,5 +432,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canDrain: 0
-  Player: {fileID: 0}
   ennemiesDrainables: []

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8655506125679251644}
   - component: {fileID: -9095346539761703398}
   - component: {fileID: 2703362845019252994}
-  m_Layer: 0
+  - component: {fileID: 1844060503066861469}
+  m_Layer: 11
   m_Name: ProjectilePieuSuivie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,6 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  caster: {fileID: 7178165792091486540, guid: 9879cbd719c9d9140af391cfb2b89c64, type: 3}
+  player: {fileID: 0}
+  damage: 10
 --- !u!50 &-9095346539761703398
 Rigidbody2D:
   serializedVersion: 4
@@ -118,6 +122,32 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &2703362845019252994
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498209220909517115}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
+--- !u!61 &1844060503066861469
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

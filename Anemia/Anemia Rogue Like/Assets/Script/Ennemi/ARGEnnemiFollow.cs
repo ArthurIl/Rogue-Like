@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ARGEnnemiFollow : ARGEnnemi
 {
-    // Start is called before the first frame update
+    private bool canAttack;
     void Start()
     {
         ennemiCanMove = true;
         target = GameObject.FindGameObjectWithTag("Player");
+        canAttack = false;
     }
 
     // Update is called once per frame
@@ -19,12 +20,27 @@ public class ARGEnnemiFollow : ARGEnnemi
     }
 
     private void OnTriggerEnter2D(Collider2D other)
-    {        
-        if (other.gameObject.tag == "Player")
+    {
+        if (other.gameObject.tag == "Player" && canAttack == false)
         {
-            other.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+            StartCoroutine("Attack");
         }
-           
+    }
+
+    private void OnTriggerStay2D(Collider2D collid)
+    {
+        if (canAttack == true && collid.gameObject.CompareTag("Player"))
+        {
+            {
+                collid.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+                canAttack = false;
+            }
+        }
+        //else if (canAttack == true && collid.gameObject.CompareTag("Player"))
+        //{
+        //    canAttack = false;
+        //    StartCoroutine("Attack");
+        //}
     }
 
     public void Follow()
@@ -33,6 +49,14 @@ public class ARGEnnemiFollow : ARGEnnemi
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
+    }
+
+    IEnumerator Attack()
+    {
+        yield return new WaitForSeconds(0.2f);
+        canAttack = true;
+        yield return new WaitForSeconds(0.5f);
+        canAttack = false;
     }
 
 }

@@ -57,7 +57,7 @@ public class ARGBrute : ARGEnnemi
         if (Vector2.Distance(transform.position, target.transform.position) < followRange && ennemiCanMove && isActive == false)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-            Debug.Log("Follow");
+
         }
 
         if (Vector2.Distance(transform.position, target.transform.position) < slameRange && isActive == false)
@@ -81,8 +81,12 @@ public class ARGBrute : ARGEnnemi
         ennemiCanCharge = false;
         int layer_mask = LayerMask.GetMask("Wall");
         Debug.DrawLine(transform.position, target.transform.position, Color.red, 10f);
-        hitInfo = Physics2D.Raycast(transform.position, target.transform.position, Mathf.Infinity, layer_mask);
+        hitInfo = Physics2D.Raycast(transform.position, target.transform.position - transform.position, Mathf.Infinity, layer_mask);
+        Debug.DrawLine(transform.position, hitInfo.point, Color.blue, 10f);
         positionTarget = new Vector2(hitInfo.point.x * 0.92f, hitInfo.point.y * 0.92f);
+        Debug.Log("Position du joueur est " + target.transform.position);
+        Debug.Log("position ennemi " + transform.position);
+        Debug.Log("position du point target est " + positionTarget);
         isActive = true;
         if (isActive == true)
             
@@ -96,7 +100,7 @@ public class ARGBrute : ARGEnnemi
             }
             else
             {
-                yield return new WaitForSeconds(4f);
+                yield return new WaitForSeconds(2f);
                 ennemiCanCharge = true;
                 isActive = false;
             }            

@@ -11,7 +11,7 @@ public class Lance_pieu : MonoBehaviour
     {
         if (timeBtwShots < +0)
         {
-            Instantiate(projectile, transform.position, transform.rotation);
+            Instantiate(projectile, transform.localPosition, transform.rotation);
             timeBtwShots = startTimeBtwShot;
         }
         else
@@ -23,6 +23,5 @@ public class Lance_pieu : MonoBehaviour
     private void Update()
     {
         Shoot();
-
     }
 }
