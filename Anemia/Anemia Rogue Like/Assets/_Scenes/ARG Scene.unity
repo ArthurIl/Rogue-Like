@@ -368,6 +368,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &402732403 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1595187487185174457, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1631278030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &447093183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -942,6 +948,16 @@ PrefabInstance:
       propertyPath: ennemiCanMove
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8641001474748999723, guid: 42ed3af53371b9b469cf110d4a6a3835,
+        type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641001474748999723, guid: 42ed3af53371b9b469cf110d4a6a3835,
+        type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 1877191209}
     - target: {fileID: -4840849541970695739, guid: 42ed3af53371b9b469cf110d4a6a3835,
         type: 3}
       propertyPath: m_Mass
@@ -1294,7 +1310,12 @@ PrefabInstance:
     - target: {fileID: 4631194136078393727, guid: 2b9daea02f432d94fba420e8d2a3e41a,
         type: 3}
       propertyPath: attrition
-      value: 0
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631194136078393727, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: immunedDuration
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6279994689456717278, guid: 2b9daea02f432d94fba420e8d2a3e41a,
         type: 3}
@@ -1326,8 +1347,34 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4631194136078393714, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: enemy.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631194136078393714, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: enemyDistance
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631194136078393714, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 402732403}
+    - target: {fileID: 4631194136078393714, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: wall.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b9daea02f432d94fba420e8d2a3e41a, type: 3}
+--- !u!61 &1877191209 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8532161474430292682, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1631278030}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1901976176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5776866850792388607, guid: 19284550a75b19849bbcc42abc577108,

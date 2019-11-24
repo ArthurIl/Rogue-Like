@@ -5,6 +5,8 @@ using UnityEngine;
 public class ARGEnnemiFollow : ARGEnnemi
 {
     private bool canAttack;
+    public Collider2D playerCollider;
+    
     void Start()
     {
         ennemiCanMove = true;
@@ -54,9 +56,14 @@ public class ARGEnnemiFollow : ARGEnnemi
     IEnumerator Attack()
     {
         yield return new WaitForSeconds(0.2f);
+
         canAttack = true;
+        playerCollider.enabled = false;
+
         yield return new WaitForSeconds(0.5f);
+
         canAttack = false;
+        playerCollider.enabled = true;
     }
 
 }

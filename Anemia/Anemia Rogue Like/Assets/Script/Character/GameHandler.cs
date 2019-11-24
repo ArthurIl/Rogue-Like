@@ -35,6 +35,9 @@ public class GameHandler : MonoBehaviour
     private float timeBtwAttack;
     public float startTimeBtwAttack;
 
+    public float immunedDuration;
+
+
     public Transform attackPos;
     public LayerMask whatIsEnnemy;
     public float attackRangeX;
@@ -56,12 +59,10 @@ public class GameHandler : MonoBehaviour
         ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
         //Debug.Log("EMP : " + Input.GetAxis("MoveHorizontal"));
         //Debug.Log("EMP2 : " + Input.GetAxis("MoveVertical"));
-        //if (Input.GetAxis("MoveHorizontal") != 0 && Input.GetAxis("MoveHorizontal") <= Math.Sqrt(2) / 2)
         if(Input.GetAxis("MoveHorizontal") != 0 || Input.GetAxis("MoveVertical") != 0)
         {
             attackPos.localPosition = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0).normalized*0.2f;
         }
-
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -150,10 +151,29 @@ public class GameHandler : MonoBehaviour
         immuned = false;
     }
 
-    public void TakeDamage(float amout) //prend des dégats
+    private IEnumerator Immuned()
     {
-        health -= amout;
+        yield return new WaitForSeconds(0.2f);
+
+        immuned = true;
+
+        yield return new WaitForSeconds(immunedDuration);
+
+        immuned = false;
     }
+
+    public void TakeDamage(float amount) //prend des dégats
+    {
+        health -= amount;
+    }
+
+    /*private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Ennemi") && !immuned)
+        {
+            StartCoroutine(Immuned());
+        }
+    */
 
      public void CanDrain()
     {

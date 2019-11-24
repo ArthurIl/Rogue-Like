@@ -21,6 +21,10 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     protected bool canDash = true;
     protected bool canMoove;
+    public Collider2D playerCollider;
+    public LayerMask enemy;
+    public LayerMask wall;
+    public float enemyDistance;
 
     Vector3 movement;
 
@@ -47,9 +51,13 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             Move(movement);
-            //WalkAnimation();
         }
 
+        RaycastHit2D wallHit = Physics2D.Raycast(transform.position, movement, enemyDistance, wall);
+        if (wallHit)
+        {
+            playerCollider.enabled = true;
+        }
 
     }
 
@@ -59,17 +67,6 @@ public class CharacterMovement : MonoBehaviour
     {
       playerRb.velocity = direction.normalized * acceleration * Time.deltaTime;
     }
-
-   /* public void WalkAnimation()
-    {
-        if (playerRb.velocity != Vector2.zero)
-        {
-            anim.SetFloat("MoveX", Input.GetAxisRaw("MoveHorizontal"));
-            anim.SetFloat("MoveY", Input.GetAxisRaw("MoveVertical"));
-            anim.SetBool("Moving", true);
-      
-  
-    }*/
 
     //IEnumerator dash(Vector3 movement)
     //{
@@ -92,6 +89,12 @@ public class CharacterMovement : MonoBehaviour
         float timer = 0.0f;  
         canDash = false;
 
+        RaycastHit2D enemyHit = Physics2D.Raycast(transform.position, direction, enemyDistance, enemy);
+        if(enemyHit)
+        {
+            playerCollider.enabled = false;
+        }
+
         while (timer < dashTime)
         {
             playerRb.velocity = direction.normalized * dashSpeed * dashCurve.Evaluate(timer / dashTime);
@@ -101,7 +104,7 @@ public class CharacterMovement : MonoBehaviour
         }
 
         playerRb.velocity = Vector2.zero;
-        
+        playerCollider.enabled = true;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
