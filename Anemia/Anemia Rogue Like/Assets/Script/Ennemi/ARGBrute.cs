@@ -13,6 +13,9 @@ public class ARGBrute : ARGEnnemi
     private bool isTouchingAWall;
     private Vector2 positionTarget;
     RaycastHit2D hitInfo;
+
+    public Collider2D playerCollider;
+
     void Start()
     {
         isActive = false;
@@ -40,6 +43,7 @@ public class ARGBrute : ARGEnnemi
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+            StartCoroutine(PlayerImmuned());
         }
     }
 
@@ -80,13 +84,13 @@ public class ARGBrute : ARGEnnemi
     {
         ennemiCanCharge = false;
         int layer_mask = LayerMask.GetMask("Wall");
-        Debug.DrawLine(transform.position, target.transform.position, Color.red, 10f);
+        //Debug.DrawLine(transform.position, target.transform.position, Color.red, 10f);
         hitInfo = Physics2D.Raycast(transform.position, target.transform.position - transform.position, Mathf.Infinity, layer_mask);
-        Debug.DrawLine(transform.position, hitInfo.point, Color.blue, 10f);
+        //Debug.DrawLine(transform.position, hitInfo.point, Color.blue, 10f);
         positionTarget = new Vector2(hitInfo.point.x * 0.92f, hitInfo.point.y * 0.92f);
-        Debug.Log("Position du joueur est " + target.transform.position);
+        /*Debug.Log("Position du joueur est " + target.transform.position);
         Debug.Log("position ennemi " + transform.position);
-        Debug.Log("position du point target est " + positionTarget);
+        Debug.Log("position du point target est " + positionTarget);*/
         isActive = true;
         if (isActive == true)
             
@@ -115,6 +119,16 @@ public class ARGBrute : ARGEnnemi
         yield return new WaitForSeconds(1f);
         isTouchingAWall = false;
         yield return null;
+    }
+
+    private IEnumerator PlayerImmuned()
+    {
+        playerCollider.enabled = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        playerCollider.enabled = true;
+
     }
 
 }

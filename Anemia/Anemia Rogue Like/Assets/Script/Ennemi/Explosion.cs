@@ -8,6 +8,7 @@ public class Explosion : MonoBehaviour
 
     private float damage = 10f;
     public float explosionTimer;
+    public Collider2D playerCollider;
 
    void Start()
     {
@@ -20,7 +21,9 @@ public class Explosion : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             collider.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+            StartCoroutine(PlayerImmuned());
             Destroy(this.gameObject);
+
         }
         
 
@@ -29,6 +32,16 @@ public class Explosion : MonoBehaviour
     {
         yield return new WaitForSeconds(explosionTimer);
         Destroy(this.gameObject);
+
+    }
+
+    private IEnumerator PlayerImmuned()
+    {
+        playerCollider.enabled = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        playerCollider.enabled = true;
 
     }
 }

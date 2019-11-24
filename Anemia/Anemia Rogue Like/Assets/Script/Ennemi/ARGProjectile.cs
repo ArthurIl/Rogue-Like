@@ -9,6 +9,7 @@ public class ARGProjectile : MonoBehaviour
     private Transform player;
     private Vector2 target;
     float damage = 0.05f;
+    public Collider2D playerCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class ARGProjectile : MonoBehaviour
         if (other.CompareTag("Player")) {
 
             other.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+            StartCoroutine(PlayerImmuned());
             DestroyProjectile();
         }
         //else if(other.gameObject.layer == 8){
@@ -42,5 +44,15 @@ public class ARGProjectile : MonoBehaviour
     void DestroyProjectile()
     {
         Destroy(gameObject);
+    }
+
+    private IEnumerator PlayerImmuned()
+    {
+        playerCollider.enabled = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        playerCollider.enabled = true;
+
     }
 }
