@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7538171970553584818}
   - component: {fileID: 7538171970553584819}
   - component: {fileID: 7538171970553584828}
-  - component: {fileID: 7538171970553584829}
+  - component: {fileID: 3544558232832906343}
   m_Layer: 0
-  m_Name: Sword
+  m_Name: Dagger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,12 +93,12 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
---- !u!114 &7538171970553584829
+--- !u!114 &3544558232832906343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,7 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6def4efa7cd799942a4c599a35b0add5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4631194136078393715, guid: 2b9daea02f432d94fba420e8d2a3e41a, type: 3}
   item: {fileID: 11400000, guid: 1d32948444769fb4abd32e9c39a5ce37, type: 2}
   itemIcon: {fileID: 1643389407854128205, guid: ed9613f0cce55a2438ce899fe8dc721c,
     type: 3}
