@@ -5,10 +5,8 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField]
-    private float acceleration;
-
+    public float acceleration;
     private Rigidbody2D playerRb;
-
     [SerializeField]
     private float dashSpeed;
     [SerializeField]
@@ -18,8 +16,9 @@ public class CharacterMovement : MonoBehaviour
     private int direction;
     [SerializeField]
     protected bool canMove = true;
-
+    public float stockAcceleration;
     Vector3 movement;
+    public bool isActive = true;
 
     [SerializeField]
     private AnimationCurve dashCurve;
@@ -33,13 +32,17 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0f).normalized;
-        if (Input.GetButtonDown("Dash") && canMove)
+        if (isActive == true)
         {
-            Dashing(movement);
+            movement = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0f).normalized;
+            if (Input.GetButtonDown("Dash") && canMove)
+            {
+                Dashing(movement);
+            }
+            else
+                Move(movement);
         }
-        else
-             Move(movement);
+
     }
 
     //mouvement du joueur en récupérant les axes du stick de la manette + accélération modifiable dans l'inspector
@@ -83,5 +86,15 @@ public class CharacterMovement : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canMove = true;
 
+    }
+    
+    public void Paralysis()
+    {
+        isActive = false;
+    }
+    
+    public void Unparalysed()
+    {
+        isActive = true;
     }
 }

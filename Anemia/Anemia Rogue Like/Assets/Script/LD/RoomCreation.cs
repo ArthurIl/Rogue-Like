@@ -8,13 +8,12 @@ public class RoomCreation : MonoBehaviour
     private int rand;
     public int roomNumber = 0;
     public GameObject spawner;
-    public bool spawned = false;
+    
 
     private void Start()
     { 
         template = GameObject.FindGameObjectWithTag("RoomTemplate").GetComponent<RoomTemplate2>();
-        spawner = GameObject.FindGameObjectWithTag("Spawner");
-        spawned = false;
+              
     }
 
      void Spawn ()
@@ -52,16 +51,17 @@ public class RoomCreation : MonoBehaviour
                 rand = Random.Range(0, template.bossRooms.Length);
                 Instantiate(template.bossRooms[rand], spawner.transform.position, template.bossRooms[rand].transform.rotation);
             }
-            spawned = true;              
+                         
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-
+            spawner = GameObject.FindGameObjectWithTag("Spawner");
             Spawn();
             roomNumber += 1;
+            Destroy(spawner.gameObject);
         }
             
     }
