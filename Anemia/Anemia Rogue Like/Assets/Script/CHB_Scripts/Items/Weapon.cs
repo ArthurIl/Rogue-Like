@@ -11,4 +11,9 @@ public class Weapon : Item
 
         return type;
     }
+
+    public override void BehaviorToPlayer()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -11,4 +11,9 @@ public class Trinket : Item
 
         return type;
     }
+
+    public override void BehaviorToPlayer()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -8,7 +8,7 @@ public enum ItemType { WEAPON, TRINKET, DISPOSABLE}
 public abstract class Item : ScriptableObject
 {
     protected ItemType type;
-    public Sprite itemSprite;
 
     public abstract ItemType WhatType();
+    public abstract void BehaviorToPlayer();
 }

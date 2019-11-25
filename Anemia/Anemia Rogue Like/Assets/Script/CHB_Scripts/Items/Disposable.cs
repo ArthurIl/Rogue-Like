@@ -12,4 +12,9 @@ public class Disposable : Item
 
         return type;
     }
+
+    public override void BehaviorToPlayer()
+    {
+        throw new System.NotImplementedException();
+    }
 }
