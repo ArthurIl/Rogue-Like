@@ -57,6 +57,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.31}
   m_EdgeRadius: 0
+--- !u!1 &3930143208375543007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7304687867537094591}
+  - component: {fileID: 12752596501022509}
+  m_Layer: 0
+  m_Name: Attaque Range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7304687867537094591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930143208375543007}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.35890582, y: 0.21211673, z: -1.9519075}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7496328363864952616}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &12752596501022509
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930143208375543007}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.005201459}
+  serializedVersion: 2
+  m_Radius: 0.2
 --- !u!1 &7496328363864952621
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +137,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7036029002592694491}
+  - {fileID: 7304687867537094591}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -180,6 +228,8 @@ MonoBehaviour:
   damage: 5
   ennemiHealth: 10
   souls: {fileID: 2459590833298785680, guid: 62cedebb0dff25748b0383aa246e59bf, type: 3}
+  playerCollider: {fileID: 0}
+  rangeDammage: {fileID: 0}
 --- !u!61 &4393602867718060402
 BoxCollider2D:
   m_ObjectHideFlags: 0

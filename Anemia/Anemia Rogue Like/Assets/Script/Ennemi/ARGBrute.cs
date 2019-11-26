@@ -11,17 +11,20 @@ public class ARGBrute : ARGEnnemi
     private bool ennemiCanCharge;
     private bool isActive;
     private bool isTouchingAWall;
+    private bool secondPhase;
+    private bool ennemiCanSlam;
     private Vector2 positionTarget;
     RaycastHit2D hitInfo;
 
     public Collider2D playerCollider;
-
+    public CircleCollider2D slamAttaque;
     void Start()
     {
         isActive = false;
         ennemiCanMove = true;
         isTouchingAWall = false;
         ennemiCanCharge = true;
+        ennemiCanSlam = true;
 
         target = GameObject.FindGameObjectWithTag("Player");
         playerCollider = target.GetComponent<Collider2D>();
@@ -32,6 +35,7 @@ public class ARGBrute : ARGEnnemi
     {
         Follow();
         Death();
+        Drainable();
 
         if (isActive == true)
         {
@@ -53,7 +57,6 @@ public class ARGBrute : ARGEnnemi
         if (collision.gameObject.tag == "Wall")
         {
             StartCoroutine("Stun");
-
         }
     }
 
@@ -63,11 +66,22 @@ public class ARGBrute : ARGEnnemi
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
 
+            if (secondPhase == true)
+            {
+                //animator drainable
+            }
+            else
+            {
+                //animator non drainable
+            }
+
+
         }
 
-        if (Vector2.Distance(transform.position, target.transform.position) < slameRange && isActive == false)
+        if (Vector2.Distance(transform.position, target.transform.position) < slameRange && isActive == false && ennemiCanSlam)
         {
             StartCoroutine("Slam");
+
         }
 
         if (Vector2.Distance(transform.position, target.transform.position) > chargeRange && ennemiCanMove && ennemiCanCharge)
@@ -78,20 +92,32 @@ public class ARGBrute : ARGEnnemi
 
     IEnumerator Slam()
     {
-        yield return null;
+        ennemiCanSlam = false;
+        ennemiCanMove = false;
+        yield return new WaitForSeconds(1f); //délai avant attaque
+        slamAttaque.enabled = true;
+        yield return new WaitForSeconds(0.5f); // temps que reste la zone
+        slamAttaque.enabled = false;
+        yield return new WaitForSeconds(2f); //temps immobilisé après le slam
+        ennemiCanSlam = true;
+        ennemiCanMove = true;
+
+        if (secondPhase == true)
+        {
+            //animator drainable
+        }
+        else
+        {
+            //animator non drainable
+        }
     }
 
     IEnumerator Charge()
     {
         ennemiCanCharge = false;
         int layer_mask = LayerMask.GetMask("Wall");
-        //Debug.DrawLine(transform.position, target.transform.position, Color.red, 10f);
         hitInfo = Physics2D.Raycast(transform.position, target.transform.position - transform.position, Mathf.Infinity, layer_mask);
-        //Debug.DrawLine(transform.position, hitInfo.point, Color.blue, 10f);
         positionTarget = new Vector2(hitInfo.point.x * 0.92f, hitInfo.point.y * 0.92f);
-        /*Debug.Log("Position du joueur est " + target.transform.position);
-        Debug.Log("position ennemi " + transform.position);
-        Debug.Log("position du point target est " + positionTarget);*/
         isActive = true;
         if (isActive == true)
             
@@ -130,6 +156,17 @@ public class ARGBrute : ARGEnnemi
 
         playerCollider.enabled = true;
 
+    }
+
+    void Drainable()
+    {
+        if (ennemiHealth <= 10)
+        {
+            secondPhase = true;
+            transform.gameObject.tag = "Ennemi";
+            //animator drainale (changement de sprite)
+        }
+        
     }
 
 }

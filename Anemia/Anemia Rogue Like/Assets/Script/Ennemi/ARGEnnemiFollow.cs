@@ -6,12 +6,14 @@ public class ARGEnnemiFollow : ARGEnnemi
 {
     private bool canAttack;
     public Collider2D playerCollider;
-    
+    private GameObject player;
+    private bool inRange;
+    public Collider2D rangeDammage;
     void Start()
     {
         ennemiCanMove = true;
         target = GameObject.FindGameObjectWithTag("Player");
-        canAttack = false;
+        canAttack = true;
         playerCollider = target.GetComponent<Collider2D>();
     }
 
@@ -24,26 +26,21 @@ public class ARGEnnemiFollow : ARGEnnemi
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" && canAttack == false)
+        if (other.gameObject.tag == "Player" && canAttack == true)
         {
+            player = other.gameObject;
+            rangeDammage.enabled = true;
             StartCoroutine("Attack");
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collid)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (canAttack == true && collid.gameObject.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
-            {
-                collid.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
-                canAttack = false;
-            }
+            inRange = true;
         }
-        //else if (canAttack == true && collid.gameObject.CompareTag("Player"))
-        //{
-        //    canAttack = false;
-        //    StartCoroutine("Attack");
-        //}
+        else inRange = false;
     }
 
     public void Follow()
@@ -56,15 +53,22 @@ public class ARGEnnemiFollow : ARGEnnemi
 
     IEnumerator Attack()
     {
-        yield return new WaitForSeconds(0.2f);
-
-        canAttack = true;
+        speed = 0;
+        
+        yield return new WaitForSeconds(0.5f);
         playerCollider.enabled = false;
+        canAttack = false;
+        
+        if (inRange == true)
+        {
+         player.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+        }
 
         yield return new WaitForSeconds(0.5f);
-
-        canAttack = false;
+        rangeDammage.enabled = false;
+        canAttack = true;
         playerCollider.enabled = true;
+        speed = 0.2f;
     }
 
 }
