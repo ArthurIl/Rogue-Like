@@ -21,12 +21,6 @@ public class Disposable : Item
         throw new System.NotImplementedException();
     }
 
-    public float Heal(float pHealth)
-    {
-        pHealth += healthRefill;
-
-        return pHealth;
-    }
 
     public float HitMore(float pAttackDamage)
     {
