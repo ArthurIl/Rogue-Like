@@ -6,19 +6,16 @@ public class ARGDrainColliderScript : MonoBehaviour
 {
     public bool canDrain;
     bool alreadyInList;
-    public GameObject Player;
     public List<GameObject> ennemiesDrainables = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        //Player.GetComponent<GameHandler>().drainDammage;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        ennemiesDrainables.RemoveAll(list_item => list_item == null); ennemiesDrainables.RemoveAll(list_item => list_item == null);
+        ennemiesDrainables.RemoveAll(list_item => list_item == null);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,16 +28,13 @@ public class ARGDrainColliderScript : MonoBehaviour
                 if (collision.gameObject == ennemi)
                 {
                     alreadyInList = true;
-                }                
+                }
             }
             if (!alreadyInList)
             {
                 ennemiesDrainables.Add(collision.gameObject);
-                alreadyInList = false;
             }
-                
-
-
+            alreadyInList = false;
         }
     }
 

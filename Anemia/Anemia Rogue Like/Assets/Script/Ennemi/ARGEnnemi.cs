@@ -12,18 +12,24 @@ public class ARGEnnemi : MonoBehaviour
     public float damage ;
     public float ennemiHealth;
 
-    public void EnnemisTakeDamage(float amout)
+    public GameObject souls;
+
+    public void EnnemisTakeDamage(float amount)
     {
-        ennemiHealth -= amout;
+        ennemiHealth -= amount;
         ennemiCanMove = false;
         canShoot = false;
 
     }
-
+    public void EnnemisGetHit(float dammage)
+    {
+        ennemiHealth -= dammage;
+    }
     public void Death()
     {
         if (ennemiHealth <= 0)
         {
+            Instantiate(souls, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
