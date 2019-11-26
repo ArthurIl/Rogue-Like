@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class CharacterMovement : MonoBehaviour
     private float dashTime;
     [SerializeField]
     private float dashCooldown;
+    [SerializeField]
+    private float maxDashCooldown;
     private int direction;
     [SerializeField]
     protected bool canDash = true;
@@ -26,11 +29,16 @@ public class CharacterMovement : MonoBehaviour
     public LayerMask wall;
     public LayerMask trap;
     public float enemyDistance;
+    [SerializeField]
+    private Image dashBar;
+    private bool isCooldown;
 
     Vector3 movement;
 
     [SerializeField]
     private AnimationCurve dashCurve;
+
+
 
     private Animator anim;
 
@@ -44,6 +52,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CDFeedback();
         movement = new Vector3(Input.GetAxisRaw("MoveHorizontal"), Input.GetAxisRaw("MoveVertical"), 0f).normalized;
         if (Input.GetButtonDown("Dash") && canDash)
         {
@@ -59,7 +68,6 @@ public class CharacterMovement : MonoBehaviour
         {
             playerCollider.enabled = true;
         }
-
     }
 
 
@@ -112,4 +120,22 @@ public class CharacterMovement : MonoBehaviour
         canDash = true;
 
     }
+
+    private void CDFeedback()
+    {
+        if (Input.GetButtonDown("Dash"))
+        {
+            isCooldown = true;
+        }
+        if(isCooldown == true)
+        {
+            dashBar.fillAmount += 1 / dashCooldown * Time.deltaTime;
+            if (dashBar.fillAmount >= 1)
+            {
+                dashBar.fillAmount = 0;
+                isCooldown = false;
+            }
+        }
+    }
+
 }

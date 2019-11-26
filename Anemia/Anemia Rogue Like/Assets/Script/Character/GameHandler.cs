@@ -151,16 +151,16 @@ public class GameHandler : MonoBehaviour
         immuned = false;
     }
 
-    private IEnumerator Immuned()
-    {
-        yield return new WaitForSeconds(0.2f);
+    //private IEnumerator Immuned()
+    //{
+    //    yield return new WaitForSeconds(0.2f);
 
-        immuned = true;
+    //    immuned = true;
 
-        yield return new WaitForSeconds(immunedDuration);
+    //    yield return new WaitForSeconds(immunedDuration);
 
-        immuned = false;
-    }
+    //    immuned = false;
+    //}
 
     public void TakeDamage(float amount) //prend des dégats
     {
