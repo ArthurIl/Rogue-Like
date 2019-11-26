@@ -14,7 +14,7 @@ public class GameHandler : MonoBehaviour
     [SerializeField]
     private int healthMin = 0;
     [SerializeField]
-    private Image uiBar = default;
+    private Image uiBar;
     public float attrition;
     public float drainHeal;
 

@@ -24,6 +24,7 @@ public class CharacterMovement : MonoBehaviour
     public Collider2D playerCollider;
     public LayerMask enemy;
     public LayerMask wall;
+    public LayerMask trap;
     public float enemyDistance;
 
     Vector3 movement;
@@ -90,7 +91,8 @@ public class CharacterMovement : MonoBehaviour
         canDash = false;
 
         RaycastHit2D enemyHit = Physics2D.Raycast(transform.position, direction, enemyDistance, enemy);
-        if(enemyHit)
+        RaycastHit2D trapHit = Physics2D.Raycast(transform.position, direction, enemyDistance, trap);
+        if (enemyHit || trapHit)
         {
             playerCollider.enabled = false;
         }

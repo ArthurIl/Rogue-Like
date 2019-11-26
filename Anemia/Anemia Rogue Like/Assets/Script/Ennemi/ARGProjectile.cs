@@ -10,10 +10,16 @@ public class ARGProjectile : MonoBehaviour
     private Vector2 target;
     float damage = 0.05f;
     public Collider2D playerCollider;
+    private GameObject theTarget;
 
     // Start is called before the first frame update
     void Start()
     {
+        theTarget = GameObject.FindGameObjectWithTag("Player");
+        playerCollider = theTarget.GetComponent<Collider2D>();
+
+
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         target = new Vector2(player.position.x, player.position.y);

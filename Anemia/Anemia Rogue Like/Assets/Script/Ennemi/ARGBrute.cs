@@ -24,6 +24,7 @@ public class ARGBrute : ARGEnnemi
         ennemiCanCharge = true;
 
         target = GameObject.FindGameObjectWithTag("Player");
+        playerCollider = target.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame

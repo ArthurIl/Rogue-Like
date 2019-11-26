@@ -23,6 +23,7 @@ public class ARGLittleSpawned : ARGEnnemi
     // Start is called before the first frame update
     void Start()
     {
+
         littleSpawnedRb = GetComponent<Rigidbody2D>();
         ennemiCanMove = true;
         target = GameObject.FindGameObjectWithTag("Player");

@@ -12,6 +12,7 @@ public class ARGEnnemiFollow : ARGEnnemi
         ennemiCanMove = true;
         target = GameObject.FindGameObjectWithTag("Player");
         canAttack = false;
+        playerCollider = target.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
