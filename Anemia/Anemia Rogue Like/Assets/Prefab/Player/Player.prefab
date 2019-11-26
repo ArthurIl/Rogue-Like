@@ -133,7 +133,8 @@ MonoBehaviour:
   acceleration: 50
   dashSpeed: 5
   dashTime: 0.25
-  dashCooldown: 0.1
+  dashCooldown: 0.5
+  maxDashCooldown: 0.5
   canDash: 1
   playerCollider: {fileID: 1595187487185174457}
   enemy:
@@ -146,6 +147,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   enemyDistance: 0.8
+  dashBar: {fileID: 0}
   dashCurve:
     serializedVersion: 2
     m_Curve:
