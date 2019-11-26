@@ -7,8 +7,7 @@ public class CharacterMovement : MonoBehaviour
 {
     //Statement déplacement
     [SerializeField]
-    private float acceleration;
-
+    public float acceleration;
     private Rigidbody2D playerRb;
 
     //Statement Dash
@@ -34,6 +33,7 @@ public class CharacterMovement : MonoBehaviour
     private bool isCooldown;
 
     Vector3 movement;
+    public bool isActive = true;
 
     [SerializeField]
     private AnimationCurve dashCurve;
@@ -56,7 +56,13 @@ public class CharacterMovement : MonoBehaviour
         movement = new Vector3(Input.GetAxisRaw("MoveHorizontal"), Input.GetAxisRaw("MoveVertical"), 0f).normalized;
         if (Input.GetButtonDown("Dash") && canDash)
         {
-            Dashing(movement);
+            movement = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0f).normalized;
+            if (Input.GetButtonDown("Dash") && canMove)
+            {
+                Dashing(movement);
+            }
+            else
+                Move(movement);
         }
         else
         {
