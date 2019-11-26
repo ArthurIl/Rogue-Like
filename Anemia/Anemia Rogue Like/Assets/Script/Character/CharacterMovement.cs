@@ -8,6 +8,7 @@ public class CharacterMovement : MonoBehaviour
     //Statement déplacement
     [SerializeField]
     public float acceleration;
+    private float stockAcceleration;
     private Rigidbody2D playerRb;
 
     //Statement Dash
@@ -22,7 +23,7 @@ public class CharacterMovement : MonoBehaviour
     private int direction;
     [SerializeField]
     protected bool canDash = true;
-    protected bool canMoove;
+    protected bool canMove;
     public Collider2D playerCollider;
     public LayerMask enemy;
     public LayerMask wall;
@@ -32,8 +33,11 @@ public class CharacterMovement : MonoBehaviour
     private Image dashBar;
     private bool isCooldown;
 
+    
+
     Vector3 movement;
     public bool isActive = true;
+    public bool haveBoot = false;
 
     [SerializeField]
     private AnimationCurve dashCurve;
@@ -47,27 +51,36 @@ public class CharacterMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody2D>();
+        stockAcceleration = acceleration;
     }
 
     // Update is called once per frame
     void Update()
     {
         CDFeedback();
-        movement = new Vector3(Input.GetAxisRaw("MoveHorizontal"), Input.GetAxisRaw("MoveVertical"), 0f).normalized;
-        if (Input.GetButtonDown("Dash") && canDash)
-        {
-            movement = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0f).normalized;
-            if (Input.GetButtonDown("Dash") && canMove)
+        if (isActive == true) {
+
+            movement = new Vector3(Input.GetAxisRaw("MoveHorizontal"), Input.GetAxisRaw("MoveVertical"), 0f).normalized;
+            if (Input.GetButtonDown("Dash") && canDash)
             {
-                Dashing(movement);
+                movement = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0f).normalized;
+                if (Input.GetButtonDown("Dash") && canMove)
+                {
+                    Dashing(movement);
+                }
+                else
+                    Move(movement);
             }
             else
+            {
                 Move(movement);
+            }
         }
-        else
+        if (haveBoot == false)
         {
-            Move(movement);
+            acceleration = stockAcceleration;
         }
+
 
         RaycastHit2D wallHit = Physics2D.Raycast(transform.position, movement, enemyDistance, wall);
         if (wallHit)
@@ -142,6 +155,16 @@ public class CharacterMovement : MonoBehaviour
                 isCooldown = false;
             }
         }
+    }
+
+    public void Paralysis()
+    {
+        isActive = false;
+    }
+
+    public void Unparalysed()
+    {
+        isActive = true;
     }
 
 }
