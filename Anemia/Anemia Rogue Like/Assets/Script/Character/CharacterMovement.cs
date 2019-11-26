@@ -25,6 +25,7 @@ public class CharacterMovement : MonoBehaviour
     protected bool canDash = true;
     protected bool canMove;
     public Collider2D playerCollider;
+    public Collider2D isTriggerCollider;
     public LayerMask enemy;
     public LayerMask wall;
     public LayerMask trap;
@@ -36,8 +37,8 @@ public class CharacterMovement : MonoBehaviour
     
 
     Vector3 movement;
-    public bool isActive = true;
-    public bool haveBoot = false;
+    public bool isActive;
+    public bool haveBoot;
 
     [SerializeField]
     private AnimationCurve dashCurve;
@@ -58,23 +59,18 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         CDFeedback();
-        if (isActive == true) {
+        if (isActive == true)
 
-            movement = new Vector3(Input.GetAxisRaw("MoveHorizontal"), Input.GetAxisRaw("MoveVertical"), 0f).normalized;
-            if (Input.GetButtonDown("Dash") && canDash)
-            {
+        {
+
                 movement = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0f).normalized;
-                if (Input.GetButtonDown("Dash") && canMove)
+                if (Input.GetButtonDown("Dash") && canDash)
                 {
                     Dashing(movement);
                 }
-                else
-                    Move(movement);
-            }
-            else
-            {
-                Move(movement);
-            }
+                else Move(movement);
+
+
         }
         if (haveBoot == false)
         {
@@ -86,6 +82,7 @@ public class CharacterMovement : MonoBehaviour
         if (wallHit)
         {
             playerCollider.enabled = true;
+            isTriggerCollider.enabled = true;
         }
     }
 
@@ -122,6 +119,7 @@ public class CharacterMovement : MonoBehaviour
         if (enemyHit || trapHit)
         {
             playerCollider.enabled = false;
+            isTriggerCollider.enabled = false;
         }
 
         while (timer < dashTime)
@@ -134,6 +132,7 @@ public class CharacterMovement : MonoBehaviour
 
         playerRb.velocity = Vector2.zero;
         playerCollider.enabled = true;
+        isTriggerCollider.enabled = true;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
@@ -142,16 +141,17 @@ public class CharacterMovement : MonoBehaviour
 
     private void CDFeedback()
     {
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash") && canDash)
         {
             isCooldown = true;
+            dashBar.fillAmount = 0f;
         }
         if(isCooldown == true)
         {
-            dashBar.fillAmount += 1 / dashCooldown * Time.deltaTime;
-            if (dashBar.fillAmount >= 1)
+            dashBar.fillAmount += 1f / dashCooldown * Time.deltaTime;
+            if (dashBar.fillAmount >= 1f)
             {
-                dashBar.fillAmount = 0;
+                dashBar.fillAmount = 1f;
                 isCooldown = false;
             }
         }
@@ -159,7 +159,9 @@ public class CharacterMovement : MonoBehaviour
 
     public void Paralysis()
     {
+        Debug.Log("je suis paralyser");
         isActive = false;
+        playerRb.velocity = Vector2.zero;
     }
 
     public void Unparalysed()

@@ -15,6 +15,7 @@ public class ARGEnnemiFollow : ARGEnnemi
         target = GameObject.FindGameObjectWithTag("Player");
         canAttack = true;
         playerCollider = target.GetComponent<Collider2D>();
+        rangeDammage = gameObject.GetComponentInChildren<CircleCollider2D>();
     }
 
     // Update is called once per frame

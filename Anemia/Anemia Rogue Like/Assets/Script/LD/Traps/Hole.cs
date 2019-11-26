@@ -8,37 +8,50 @@ public class Hole : MonoBehaviour
     public GameObject spawnPoint;
     public float damage;
     private IEnumerator coroutine;
+    private bool isInTrigger;
+    private bool wasInTrigger;
+    private GameObject playerVariable;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
-        coroutine = WaitAndRelease(2.0f);
+        isInTrigger = false;
+        playerVariable = null;
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (wasInTrigger && !isInTrigger )
+        {
+            wasInTrigger = false;
+        }
+        isInTrigger = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            
-            StartCoroutine(coroutine);
-            
             collision.gameObject.GetComponent<CharacterMovement>().Paralysis();
-
-
+            playerVariable = collision.gameObject;
+            StartCoroutine("WaitAndRelease");
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<CharacterMovement>().Unparalysed();
-        collision.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+      wasInTrigger = true;
+      isInTrigger = true;
     }
 
-    private IEnumerator WaitAndRelease(float waitTime)
+    private IEnumerator WaitAndRelease()
     {
         Debug.Log("Fallen");
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.8f);
         player.transform.position = spawnPoint.transform.position;
+        playerVariable.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+        playerVariable.gameObject.GetComponent<CharacterMovement>().Unparalysed();
     }
         
 }

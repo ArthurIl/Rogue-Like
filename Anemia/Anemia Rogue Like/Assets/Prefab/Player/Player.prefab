@@ -137,6 +137,7 @@ MonoBehaviour:
   maxDashCooldown: 0.5
   canDash: 1
   playerCollider: {fileID: 1595187487185174457}
+  isTriggerCollider: {fileID: 8532161474430292682}
   enemy:
     serializedVersion: 2
     m_Bits: 512
@@ -148,6 +149,8 @@ MonoBehaviour:
     m_Bits: 1024
   enemyDistance: 0.8
   dashBar: {fileID: 0}
+  isActive: 1
+  haveBoot: 0
   dashCurve:
     serializedVersion: 2
     m_Curve:

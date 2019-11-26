@@ -35,8 +35,6 @@ public class GameHandler : MonoBehaviour
     private float timeBtwAttack;
     public float startTimeBtwAttack;
 
-    public float immunedDuration;
-
 
     public Transform attackPos;
     public LayerMask whatIsEnnemy;
@@ -61,7 +59,7 @@ public class GameHandler : MonoBehaviour
         //Debug.Log("EMP2 : " + Input.GetAxis("MoveVertical"));
         if(Input.GetAxis("MoveHorizontal") != 0 || Input.GetAxis("MoveVertical") != 0)
         {
-            attackPos.localPosition = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0).normalized*0.2f;
+            attackPos.localPosition = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0).normalized * 0.2f;
         }
     }
     // Update is called once per frame
