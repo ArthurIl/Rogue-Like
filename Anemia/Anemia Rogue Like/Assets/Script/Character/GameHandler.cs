@@ -31,19 +31,21 @@ public class GameHandler : MonoBehaviour
     bool canDrain;
 
     public float drainDammage;
-    public float attackDammage;
+
 
     //Statment attack
     private float timeBtwAttack;
     public float startTimeBtwAttack;
-
+    public float attackDammage;
 
     public Transform attackPos;
     public LayerMask whatIsEnnemy;
     public float attackRangeX;
     public float attackRangeY;
 
-    public Weapon weapon;
+    public Weapon sword;
+    public Weapon dagger;
+    public Weapon sickle;
 
     //Statment soul
     public int soulsCount;
@@ -53,7 +55,7 @@ public class GameHandler : MonoBehaviour
     {
         ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
     }
-    
+   
 
     void Update()
     {

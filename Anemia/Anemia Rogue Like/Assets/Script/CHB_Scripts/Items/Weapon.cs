@@ -5,6 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Item/Weapon")]
 public class Weapon : Item
 {
+    public float attackDammage;
+    public float attackRangeX;
+    public float attackRangeY;
+    public float timeBtwAttack;
+    public float startTimeBtwAttack;
     public override ItemType WhatType()
     {
         type = ItemType.WEAPON;
