@@ -14,18 +14,18 @@ public class Inventory : MonoBehaviour
             switch (i)
             {
                 case 0:
-                    Debug.Log("Weapon slot is : ");
+                    Debug.Log("Weapon slot is : " + isFull[i]);
                     break;
                 case 1:
-                    Debug.Log("Trinket slot is : ");
+                    Debug.Log("Trinket slot is : " + isFull[i]);
                     break;
                 case 2:
-                    Debug.Log("Disposable slot is : ");
+                    Debug.Log("Disposable slot is : " + isFull[i]);
                     break;
                 default:
                     break;
             }
-            Debug.Log(isFull[i]);
+            
         }
     }
 }
