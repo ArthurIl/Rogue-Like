@@ -34,8 +34,8 @@ public class GameHandler : MonoBehaviour
 
 
     //Statment attack
-    private float timeBtwAttack;
-    public float startTimeBtwAttack;
+    public float timeBtwAttack;
+    public bool canAttack = true;
     public float attackDammage;
 
     public Transform attackPos;
@@ -43,9 +43,6 @@ public class GameHandler : MonoBehaviour
     public float attackRangeX;
     public float attackRangeY;
 
-    public Weapon sword;
-    public Weapon dagger;
-    public Weapon sickle;
 
     //Statment soul
     public int soulsCount;
@@ -60,7 +57,12 @@ public class GameHandler : MonoBehaviour
     void Update()
     {
         BarRenderer();
-        Attaque();
+        if (Input.GetButtonDown("Attaque") && canAttack == false)
+        {
+            Debug.Log("PRBA" + "attack");
+            StartCoroutine("Attaque");
+        }
+
         canDrain = GetComponentInChildren<ARGDrainColliderScript>().canDrain;
         ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
         //Debug.Log("EMP : " + Input.GetAxis("MoveHorizontal"));
@@ -100,26 +102,21 @@ public class GameHandler : MonoBehaviour
 
     }
 
-    public void Attaque()
+    public IEnumerator Attaque()
     {
-        if (timeBtwAttack <= 0)
-        {
-            if (Input.GetButtonDown("Attaque"))
-            {
+            canAttack = true;
+
+           
                 Collider2D[] ennemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnnemy);
                 for (int i = 0; i < ennemiesToDamage.Length; i++)
                 {
                     ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisGetHit(attackDammage);
                     Debug.Log("Damage Taken!");
                 }
-                timeBtwAttack = startTimeBtwAttack;
-            }
-         
-        }
-        else
-        {
-            timeBtwAttack -= Time.deltaTime;   
-        }
+              
+        yield return new WaitForSeconds(timeBtwAttack);
+
+        canAttack = false;
     }
 
     private void OnDrawGizmosSelected()

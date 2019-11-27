@@ -9,7 +9,6 @@ public class Weapon : Item
     public float attackRangeX;
     public float attackRangeY;
     public float timeBtwAttack;
-    public float startTimeBtwAttack;
     public override ItemType WhatType()
     {
         type = ItemType.WEAPON;
