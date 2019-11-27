@@ -11,9 +11,11 @@ public class Pickable : MonoBehaviour
     public GameObject itemIcon;
     private int wishedSlot;
     private bool inPickupRange = false;
+    
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        
         //Spoiler, find with tag  c'est dégueu, vivement le manager qui transmet le player
 
         //CHB:
@@ -46,7 +48,7 @@ public class Pickable : MonoBehaviour
             if (inventory.isFull[wishedSlot] == false)
             {
                 inventory.isFull[wishedSlot] = true;
-                Instantiate(itemIcon, inventory.slots[wishedSlot].transform, true);
+                Instantiate(itemIcon, inventory.slots[wishedSlot].transform, false);
                 Destroy(gameObject);
             }
             else
@@ -54,7 +56,7 @@ public class Pickable : MonoBehaviour
                 //CHB:
                 //Call destroying item currently held and spawning corresponding collectible
                 inventory.slots[wishedSlot].GetComponent<Slot>().DropItem();
-                Instantiate(itemIcon, inventory.slots[wishedSlot].transform, true);
+                Instantiate(itemIcon, inventory.slots[wishedSlot].transform, false);
                 Destroy(gameObject);
             }
 

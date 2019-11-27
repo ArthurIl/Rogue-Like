@@ -7,6 +7,7 @@ using System;
 
 public class GameHandler : MonoBehaviour
 {
+    // Statement health
     [SerializeField]
     protected float health = 1;
     [SerializeField]
@@ -32,6 +33,7 @@ public class GameHandler : MonoBehaviour
     public float drainDammage;
     public float attackDammage;
 
+    //Statment attack
     private float timeBtwAttack;
     public float startTimeBtwAttack;
 
@@ -40,6 +42,10 @@ public class GameHandler : MonoBehaviour
     public LayerMask whatIsEnnemy;
     public float attackRangeX;
     public float attackRangeY;
+
+    public Weapon weapon;
+
+    //Statment soul
     public int soulsCount;
 
     // Start is called before the first frame update

@@ -809,7 +809,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9163924814155871555}
-  - component: {fileID: -5821608959578382215}
   m_Layer: 0
   m_Name: Wall_E
   m_TagString: Rooms
@@ -832,22 +831,10 @@ Transform:
   - {fileID: 882498742115037406}
   - {fileID: 8833848869561145458}
   - {fileID: 5937013226042112494}
-  - {fileID: 5997084692431862909}
+  - {fileID: 4106194594732096350}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5821608959578382215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2642436900314062963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 647f4e13a3690d8409da807f0a73b408, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3326323561859538384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3255,7 +3242,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2517977045204025774}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4624720059519089553
+--- !u!1001 &3164764582014483634
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3267,12 +3254,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnerEntrance
       objectReference: {fileID: 0}
-    - target: {fileID: 441386397822806403, guid: 807d93fadfc0c294a9d86d9b20a66d77,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000,
-        type: 0}
     - target: {fileID: 1375747039951276012, guid: 807d93fadfc0c294a9d86d9b20a66d77,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3286,7 +3267,7 @@ PrefabInstance:
     - target: {fileID: 1375747039951276012, guid: 807d93fadfc0c294a9d86d9b20a66d77,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.903025
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1375747039951276012, guid: 807d93fadfc0c294a9d86d9b20a66d77,
         type: 3}
@@ -3328,16 +3309,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3141162208399942878, guid: 807d93fadfc0c294a9d86d9b20a66d77,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807d93fadfc0c294a9d86d9b20a66d77, type: 3}
---- !u!4 &5997084692431862909 stripped
+--- !u!4 &4106194594732096350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1375747039951276012, guid: 807d93fadfc0c294a9d86d9b20a66d77,
     type: 3}
-  m_PrefabInstance: {fileID: 4624720059519089553}
+  m_PrefabInstance: {fileID: 3164764582014483634}
   m_PrefabAsset: {fileID: 0}
