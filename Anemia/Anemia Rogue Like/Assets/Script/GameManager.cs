@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public int soulsCount;
+    public int bloodCount;
     public int numberS;
     public int numberB;
 
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public void GetBlood(int numberB)
     {
-        soulsCount += numberB;
+        bloodCount += numberB;
     }
 
 }

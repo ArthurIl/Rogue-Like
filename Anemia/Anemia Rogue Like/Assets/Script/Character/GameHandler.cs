@@ -35,7 +35,7 @@ public class GameHandler : MonoBehaviour
 
     //Statment attack
     public float timeBtwAttack;
-    public bool canAttack = true;
+    public bool canAttack;
     public float attackDammage;
 
     public Transform attackPos;
@@ -57,7 +57,7 @@ public class GameHandler : MonoBehaviour
     void Update()
     {
         BarRenderer();
-        if (Input.GetButtonDown("Attaque") && canAttack == false)
+        if (Input.GetButtonDown("Attaque") && canAttack)
         {
             Debug.Log("PRBA" + "attack");
             StartCoroutine("Attaque");
@@ -104,19 +104,19 @@ public class GameHandler : MonoBehaviour
 
     public IEnumerator Attaque()
     {
-            canAttack = true;
+            canAttack = false;
 
            
                 Collider2D[] ennemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnnemy);
                 for (int i = 0; i < ennemiesToDamage.Length; i++)
                 {
-                    ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisGetHit(attackDammage);
+                    ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(attackDammage);
                     Debug.Log("Damage Taken!");
                 }
               
         yield return new WaitForSeconds(timeBtwAttack);
 
-        canAttack = false;
+        canAttack = true;
     }
 
     private void OnDrawGizmosSelected()

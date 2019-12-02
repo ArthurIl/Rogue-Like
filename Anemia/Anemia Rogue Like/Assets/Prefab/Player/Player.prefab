@@ -252,17 +252,15 @@ MonoBehaviour:
   player: {fileID: 4631194136078393715}
   drain: {fileID: 6313314249698492288}
   drainDammage: 0.1
-  startTimeBtwAttack: 0
-  attackDammage: 0
+  timeBtwAttack: 0
+  canAttack: 1
+  attackDammage: 1
   attackPos: {fileID: 5778388236954443019}
   whatIsEnnemy:
     serializedVersion: 2
     m_Bits: 512
   attackRangeX: 0
   attackRangeY: 0
-  sword: {fileID: 11400000, guid: 9d289858ad39ddb4ca944565e8e48414, type: 2}
-  dagger: {fileID: 11400000, guid: cf9c865c34d5b86428aa9f220de760a2, type: 2}
-  sickle: {fileID: 11400000, guid: 6ec04edc57b89b041ad2a07307354ee8, type: 2}
   soulsCount: 0
 --- !u!95 &6786507952811797820
 Animator:
