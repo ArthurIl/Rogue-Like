@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int bloodCount;
     public int numberS;
     public int numberB;
+    public List<GameObject> itemsUnlock;
 
     void Awake()
     {
@@ -22,6 +23,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         
+    }
+
+    public void ItemList(GameObject item)
+    {
+        itemsUnlock.Add(item);
     }
 
     public void GetSouls(int numberS)

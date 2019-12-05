@@ -131,13 +131,14 @@ public class GameHandler : MonoBehaviour
         {
             health -= attrition;
             uiBar.fillAmount = health;
-            if (health <= healthMin)
+        }
+        else if (health <= healthMin) //mit un else if à la place d'un if
             {
                 health = healthMin;
                 GameManager.Instance.soulsCount = 0;
-                //SceneManager.LoadScene("ARG HUB"); //retourne à la scène HUB
+                SceneManager.LoadScene("ARG HUB"); //retourne à la scène HUB
             }
-        }
+        
     }
 
     private void BarRenderer()
