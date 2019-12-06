@@ -58,12 +58,26 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        movement = Vector3.zero;
+        movement.x = Input.GetAxis("MoveHorizontal");
+        movement.y = Input.GetAxis("MoveVertical");
+        if(movement != Vector3.zero)
+        {
+            anim.SetFloat("moveX", movement.x);
+            anim.SetFloat("moveY", movement.y);
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }
+
         CDFeedback();
         if (isActive == true)
 
         {
 
-                movement = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0f).normalized;
+                movement = new Vector3(movement.x, movement.y, 0f).normalized;
                 if (Input.GetButtonDown("Dash") && canDash)
                 {
                     Dashing(movement);
