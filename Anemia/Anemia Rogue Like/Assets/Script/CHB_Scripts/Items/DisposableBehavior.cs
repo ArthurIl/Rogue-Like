@@ -5,15 +5,10 @@ using UnityEngine;
 public class DisposableBehavior : MonoBehaviour
 {
     private GameHandler playerHandler;
-    private float playerHealth;
-    private float playerAttackDam;
-    private int playerSouls;
     public Disposable myDisposable;
     void Start()
     {
         playerHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<GameHandler>();
-        playerAttackDam = playerHandler.attackDammage;
-        playerSouls = playerHandler.soulsCount;
     }
 
     // Update is called once per frame
@@ -28,16 +23,16 @@ public class DisposableBehavior : MonoBehaviour
             }
             else if (myDisposable.dammageBoost > 0)
             {
-                Debug.Log("Attack damage : " + playerAttackDam + ",");
-                playerAttackDam = myDisposable.HitMore(playerAttackDam);
-                Debug.Log("Has become : " + playerAttackDam);
+                Debug.Log("Attack damage : " + playerHandler.attackDammage + ",");
+                playerHandler.attackDammage = myDisposable.HitMore(playerHandler.attackDammage);
+                Debug.Log("Has become : " + playerHandler.attackDammage);
 
             }
             else if (myDisposable.soulsAdd > 0)
             {
-                Debug.Log("Souls count : " + playerSouls + ",");
-                playerSouls = myDisposable.GiveSouls(playerSouls);
-                Debug.Log("Has become : " + playerSouls);
+                Debug.Log("Souls count : " + playerHandler.soulsCount + ",");
+                playerHandler.soulsCount = myDisposable.GiveSouls(playerHandler.soulsCount);
+                Debug.Log("Has become : " + playerHandler.soulsCount);
 
             }
 
