@@ -17,7 +17,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float dashTime;
     [SerializeField]
-    private float dashCooldown;
+    public float dashCooldown;
+    public float stockCooldown;
     [SerializeField]
     private float maxDashCooldown;
     private int direction;
@@ -39,7 +40,7 @@ public class CharacterMovement : MonoBehaviour
     Vector3 movement;
     public bool isActive;
     public bool haveBoot;
-
+    public bool isMoving;
     [SerializeField]
     private AnimationCurve dashCurve;
 
@@ -53,6 +54,7 @@ public class CharacterMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody2D>();
         stockAcceleration = acceleration;
+        stockCooldown = dashCooldown;
     }
 
     // Update is called once per frame
@@ -89,6 +91,7 @@ public class CharacterMovement : MonoBehaviour
         if (haveBoot == false)
         {
             acceleration = stockAcceleration;
+            dashCooldown = stockCooldown;
         }
 
 
@@ -105,6 +108,8 @@ public class CharacterMovement : MonoBehaviour
     public void Move(Vector3 direction)
     {
       playerRb.velocity = direction.normalized * acceleration * Time.deltaTime;
+
+
     }
 
     //IEnumerator dash(Vector3 movement)

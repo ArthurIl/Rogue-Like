@@ -135,6 +135,7 @@ MonoBehaviour:
   dashSpeed: 5
   dashTime: 0.25
   dashCooldown: 0.5
+  stockCooldown: 0
   maxDashCooldown: 0.5
   canDash: 1
   playerCollider: {fileID: 1595187487185174457}
@@ -152,6 +153,7 @@ MonoBehaviour:
   dashBar: {fileID: 0}
   isActive: 1
   haveBoot: 0
+  isMoving: 0
   dashCurve:
     serializedVersion: 2
     m_Curve:
@@ -192,7 +194,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4631194136078393715}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -249,7 +251,9 @@ MonoBehaviour:
   healthMin: 0
   uiBar: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f, type: 3}
   attrition: 0.1
+  stockAttrition: 0
   drainHeal: 1
+  storeDrainHeal: 0
   player: {fileID: 4631194136078393715}
   drain: {fileID: 6313314249698492288}
   drainDammage: 0.1
@@ -263,6 +267,9 @@ MonoBehaviour:
   attackRangeX: 0
   attackRangeY: 0
   soulsCount: 0
+  haveMoreBlood: 0
+  haveBloodRecycler: 0
+  useDrain: 0
 --- !u!95 &6786507952811797820
 Animator:
   serializedVersion: 3
