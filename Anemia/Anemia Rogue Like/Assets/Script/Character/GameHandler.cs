@@ -17,7 +17,10 @@ public class GameHandler : MonoBehaviour
     [SerializeField]
     private Image uiBar;
     public float attrition;
+    public float stockAttrition;
     public float drainHeal;
+    
+    public float storeDrainHeal;
 
     private bool immuned = false;
     public GameObject player;
@@ -48,10 +51,16 @@ public class GameHandler : MonoBehaviour
     //Statment soul
     public int soulsCount;
 
+    //trinket Bool
+    public bool haveMoreBlood;
+    public bool haveBloodRecycler;
+    public bool useDrain;
     // Start is called before the first frame update
     void Start()
     {
         ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
+        storeDrainHeal = drainHeal;
+        stockAttrition = attrition;
     }
     
 
@@ -67,6 +76,14 @@ public class GameHandler : MonoBehaviour
         {
             attackPos.localPosition = new Vector3(Input.GetAxis("MoveHorizontal"), Input.GetAxis("MoveVertical"), 0).normalized * 0.2f;
         }
+        if (haveMoreBlood == false)
+        {
+            drainHeal = storeDrainHeal;
+        }
+        if (haveBloodRecycler == false)
+        {
+            attrition = stockAttrition;
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -77,8 +94,10 @@ public class GameHandler : MonoBehaviour
 
     public void healthUpEnnemi(GameObject ennemis)
     {
+
         if (health < healthMax && Input.GetButton("Drain") && canDrain == true) 
         {
+            useDrain = true;
             health += drainHeal;
             uiBar.fillAmount = health;
             ennemis.GetComponent<ARGEnnemi>().EnnemisTakeDamage(drainDammage);
@@ -90,6 +109,7 @@ public class GameHandler : MonoBehaviour
         else
         {
             ennemis.GetComponent<ARGEnnemi>().ennemiCanMove = true;
+            useDrain = false;
         }
         if (health == healthMax && !immuned)
         {

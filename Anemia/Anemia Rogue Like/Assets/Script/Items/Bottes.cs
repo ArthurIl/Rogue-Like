@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Bottes : MonoBehaviour
 {
-    private float speed;
     public float multiplier;
-    public CharacterMovement script;
+    private CharacterMovement script;
+    public float fasterCharge;
 
     private void Start()
-    {
+    {   
         script = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
         script.haveBoot = true;
         script.acceleration = script.acceleration * multiplier;
+        script.dashCooldown = script.dashCooldown * fasterCharge;
+
     }
 }

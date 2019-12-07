@@ -5,7 +5,7 @@ using UnityEngine;
 public class Slot : MonoBehaviour
 {
     //public GameObject player;
-    private Inventory inventory;
+    protected Inventory inventory;
     public int i;
     
     // Start is called before the first frame update
