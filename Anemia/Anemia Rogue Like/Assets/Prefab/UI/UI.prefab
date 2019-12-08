@@ -105,14 +105,14 @@ RectTransform:
   m_GameObject: {fileID: 1366003490728900148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 6649769439689888232}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -197, y: -152.2}
+  m_AnchoredPosition: {x: -145, y: -188.2}
   m_SizeDelta: {x: 55.5, y: 55.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6303673960480443804
@@ -192,14 +192,14 @@ RectTransform:
   m_GameObject: {fileID: 1796670125511299757}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 6649769439689888232}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -129.4, y: -152.2}
+  m_AnchoredPosition: {x: -98.1, y: -188.7}
   m_SizeDelta: {x: 55.5, y: 55.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1887019061172112647
@@ -279,14 +279,14 @@ RectTransform:
   m_GameObject: {fileID: 3976945031646836998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 6649769439689888232}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -49.59996, y: -154.75002}
+  m_AnchoredPosition: {x: -38, y: -189.4}
   m_SizeDelta: {x: 55.5, y: 55.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2141343976682330105
@@ -743,6 +743,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blood
       objectReference: {fileID: 0}
+    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3647143521178360801, guid: 5f540ab194f9b0640bcbcae5945cf7b8,
+        type: 3}
+    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7582486299905624647, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -847,32 +873,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
-        type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -3647143521178360801, guid: 5f540ab194f9b0640bcbcae5945cf7b8,
-        type: 3}
-    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fbb95de7f25f4141b299bbc45ad9c9f, type: 3}
