@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int numberS;
     public int numberB;
     public List<GameObject> itemsUnlock;
+    private int randomChoice;
 
     void Awake()
     {
@@ -28,6 +29,14 @@ public class GameManager : MonoBehaviour
     public void ItemList(GameObject item)
     {
         itemsUnlock.Add(item);
+    }
+
+    public void SetItem(Transform position)
+    {
+        
+        randomChoice = Random.Range(0, itemsUnlock.Count +1);
+        Debug.Log(randomChoice);
+        Instantiate(itemsUnlock[randomChoice], position.position, position.rotation);
     }
 
     public void GetSouls(int numberS)
