@@ -250,11 +250,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8487609638394634871, guid: ae4613847ac348143b0dd50b8962b195,
-        type: 3}
-      propertyPath: priceHeader
-      value: 
-      objectReference: {fileID: 157667702}
     - target: {fileID: 4553368845191817955, guid: ae4613847ac348143b0dd50b8962b195,
         type: 3}
       propertyPath: m_Name
@@ -315,6 +310,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8487609638394634871, guid: ae4613847ac348143b0dd50b8962b195,
+        type: 3}
+      propertyPath: priceHeader
+      value: 
+      objectReference: {fileID: 157667702}
     - target: {fileID: 4553368845191817982, guid: ae4613847ac348143b0dd50b8962b195,
         type: 3}
       propertyPath: m_Enabled
@@ -1725,6 +1725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlockingMask.m_Bits
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6009538583487215161, guid: 065f2c008225cf643bec493d8c0ce6e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 065f2c008225cf643bec493d8c0ce6e7, type: 3}
