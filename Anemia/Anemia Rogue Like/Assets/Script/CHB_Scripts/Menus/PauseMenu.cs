@@ -14,7 +14,12 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            TogglePause();
+        }
+
+        Debug.Log("TimeScale: " + Time.timeScale);
     }
 
     public void TogglePause()
