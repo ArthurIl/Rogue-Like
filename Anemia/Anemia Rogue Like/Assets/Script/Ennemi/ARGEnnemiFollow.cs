@@ -9,8 +9,10 @@ public class ARGEnnemiFollow : ARGEnnemi
     private GameObject player;
     private bool inRange;
     public Collider2D rangeDammage;
+    private Animator anim;
     void Start()
     {
+        anim = GetComponent<Animator>();
         ennemiCanMove = true;
         target = GameObject.FindGameObjectWithTag("Player");
         canAttack = true;

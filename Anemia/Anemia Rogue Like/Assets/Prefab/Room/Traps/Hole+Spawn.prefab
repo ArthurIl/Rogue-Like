@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 768685699197627373}
   - component: {fileID: 768685699197627372}
   - component: {fileID: 768685699197627375}
+  - component: {fileID: 3225286417247029897}
   m_Layer: 10
   m_Name: Hole+Spawn
   m_TagString: Traps
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &768685699197627372
@@ -125,6 +126,25 @@ MonoBehaviour:
   player: {fileID: 0}
   spawnPoint: {fileID: 5691799855988174535}
   damage: 0
+--- !u!95 &3225286417247029897
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768685699197627374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5691799855988174535
 GameObject:
   m_ObjectHideFlags: 0

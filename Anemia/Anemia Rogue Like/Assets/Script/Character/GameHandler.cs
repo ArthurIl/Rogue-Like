@@ -68,12 +68,19 @@ public class GameHandler : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonUp("Drain"))
+        {
+            anim.SetBool("isDrain", false);
+        }
         BarRenderer();
         if (Input.GetButtonDown("Attaque") && canAttack)
         {
             Debug.Log("PRBA" + "attack");
+            anim.SetBool("isAttack", true);
             StartCoroutine("Attaque");
         }
+        else anim.SetBool("isAttack", false);
+
 
         canDrain = GetComponentInChildren<ARGDrainColliderScript>().canDrain;
         ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
@@ -101,7 +108,6 @@ public class GameHandler : MonoBehaviour
 
     public void healthUpEnnemi(GameObject ennemis)
     {
-
         if (health < healthMax && Input.GetButton("Drain") && canDrain == true) 
         {
             anim.SetBool("isDrain", true);
@@ -138,9 +144,7 @@ public class GameHandler : MonoBehaviour
                     ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(attackDammage);
                     Debug.Log("Damage Taken!");
                 }
-              
         yield return new WaitForSeconds(timeBtwAttack);
-
         canAttack = true;
     }
 
@@ -194,7 +198,10 @@ public class GameHandler : MonoBehaviour
     public void TakeDamage(float amount) //prend des dégats
     {
         health -= amount;
+        anim.SetBool("isStagger", true);
+        StartCoroutine(StopStagger());
     }
+
 
     /*private void OnTriggerEnter2D(Collider2D other)
     {
@@ -224,5 +231,10 @@ public class GameHandler : MonoBehaviour
 
           }
       }
+    private IEnumerator StopStagger()
+    {
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("isStagger", false);
+    }
 }
 
