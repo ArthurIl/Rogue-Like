@@ -10,6 +10,7 @@ public class ARGEnnemiFollow : ARGEnnemi
     private bool inRange;
     public Collider2D rangeDammage;
     private Animator anim;
+    private Vector2 direction;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -18,11 +19,15 @@ public class ARGEnnemiFollow : ARGEnnemi
         canAttack = true;
         playerCollider = target.GetComponent<Collider2D>();
         rangeDammage = gameObject.GetComponentInChildren<CircleCollider2D>();
+        direction = (target.transform.position - transform.position).normalized;
     }
 
     // Update is called once per frame
     void Update()
     {
+        anim.SetFloat("empalléMoveX", direction.x);
+        Debug.Log(direction);
+
         Follow();
         Death();
     }
@@ -50,6 +55,7 @@ public class ARGEnnemiFollow : ARGEnnemi
     {
         if (Vector2.Distance(transform.position, target.transform.position) > 0.15f && ennemiCanMove)
         {
+            direction = (target.transform.position - transform.position).normalized;
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
     }
@@ -57,17 +63,20 @@ public class ARGEnnemiFollow : ARGEnnemi
     IEnumerator Attack()
     {
         speed = 0;
-        
-        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("isAttack", true);
+        yield return new WaitForSeconds(0.3f);
+
         playerCollider.enabled = false;
         canAttack = false;
-        
+
+
         if (inRange == true)
         {
-         player.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+            player.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
         }
 
         yield return new WaitForSeconds(0.5f);
+        anim.SetBool("isAttack", false);
         rangeDammage.enabled = false;
         canAttack = true;
         playerCollider.enabled = true;

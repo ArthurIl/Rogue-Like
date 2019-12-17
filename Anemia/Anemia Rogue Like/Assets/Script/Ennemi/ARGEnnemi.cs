@@ -19,7 +19,6 @@ public class ARGEnnemi : MonoBehaviour
         ennemiHealth -= amount;
         ennemiCanMove = false;
         canShoot = false;
-
     }
     //public void EnnemisGetHit(float dammage)
     //{
