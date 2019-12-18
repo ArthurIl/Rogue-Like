@@ -5,14 +5,20 @@ using UnityEngine.UI;
 
 public class ARGBloodCount : MonoBehaviour
 {
-    public GameManager GameManger;
+    public GameObject GameManager;
+    public GameManager GM;
     public Text bloodCount;
 
 
-    // Update is called once per frame
+    private void Start()
+    {
+        GameManager = GameObject.Find("GameManager");
+        GM = GameManager.GetComponent<GameManager>();
+    }
+
     void Update()
     {
-        bloodCount.text = GameManger.bloodCount.ToString();
+        bloodCount.text = GM.bloodCount.ToString();
     }
 }
 

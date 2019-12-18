@@ -11,7 +11,7 @@ public class ARGLayerManager : MonoBehaviour
 
     void Start()
     {
-        props = GameObject.FindGameObjectsWithTag("Props");
+        DetectObstacle();
         playerSpr = GetComponent<SpriteRenderer>();
     }
 
@@ -37,6 +37,19 @@ public class ARGLayerManager : MonoBehaviour
                     propsSpr.sortingOrder = playerSpr.sortingOrder - 1;
                 }
             }
+        }
+    }
+
+    private void DetectObstacle()
+    {
+        props = GameObject.FindGameObjectsWithTag("Props");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Entrance")//vérifier
+        {
+            DetectObstacle();
         }
     }
 }

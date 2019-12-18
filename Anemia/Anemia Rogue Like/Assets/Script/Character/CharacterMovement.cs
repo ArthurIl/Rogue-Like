@@ -135,6 +135,7 @@ public class CharacterMovement : MonoBehaviour
 
         RaycastHit2D enemyHit = Physics2D.Raycast(transform.position, direction, enemyDistance, enemy);
         RaycastHit2D trapHit = Physics2D.Raycast(transform.position, direction, enemyDistance, trap);
+
         if (enemyHit || trapHit)
         {
             playerCollider.enabled = false;

@@ -11,7 +11,7 @@ public class Pickable : MonoBehaviour
     public GameObject itemIcon;
     private int wishedSlot;
     private bool inPickupRange = false;
-    
+
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -43,7 +43,7 @@ public class Pickable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && inPickupRange == true)
+        if (Input.GetKeyDown(KeyCode.F) && inPickupRange == true )
         {
             if (inventory.isFull[wishedSlot] == false)
             {
