@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int numberS;
     public int numberB;
     public List<GameObject> itemsUnlock;
+    public List<GameObject> itemsUnlockChest;
     private int randomChoice;
 
     void Awake()
@@ -31,12 +32,23 @@ public class GameManager : MonoBehaviour
         itemsUnlock.Add(item);
     }
 
+    public void ItemListChest(GameObject itemC)
+    {
+        itemsUnlockChest.Add(itemC);
+    }
+
     public void SetItem(Transform position)
     {
         
-        randomChoice = Random.Range(0, itemsUnlock.Count +1);
-        Debug.Log(randomChoice);
+        randomChoice = Random.Range(0, itemsUnlock.Count);
         Instantiate(itemsUnlock[randomChoice], position.position, position.rotation);
+    }
+
+    public void SetItemChest(Transform position)
+    {
+
+        randomChoice = Random.Range(0, itemsUnlockChest.Count);
+        Instantiate(itemsUnlockChest[randomChoice], position.position, position.rotation);
     }
 
     public void GetSouls(int numberS)

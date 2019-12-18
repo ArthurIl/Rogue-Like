@@ -96,7 +96,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
 --- !u!1 &8330714677270219384
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +110,6 @@ GameObject:
   - component: {fileID: 8330714677270219387}
   - component: {fileID: 8330714677270219388}
   - component: {fileID: 8330714677270219391}
-  - component: {fileID: 7767823698494738231}
   m_Layer: 9
   m_Name: Brute
   m_TagString: Untagged
@@ -206,8 +205,9 @@ MonoBehaviour:
   chargeRange: 2.5
   chargeSpeed: 0.2
   followRange: 2
+  altar: {fileID: 3552123511057006169, guid: 64d1c44fb4775c24c8edbf58e2d7ffb9, type: 3}
   playerCollider: {fileID: 0}
-  slamAttaque: {fileID: 7767823698494738231}
+  slamAttaque: {fileID: 4763588089796718631}
 --- !u!61 &8330714677270219388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -255,19 +255,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &7767823698494738231
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8330714677270219384}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5

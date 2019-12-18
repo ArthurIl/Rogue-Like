@@ -10,6 +10,7 @@ public class ARGShop : MonoBehaviour
     private int newBloods;
     public GameObject thisObject;
     public GameObject itemUnlocked;
+    public GameObject itemUnlockedChest;
     private List<GameObject> thisList;
     public bool canBuy;
     public GameObject priceHeader;
@@ -39,9 +40,9 @@ public class ARGShop : MonoBehaviour
 
             newBloods = bloods - price;
             GameManager.Instance.bloodCount = newBloods;
-            Debug.Log(newBloods);
             thisObject.SetActive(false);
             GameManager.Instance.ItemList(itemUnlocked);
+            GameManager.Instance.ItemListChest(itemUnlockedChest);
             DontDestroyOnLoad(this.gameObject);
         }
     }

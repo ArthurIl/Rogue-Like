@@ -10,6 +10,7 @@ public class ARGShop1 : MonoBehaviour
     private int newBloods;
     public GameObject thisObject;
     public GameObject itemUnlocked;
+    public GameObject itemUnlockedChest;
     private List<GameObject> thisList;
     private bool canBuy1;
     // Start is called before the first frame update
@@ -34,9 +35,9 @@ public class ARGShop1 : MonoBehaviour
 
             newBloods = bloods - price;
             GameManager.Instance.bloodCount = newBloods;
-            Debug.Log(newBloods);
             thisObject.SetActive(false);
             GameManager.Instance.ItemList(itemUnlocked);
+            GameManager.Instance.ItemListChest(itemUnlockedChest);
             DontDestroyOnLoad(this.gameObject);
         }
     }

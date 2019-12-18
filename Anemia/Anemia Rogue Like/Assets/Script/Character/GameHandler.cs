@@ -8,8 +8,7 @@ using System;
 public class GameHandler : MonoBehaviour
 {
     // Statement health
-    [SerializeField]
-    protected float health = 1;
+    public float health = 1;
     [SerializeField]
     private int healthMax = 1;
     [SerializeField]
@@ -54,17 +53,26 @@ public class GameHandler : MonoBehaviour
     public bool haveMoreBlood;
     public bool haveBloodRecycler;
     public bool useDrain;
+
+    //health vignette
+    public GameObject vignette;
+
     // Start is called before the first frame update
     void Start()
     {
         ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
         storeDrainHeal = drainHeal;
         stockAttrition = attrition;
+        vignette = GameObject.FindWithTag("Vignette");
     }
    
 
     void Update()
     {
+        Color c = vignette.GetComponent<SpriteRenderer>().color;
+        c.a = 1/health;//accéléré l'augmentation de la vignette
+        vignette.GetComponent<SpriteRenderer>().color = c;
+
         BarRenderer();
         if (Input.GetButtonDown("Attaque") && canAttack)
         {

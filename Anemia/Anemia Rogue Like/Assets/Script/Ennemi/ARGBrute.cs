@@ -15,6 +15,7 @@ public class ARGBrute : ARGEnnemi
     private bool ennemiCanSlam;
     private Vector2 positionTarget;
     RaycastHit2D hitInfo;
+    public GameObject altar;
 
     public Collider2D playerCollider;
     public CircleCollider2D slamAttaque;
@@ -34,7 +35,7 @@ public class ARGBrute : ARGEnnemi
     void Update()
     {
         Follow();
-        Death();
+        DeathBig();
         Drainable();
 
         if (isActive == true)
@@ -167,6 +168,16 @@ public class ARGBrute : ARGEnnemi
             //animator drainale (changement de sprite)
         }
         
+    }
+
+    public void DeathBig()
+    {
+        if (ennemiHealth <= 0)
+        {
+            Instantiate(souls, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Instantiate(altar,new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Destroy(this.gameObject);
+        }
     }
 
 }
