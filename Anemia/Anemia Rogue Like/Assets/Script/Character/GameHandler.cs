@@ -56,6 +56,7 @@ public class GameHandler : MonoBehaviour
 
     //health vignette
     public GameObject vignette;
+    private float pourcentageHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -69,10 +70,16 @@ public class GameHandler : MonoBehaviour
 
     void Update()
     {
-        Color c = vignette.GetComponent<SpriteRenderer>().color;
-        c.a = 1/health;//accéléré l'augmentation de la vignette
-        vignette.GetComponent<SpriteRenderer>().color = c;
+        Color c = vignette.GetComponent<RawImage>().color;
+        pourcentageHealth = (health*30) / healthMax;
+        c.a = 1/pourcentageHealth;
+        vignette.GetComponent<RawImage>().color = c;
 
+        //if (health < 40f)
+        //{
+        //    c.a = 0.9f;
+        //    vignette.GetComponent<SpriteRenderer>().color = c;
+        //}
         BarRenderer();
         if (Input.GetButtonDown("Attaque") && canAttack)
         {
@@ -113,6 +120,7 @@ public class GameHandler : MonoBehaviour
             health += drainHeal;
             uiBar.fillAmount = health;
             ennemis.GetComponent<ARGEnnemi>().EnnemisTakeDamage(drainDammage);
+            gameObject.GetComponent<CharacterMovement>().Paralysis();
             if (health >= healthMax)
             {
                 health = healthMax;
@@ -120,8 +128,8 @@ public class GameHandler : MonoBehaviour
         }
         else
         {
-            ennemis.GetComponent<ARGEnnemi>().ennemiCanMove = true;
             useDrain = false;
+            gameObject.GetComponent<CharacterMovement>().Unparalysed();
         }
         if (health == healthMax && !immuned)
         {

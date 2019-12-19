@@ -8,7 +8,7 @@ public class ARGProjectile : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
-    float damage = 0.05f;
+    public float damage;
     public Collider2D playerCollider;
     private GameObject theTarget;
 
@@ -56,7 +56,7 @@ public class ARGProjectile : MonoBehaviour
     {
         playerCollider.enabled = false;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
 
         playerCollider.enabled = true;
 

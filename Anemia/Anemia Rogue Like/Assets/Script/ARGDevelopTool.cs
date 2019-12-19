@@ -18,5 +18,10 @@ public class ARGDevelopTool : MonoBehaviour
         {
             SceneManager.LoadScene("ARG HUB");
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            GameManager.Instance.bloodCount = GameManager.Instance.bloodCount + 10;
+        }
     }
 }

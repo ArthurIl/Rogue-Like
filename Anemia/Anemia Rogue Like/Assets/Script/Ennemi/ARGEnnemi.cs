@@ -14,17 +14,15 @@ public class ARGEnnemi : MonoBehaviour
 
     public GameObject souls;
 
+
     public void EnnemisTakeDamage(float amount)
     {
         ennemiHealth -= amount;
         ennemiCanMove = false;
         canShoot = false;
+        StartCoroutine("CanMoveAgain");
 
     }
-    //public void EnnemisGetHit(float dammage)
-    //{
-    //    ennemiHealth -= dammage;
-    //}
     public void Death()
     {
         if (ennemiHealth <= 0)
@@ -32,5 +30,11 @@ public class ARGEnnemi : MonoBehaviour
             Instantiate(souls, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
+    }
+
+    IEnumerator CanMoveAgain()
+    {
+        yield return new WaitForSeconds(2);
+        ennemiCanMove = true;
     }
 }

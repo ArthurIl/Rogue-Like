@@ -36,7 +36,13 @@ public class ARGBrute : ARGEnnemi
     {
         Follow();
         DeathBig();
-        Drainable();
+
+        if (ennemiHealth <= 10 && !secondPhase)
+        {
+            //tag = "Ennemi";
+            secondPhase = true;
+            //animator drainale (changement de sprite)
+        }
 
         if (isActive == true)
         {
@@ -67,14 +73,14 @@ public class ARGBrute : ARGEnnemi
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
 
-            if (secondPhase == true)
-            {
-                //animator drainable
-            }
-            else
-            {
-                //animator non drainable
-            }
+            //if (secondPhase == true)
+            //{
+            //    //animator drainable
+            //}
+            //else
+            //{
+            //    //animator non drainable
+            //}
 
 
         }
@@ -103,14 +109,14 @@ public class ARGBrute : ARGEnnemi
         ennemiCanSlam = true;
         ennemiCanMove = true;
 
-        if (secondPhase == true)
-        {
-            //animator drainable
-        }
-        else
-        {
-            //animator non drainable
-        }
+        //if (secondPhase == true)
+        //{
+        //    //animator drainable
+        //}
+        //else
+        //{
+        //    //animator non drainable
+        //}
     }
 
     IEnumerator Charge()
@@ -161,12 +167,7 @@ public class ARGBrute : ARGEnnemi
 
     void Drainable()
     {
-        if (ennemiHealth <= 10)
-        {
-            secondPhase = true;
-            transform.gameObject.tag = "Ennemi";
-            //animator drainale (changement de sprite)
-        }
+
         
     }
 
@@ -174,7 +175,7 @@ public class ARGBrute : ARGEnnemi
     {
         if (ennemiHealth <= 0)
         {
-            Instantiate(souls, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Instantiate(souls, new Vector3(transform.position.x , transform.position.y + 0.3f, 0), Quaternion.identity);
             Instantiate(altar,new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
