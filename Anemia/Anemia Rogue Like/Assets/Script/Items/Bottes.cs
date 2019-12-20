@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Bottes : MonoBehaviour
 {
-    public float multiplier;
+    //public float multiplier;
     private CharacterMovement script;
-    public float fasterCharge;
+    private GameHandler scriptG;
+    public Trinket botte;
+    //public float fasterCharge;
 
     private void Start()
     {   
         script = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
-        script.haveBoot = true;
-        script.acceleration = script.acceleration * multiplier;
-        script.dashCooldown = script.dashCooldown * fasterCharge;
+        scriptG = GameObject.FindGameObjectWithTag("Player").GetComponent<GameHandler>();
+        //mouvement
+        script.stockAcceleration = botte.acceleration;
+        script.stockCooldown = botte.dashCooldown;
+        //drain
+        scriptG.storeDrainHeal = botte.drainHeal;
+        //attrition
+        scriptG.stockAttrition = botte.attrition;
 
     }
 }

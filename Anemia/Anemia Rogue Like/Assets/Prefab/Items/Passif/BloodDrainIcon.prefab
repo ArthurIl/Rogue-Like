@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5528451904611194975
+--- !u!1 &3395548026998861406
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5528451904611194978}
-  - component: {fileID: 5528451904611194977}
-  - component: {fileID: 5528451904611194979}
-  - component: {fileID: 1148411720748341691}
-  m_Layer: 0
-  m_Name: RecyclerPrice
+  - component: {fileID: 3106645670259331365}
+  - component: {fileID: 3501571015390359993}
+  - component: {fileID: 7260856793082006834}
+  - component: {fileID: 9117607912075528134}
+  m_Layer: 5
+  m_Name: BloodDrainIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5528451904611194978
+--- !u!4 &3106645670259331365
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5528451904611194975}
+  m_GameObject: {fileID: 3395548026998861406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.5, y: -3.1, z: -4.14388}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5528451904611194977
+--- !u!212 &3501571015390359993
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5528451904611194975}
+  m_GameObject: {fileID: 3395548026998861406}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,47 +70,43 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
-  m_Sprite: {fileID: -2787142770619688409, guid: 19628204d06d2664e9ec42d3e9bbd668,
+  m_SortingOrder: 1000
+  m_Sprite: {fileID: -7468130360528339137, guid: 99fbc2b50902b6149954c6f543b58825,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.1, y: 0.11}
+  m_Size: {x: 0.2, y: 0.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5528451904611194979
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5528451904611194975}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.07
---- !u!114 &1148411720748341691
+--- !u!114 &7260856793082006834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5528451904611194975}
+  m_GameObject: {fileID: 3395548026998861406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeb10c8f9ab6b0b4caba718e1f978fd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 90298c290e8ab1c41880107b07502b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 100
-  itemGiven: {fileID: 1011203845638817941, guid: 9dbe488c4e0285e4ea7799b85a15ef6c,
+  itemToSpawn: {fileID: 6559348771371998093, guid: c7c30b373277a824696231cea7f49294,
     type: 3}
+--- !u!114 &9117607912075528134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3395548026998861406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c35f1f8d3a9dd48964e3811a3532bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodD: {fileID: 11400000, guid: aabfcfdacca0b2b47a9700ca91b6eb25, type: 2}

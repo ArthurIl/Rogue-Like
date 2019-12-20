@@ -6,14 +6,12 @@ using UnityEngine.UI;
 public class CharacterMovement : MonoBehaviour
 {
     //Statement déplacement
-    [SerializeField]
     public float acceleration;
-    private float stockAcceleration;
+    public float stockAcceleration;
     private Rigidbody2D playerRb;
 
     //Statement Dash
-    [SerializeField]
-    private float dashSpeed;
+    public float dashSpeed;
     [SerializeField]
     private float dashTime;
     [SerializeField]

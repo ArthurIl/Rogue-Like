@@ -4,30 +4,40 @@ using UnityEngine;
 
 public class BloodRecycleur : MonoBehaviour
 {
-    public float slowerFall;
-    private GameHandler gameHandlerScript;
-    private CharacterMovement characterControllerScript;
-    private bool done;
+
+    //public float multiplier;
+    private CharacterMovement script;
+    private GameHandler scriptG;
+    public Trinket bloodRecy;
+    //public float fasterCharge;
+
     private void Start()
     {
-        gameHandlerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<GameHandler>();
-        characterControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
+        script = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
+        scriptG = GameObject.FindGameObjectWithTag("Player").GetComponent<GameHandler>();
+        //mouvement
+        script.stockAcceleration = bloodRecy.acceleration;
+        script.stockCooldown = bloodRecy.dashCooldown;
+        //drain
+        scriptG.storeDrainHeal = bloodRecy.drainHeal;
+        //attrition
+        scriptG.stockAttrition = bloodRecy.attrition;
 
-        
     }
 
-    private void Update()
-    {
-        if (characterControllerScript.isMoving == true && done == false)
-        {
-            gameHandlerScript.haveBloodRecycler = true;
-            gameHandlerScript.attrition = gameHandlerScript.attrition * slowerFall;
-            done = true;
-        }
-        else
-        {
-            gameHandlerScript.haveBloodRecycler = false;
-            done = false;
-        }
-    }
+
+    //private void Update()
+    //{
+    //    if (characterControllerScript.isMoving == true && done == false)
+    //    {
+    //        gameHandlerScript.haveBloodRecycler = true;
+    //        gameHandlerScript.stockAttrition = gameHandlerScript.stockAttrition * slowerFall;
+    //        done = true;
+    //    }
+    //    else
+    //    {
+    //        gameHandlerScript.haveBloodRecycler = false;
+    //        done = false;
+    //    }
+    //}
 }
