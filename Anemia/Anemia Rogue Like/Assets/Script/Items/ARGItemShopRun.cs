@@ -19,7 +19,7 @@ public class ARGItemShopRun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && souls >= price && canBuy)
+        if (Input.GetButton("Pick") && souls >= price && canBuy)
         {
             GameManager.Instance.soulsCount = souls - price;
             Vector2 playerPos = new Vector2(player.position.x, player.position.y);

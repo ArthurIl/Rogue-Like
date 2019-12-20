@@ -30,7 +30,7 @@ public class ARGShop2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canBuy2 == true && Input.GetButton("Drain"))
+        if (canBuy2 == true && Input.GetButton("Pick"))
         {
 
 

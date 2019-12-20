@@ -7879,18 +7879,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01ee7fb4cfa6d63469eb69b4fc344cbc, type: 3}
---- !u!1 &430339447546177425 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2509256372150367705, guid: 01ee7fb4cfa6d63469eb69b4fc344cbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 2822195740241793608}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4772016488210947545 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7283428513492062097, guid: 01ee7fb4cfa6d63469eb69b4fc344cbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 2822195740241793608}
-  m_PrefabAsset: {fileID: 0}
 --- !u!61 &6891095661580842315 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 8685300651069630211, guid: 01ee7fb4cfa6d63469eb69b4fc344cbc,
@@ -7900,6 +7888,18 @@ BoxCollider2D:
 --- !u!61 &8713638566644351854 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 6901594968452796710, guid: 01ee7fb4cfa6d63469eb69b4fc344cbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2822195740241793608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &430339447546177425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2509256372150367705, guid: 01ee7fb4cfa6d63469eb69b4fc344cbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2822195740241793608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4772016488210947545 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7283428513492062097, guid: 01ee7fb4cfa6d63469eb69b4fc344cbc,
     type: 3}
   m_PrefabInstance: {fileID: 2822195740241793608}
   m_PrefabAsset: {fileID: 0}
@@ -9020,7 +9020,7 @@ PrefabInstance:
     - target: {fileID: 5393180436277690304, guid: 9b8d2ca4bb1af5649aab3a881843a57f,
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5393180436277690304, guid: 9b8d2ca4bb1af5649aab3a881843a57f,
         type: 3}
@@ -9030,7 +9030,7 @@ PrefabInstance:
     - target: {fileID: 5393180436277690304, guid: 9b8d2ca4bb1af5649aab3a881843a57f,
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[1].Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5393180436277690304, guid: 9b8d2ca4bb1af5649aab3a881843a57f,
         type: 3}

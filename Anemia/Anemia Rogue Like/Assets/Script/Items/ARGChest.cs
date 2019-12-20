@@ -22,13 +22,14 @@ public class ARGChest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && souls >= price && canBuy)
+        if (Input.GetButton("Pick") && souls >= price && canBuy)
         {
             GameManager.Instance.soulsCount = souls - price;
             alreadySpawned = true;
             GameManager.Instance.SetItemChest(spawnPoint);
             chestClose.SetActive(false);
             chestOpen.SetActive(true);
+            canBuy = false;
 
         }
     }

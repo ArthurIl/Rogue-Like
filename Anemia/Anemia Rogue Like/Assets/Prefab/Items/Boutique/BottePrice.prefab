@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 412715811516209689}
   - component: {fileID: 4265211994751947281}
   - component: {fileID: 6455907412371257391}
+  - component: {fileID: 8712743834509827830}
   m_Layer: 0
   m_Name: BottePrice
   m_TagString: Untagged
@@ -70,15 +71,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 6673533312710336676, guid: 19628204d06d2664e9ec42d3e9bbd668,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.1, y: 0.11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6455907412371257391
@@ -96,3 +98,19 @@ MonoBehaviour:
   price: 100
   itemGiven: {fileID: 3837949961510781154, guid: a6694a88c9fc84c44bf7646f1d1e0025,
     type: 3}
+--- !u!58 &8712743834509827830
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8771064462936065663}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.055

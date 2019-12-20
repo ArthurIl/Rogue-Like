@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7500223401423005225}
   - component: {fileID: 6872170183801087236}
   - component: {fileID: 7501356423810275944}
+  - component: {fileID: 4386822520252075864}
   m_Layer: 0
   m_Name: DrainPrice
   m_TagString: Untagged
@@ -96,3 +97,19 @@ MonoBehaviour:
   price: 100
   itemGiven: {fileID: 6559348771371998093, guid: c7c30b373277a824696231cea7f49294,
     type: 3}
+--- !u!58 &4386822520252075864
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4278336696176241290}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.05

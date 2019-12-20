@@ -22,7 +22,7 @@ public class ARGAltar : MonoBehaviour
     void Update()
     {
         Debug.Log(numberOfBlood);
-        if (Input.GetButton("Drain") && canGiveHealth)
+        if (Input.GetButton("Pick") && canGiveHealth)
         {
             canGiveHealth = false;
             blood = GameManager.Instance.bloodCount;
