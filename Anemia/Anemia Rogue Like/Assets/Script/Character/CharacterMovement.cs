@@ -32,6 +32,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private Image dashBar;
     private bool isCooldown;
+    public GameObject dashSmoke;
 
     
 
@@ -80,9 +81,13 @@ public class CharacterMovement : MonoBehaviour
                 movement = new Vector3(movement.x, movement.y, 0f).normalized;
                 if (Input.GetButtonDown("Dash") && canDash)
                 {
-                    Dashing(movement);
+                    anim.SetBool("isDash", true);
+                     Dashing(movement);
+                    Instantiate(dashSmoke, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+
                 }
                 else Move(movement);
+
 
 
         }
@@ -106,8 +111,6 @@ public class CharacterMovement : MonoBehaviour
     public void Move(Vector3 direction)
     {
       playerRb.velocity = direction.normalized * acceleration * Time.deltaTime;
-
-
     }
 
     //IEnumerator dash(Vector3 movement)
@@ -128,7 +131,7 @@ public class CharacterMovement : MonoBehaviour
 
     IEnumerator SmoothDash(Vector3 direction)
     {
-        float timer = 0.0f;  
+        float timer = 0.0f;
         canDash = false;
 
         RaycastHit2D enemyHit = Physics2D.Raycast(transform.position, direction, enemyDistance, enemy);
@@ -147,13 +150,13 @@ public class CharacterMovement : MonoBehaviour
             timer += Time.deltaTime;
             yield return null;
         }
-
         playerRb.velocity = Vector2.zero;
         playerCollider.enabled = true;
         isTriggerCollider.enabled = true;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+        anim.SetBool("isDash", false);
 
     }
 
@@ -161,6 +164,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Dash") && canDash)
         {
+
             isCooldown = true;
             dashBar.fillAmount = 0f;
         }

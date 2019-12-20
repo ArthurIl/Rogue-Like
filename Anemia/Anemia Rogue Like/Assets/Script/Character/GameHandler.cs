@@ -58,9 +58,12 @@ public class GameHandler : MonoBehaviour
     public GameObject vignette;
     private float pourcentageHealth;
 
+
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         ennemiesDrainables = GetComponentInChildren<ARGDrainColliderScript>().ennemiesDrainables;
         storeDrainHeal = drainHeal;
         stockAttrition = attrition;
@@ -116,6 +119,7 @@ public class GameHandler : MonoBehaviour
 
         if (health < healthMax && Input.GetButton("Drain") && canDrain == true) 
         {
+            anim.SetBool("isDrain", true);
             useDrain = true;
             health += drainHeal;
             uiBar.fillAmount = health;
@@ -129,6 +133,7 @@ public class GameHandler : MonoBehaviour
         else
         {
             useDrain = false;
+            anim.SetBool("isDrain", false);
             gameObject.GetComponent<CharacterMovement>().Unparalysed();
         }
         if (health == healthMax && !immuned)
