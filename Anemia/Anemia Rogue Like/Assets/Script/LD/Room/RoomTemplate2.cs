@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class RoomTemplate2 : MonoBehaviour
 {
-    public GameObject[] easyRooms;
-    public GameObject[] mediumRooms;
-    public GameObject[] hardRooms;
-    public GameObject[] shop;
-    public GameObject[] itemRooms;
-    public GameObject[] bossRooms;
+    public List<GameObject> easyRooms;
+    public List<GameObject> mediumRooms;
+    public List<GameObject> hardRooms;
+    public List<GameObject> shop;
+    public List<GameObject> bossRooms;
     
 
 }
