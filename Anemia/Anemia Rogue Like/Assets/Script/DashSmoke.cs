@@ -6,7 +6,7 @@ public class DashSmoke : MonoBehaviour
 {
     public void DestroySmoke()
     {
-        
+        Destroy(gameObject);
     }
 
 }
