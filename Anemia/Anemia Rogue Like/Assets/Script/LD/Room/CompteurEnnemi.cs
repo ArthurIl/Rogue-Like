@@ -8,6 +8,7 @@ public class CompteurEnnemi : MonoBehaviour
     private Collider2D exitDoor;
     private GameObject door;
     public GameObject[] ennemies;
+    public GameObject[] spawn;
     void Start()
     {
         door = GameObject.FindGameObjectWithTag("ExitDoor");
@@ -18,9 +19,14 @@ public class CompteurEnnemi : MonoBehaviour
     private void Update()
     {
         ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
+        spawn = GameObject.FindGameObjectsWithTag("SpawnerEnnemi");
         if (ennemies.Length == 0)
         {
-            exitDoor.enabled = !exitDoor.enabled;
+            if(spawn.Length == 0)
+            {
+                exitDoor.enabled = !exitDoor.enabled;
+            }
+            
         }
     }
   
