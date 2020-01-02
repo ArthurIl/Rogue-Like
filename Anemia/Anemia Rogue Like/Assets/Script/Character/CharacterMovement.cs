@@ -184,11 +184,13 @@ public class CharacterMovement : MonoBehaviour
         Debug.Log("je suis paralyser");
         isActive = false;
         playerRb.velocity = Vector2.zero;
+        anim.SetBool("isFalling", true);
     }
 
     public void Unparalysed()
     {
         isActive = true;
+        anim.SetBool("isFalling", false);
     }
 
 }

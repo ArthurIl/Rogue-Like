@@ -11,9 +11,11 @@ public class Hole : MonoBehaviour
     private bool isInTrigger;
     private bool wasInTrigger;
     private GameObject playerVariable;
+    private Animator anim;
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
         isInTrigger = false;
         playerVariable = null;
