@@ -7,13 +7,32 @@ public class CamSwitch : MonoBehaviour
     public GameObject player;
     public GameObject playerCam;
     public GameObject roomCam;
+    private bool onSpawn = true;
 
+    private void Start()
+    {
+        roomCam.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             roomCam.SetActive(true);
             playerCam.SetActive(false);
+            onSpawn = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (onSpawn)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                roomCam.SetActive(true);
+                playerCam.SetActive(false);
+                onSpawn = false;
+            }
         }
     }
 
