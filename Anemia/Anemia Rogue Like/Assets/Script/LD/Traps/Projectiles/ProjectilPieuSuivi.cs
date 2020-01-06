@@ -26,8 +26,8 @@ public class ProjectilPieuSuivi : MonoBehaviour
         hitInfo = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 10f, layer_mask);
         //positionTarget = new Vector2(hitInfo.point.x, hitInfo.point.y);
         positionTarget = hitInfo.point;
-        Debug.DrawLine(transform.position, positionTarget, Color.red, 10f);
-       // Debug.Log("self pos = " + transform.position);
+        Debug.DrawLine(transform.position, player.transform.position - transform.position,Color.red, 10f);
+        // Debug.Log("self pos = " + transform.position);
         /*Debug.Log("target pos = " + player.transform.position);
         Debug.Log("transformed value = " + positionTarget);*/
     }

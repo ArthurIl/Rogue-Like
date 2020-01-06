@@ -43,8 +43,8 @@ public class ARGProjectile : MonoBehaviour
             StartCoroutine(PlayerImmuned());
             DestroyProjectile();
         }
-        //else if(other.gameObject.layer == 8){
-        //DestroyProjectile();}
+        else if(other.gameObject.layer == 8){
+        DestroyProjectile();}
     }
     
     void DestroyProjectile()
