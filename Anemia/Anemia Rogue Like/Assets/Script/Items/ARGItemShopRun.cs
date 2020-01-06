@@ -9,6 +9,7 @@ public class ARGItemShopRun : MonoBehaviour
     private int souls;
     private Transform player;
     private bool canBuy;
+    public GameObject priceHeader;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class ARGItemShopRun : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            priceHeader.SetActive(true);
             souls = GameManager.Instance.soulsCount;
             canBuy = true;
         }
@@ -39,6 +41,7 @@ public class ARGItemShopRun : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        priceHeader.SetActive(false);
         if (collision.tag == "Player")
         {
             canBuy = false;

@@ -11,6 +11,7 @@ public class ARGChest : MonoBehaviour
     public Transform spawnPoint;
     public GameObject chestClose;
     public GameObject chestOpen;
+    public GameObject priceHeader;
 
     // Start is called before the first frame update
     void Start()
@@ -35,17 +36,22 @@ public class ARGChest : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        
         if (collision.tag == "Player")
         {
+            priceHeader.SetActive(false);
             canBuy = false;
+
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+       
         if (!alreadySpawned)
         {
             if (collision.tag == "Player")
             {
+                priceHeader.SetActive(true);
                 souls = GameManager.Instance.soulsCount;
                 canBuy = true;
             }

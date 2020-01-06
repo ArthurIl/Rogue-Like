@@ -9,7 +9,7 @@ public class ARGStartRun : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("ARG Scene"); //retourne à la scène HUB
+            SceneManager.LoadScene("ARG Scene"); 
         }
             
 

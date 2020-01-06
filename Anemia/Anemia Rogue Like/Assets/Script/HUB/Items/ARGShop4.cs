@@ -13,6 +13,7 @@ public class ARGShop4 : MonoBehaviour
     public GameObject itemUnlockedChest;
     private List<GameObject> thisList;
     private bool canBuy4;
+    public GameObject priceHeader;
     // Start is called before the first frame update
 
     private void Awake()
@@ -45,6 +46,7 @@ public class ARGShop4 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bloods = GameManager.Instance.bloodCount;
+        priceHeader.SetActive(true);
         if (bloods >= price)
         {
             canBuy4 = true;
@@ -58,5 +60,6 @@ public class ARGShop4 : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         canBuy4 = false;
+        priceHeader.SetActive(false);
     }
 }
