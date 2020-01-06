@@ -18,12 +18,14 @@ public class ARGLittleSpawned : ARGEnnemi
     [SerializeField]
     private float dashTime;
     private Vector2 positionTarget;
+    private Vector2 direction;
+    private Animator anim;
 
     public GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = GetComponent<Animator>();
         littleSpawnedRb = GetComponent<Rigidbody2D>();
         ennemiCanMove = true;
         target = GameObject.FindGameObjectWithTag("Player");
@@ -32,6 +34,8 @@ public class ARGLittleSpawned : ARGEnnemi
     // Update is called once per frame
     void Update()
     {
+        direction = (target.transform.position - transform.position).normalized;
+        anim.SetFloat("LittleSpawnedMoveX", direction.x);
         Follow();
         Death();
     }
@@ -40,15 +44,18 @@ public class ARGLittleSpawned : ARGEnnemi
      {
          if (Vector2.Distance(transform.position, target.transform.position) > dashDTriggeristance && ennemiCanMove)
          {
+            anim.SetBool("isWalking", true);
              transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
          }
          else if (Vector2.Distance(transform.position, target.transform.position) < dashDTriggeristance && Vector2.Distance(transform.position, target.transform.position) > playerDashDistance && ennemiCanMove && canDash == true)
          {
-             StartCoroutine("Dash");
+            anim.SetBool("isWalking", false);
+            StartCoroutine("Dash");
          }
          else if (Vector2.Distance(transform.position, target.transform.position) < playerDashDistance && ennemiCanMove)
          {
-             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, -speed * Time.deltaTime);
+            anim.SetBool("isWalking", true);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, -speed * Time.deltaTime);
          }
      }
 

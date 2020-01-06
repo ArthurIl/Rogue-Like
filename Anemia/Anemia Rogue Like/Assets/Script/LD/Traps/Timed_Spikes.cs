@@ -8,9 +8,11 @@ public class Timed_Spikes : MonoBehaviour
     private float damage = 0.5f;
     
     public Collider2D spikes;
+    private Animator anim;
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         spikes = GetComponent<Collider2D>();
         InvokeRepeating("Timer", 1.0f, 5.0f);
     }
@@ -23,6 +25,7 @@ public class Timed_Spikes : MonoBehaviour
         if (spikes.enabled == false)
         {
             GetComponent<SpriteRenderer>().color = Color.green;
+            anim.SetBool("isBobo", false);
         }
         else
         {
@@ -36,7 +39,7 @@ public class Timed_Spikes : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
-            
+            anim.SetBool("isBobo", true);
         }
     }
 }

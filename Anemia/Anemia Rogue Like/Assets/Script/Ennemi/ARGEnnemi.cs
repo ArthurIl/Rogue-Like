@@ -12,6 +12,7 @@ public class ARGEnnemi : MonoBehaviour
     public float damage ;
     public float ennemiHealth;
 
+
     public GameObject souls;
 
 
