@@ -406,6 +406,7 @@ GameObject:
   - component: {fileID: 6786801642266569117}
   - component: {fileID: 6786801642266569118}
   - component: {fileID: 7543901063061936226}
+  - component: {fileID: 210464463957233150}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -544,6 +545,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 201
   m_TargetDisplay: 0
+--- !u!114 &210464463957233150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786801642266569120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &6786801642302619332
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +575,7 @@ GameObject:
   - component: {fileID: 6786801642302619329}
   - component: {fileID: 6786801642302619330}
   - component: {fileID: 3546241099317116024}
+  - component: {fileID: 3218045641455592570}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -695,6 +714,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 201
   m_TargetDisplay: 0
+--- !u!114 &3218045641455592570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786801642302619332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &6786801642393313144
 GameObject:
   m_ObjectHideFlags: 0
