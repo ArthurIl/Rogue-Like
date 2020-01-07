@@ -6,7 +6,7 @@ public class CompteurEnnemi : MonoBehaviour
 {
     private int finalCountdown;
     public Collider2D exitDoor;
-    private GameObject door;
+    public BoxCollider2D door;
     public GameObject[] ennemies;
     public GameObject[] spawn;
 
@@ -27,7 +27,7 @@ public class CompteurEnnemi : MonoBehaviour
         {
             if(spawn.Length == 0)
             {
-                exitDoor.enabled = !exitDoor.enabled;
+                door.isTrigger = true;
                 Door2.SetActive(true);
                 Door1.SetActive(false);
             }
