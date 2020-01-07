@@ -14,12 +14,13 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetButtonDown("Pause"))
         {
             TogglePause();
         }
 
         Debug.Log("TimeScale: " + Time.timeScale);
+        
     }
 
     public void TogglePause()
@@ -46,10 +47,12 @@ public class PauseMenu : MonoBehaviour
     public void ToHub()
     {
         SceneManager.LoadScene("ARG HUB");
+        Time.timeScale = 1f;
     }
 
     public void ToMainMenu()
     {
         SceneManager.LoadScene("CHB_MainMenu");
+        Time.timeScale = 1f;
     }
 }

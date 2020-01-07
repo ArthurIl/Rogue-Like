@@ -43,7 +43,7 @@ public class Pickable : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Pick") && inPickupRange == true )
+        if (Input.GetButtonDown("Pick") && inPickupRange == true )
         {
             if (inventory.isFull[wishedSlot] == false)
             {
