@@ -10,6 +10,8 @@ public class ARGAltar : MonoBehaviour
     private int newBlood;
     private int numberOfBlood;
     private GameObject player;
+    public GameObject priceHeader;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class ARGAltar : MonoBehaviour
     void Update()
     {
         Debug.Log(numberOfBlood);
-        if (Input.GetButton("Pick") && canGiveHealth)
+        if (Input.GetButtonDown("Pick") && canGiveHealth)
         {
             canGiveHealth = false;
             blood = GameManager.Instance.bloodCount;
@@ -36,6 +38,7 @@ public class ARGAltar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        priceHeader.SetActive(true);
         if (collision.tag == "Player")
         {
             canGiveHealth = true;
@@ -52,6 +55,7 @@ public class ARGAltar : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        priceHeader.SetActive(false);
         if (collision.tag == "Player")
         {
             canGiveHealth = false;
