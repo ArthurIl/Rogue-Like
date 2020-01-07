@@ -94,7 +94,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.24}
   serializedVersion: 2
   m_Radius: 0.6
 --- !u!1 &8330714677270219384
@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 8330714677270219387}
   - component: {fileID: 8330714677270219388}
   - component: {fileID: 8330714677270219391}
+  - component: {fileID: 1086095938}
   m_Layer: 9
   m_Name: Brute
   m_TagString: Untagged
@@ -125,8 +126,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8330714677270219384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.069, y: 0.761, z: 0}
+  m_LocalScale: {x: 1.0571429, y: 0.98333323, z: 1}
   m_Children:
   - {fileID: 3478692511820210783}
   m_Father: {fileID: 0}
@@ -170,7 +171,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7695361144476153678, guid: 5ce03d09d88c81c4b9b38886d0c851a6,
+  m_Sprite: {fileID: -5842455459686476303, guid: 9e3c35c956beab3408353850d88a3d2b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -210,6 +211,7 @@ MonoBehaviour:
   altar: {fileID: 3552123511057006169, guid: 64d1c44fb4775c24c8edbf58e2d7ffb9, type: 3}
   playerCollider: {fileID: 0}
   slamAttaque: {fileID: 4763588089796718631}
+  brute: {fileID: 8330714677270219384}
 --- !u!61 &8330714677270219388
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -223,11 +225,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0051831417, y: 0.048721567}
+  m_Offset: {x: 0, y: 0.3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.35, y: 0.6}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.37, y: 0.59}
     newSize: {x: 0.35, y: 0.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -257,3 +259,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &1086095938
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330714677270219384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39bc4914ac098da489c661b05ad3f1de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

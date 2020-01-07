@@ -19,8 +19,16 @@ public class ARGBrute : ARGEnnemi
 
     public Collider2D playerCollider;
     public CircleCollider2D slamAttaque;
+
+    private Vector2 direction;
+    private Animator anim;
+    public GameObject brute;
+
     void Start()
     {
+        var bruteColor = brute.GetComponent<Renderer>();
+        GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         isActive = false;
         ennemiCanMove = true;
         isTouchingAWall = false;
@@ -34,15 +42,23 @@ public class ARGBrute : ARGEnnemi
     // Update is called once per frame
     void Update()
     {
+        direction = (target.transform.position - transform.position).normalized;
+        anim.SetFloat("BruteMoveX", direction.x);
+
         Follow();
         DeathBig();
 
         if (ennemiHealth <= 10 && !secondPhase)
         {
-            //tag = "Ennemi";
+            tag = "Ennemi";
             secondPhase = true;
             //animator drainale (changement de sprite)
         }
+        if (secondPhase == true)
+        {
+            anim.SetLayerWeight(1, 0);
+        }
+        else anim.SetLayerWeight(1, 1);
 
         if (isActive == true)
         {
@@ -88,12 +104,14 @@ public class ARGBrute : ARGEnnemi
         if (Vector2.Distance(transform.position, target.transform.position) < slameRange && isActive == false && ennemiCanSlam)
         {
             StartCoroutine("Slam");
+            anim.SetBool("isAttaque", true);
+        } 
 
-        }
 
         if (Vector2.Distance(transform.position, target.transform.position) > chargeRange && ennemiCanMove && ennemiCanCharge)
         {
             StartCoroutine("Charge");
+            anim.SetBool("isDashing", true);
         }
     }
 
@@ -105,6 +123,7 @@ public class ARGBrute : ARGEnnemi
         slamAttaque.enabled = true;
         yield return new WaitForSeconds(0.5f); // temps que reste la zone
         slamAttaque.enabled = false;
+        anim.SetBool("isAttaque", false);
         yield return new WaitForSeconds(2f); //temps immobilisé après le slam
         ennemiCanSlam = true;
         ennemiCanMove = true;
@@ -135,12 +154,14 @@ public class ARGBrute : ARGEnnemi
                 yield return new WaitForSeconds(1f);
                 ennemiCanCharge = true;
                 isActive = false;
+
             }
             else
             {
                 yield return new WaitForSeconds(2f);
                 ennemiCanCharge = true;
                 isActive = false;
+                anim.SetBool("isDashing", false);
             }            
 
         }
@@ -180,5 +201,6 @@ public class ARGBrute : ARGEnnemi
             Destroy(this.gameObject);
         }
     }
+
 
 }

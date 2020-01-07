@@ -25,8 +25,14 @@ public class ARGEnnemiFollow : ARGEnnemi
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("empalléMoveX", direction.x);
-        Debug.Log(direction);
+        anim.SetFloat("ennemiCMoveX", direction.x);
+        //Debug.Log(direction);
+
+        if (ennemiCanMove == false)
+        {
+            StartCoroutine(ShlagStagger());
+        }
+
 
         Follow();
         Death();
@@ -83,4 +89,10 @@ public class ARGEnnemiFollow : ARGEnnemi
         speed = 0.2f;
     }
 
+    private IEnumerator ShlagStagger()
+    {
+        anim.SetBool("isStagger", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("isStagger", false);
+    }
 }

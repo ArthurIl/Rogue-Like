@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lance_pieu_aim : Lance_pieu
+public class Lance_pieu_aim : MonoBehaviour
 {
     GameObject player;
     public float lookSpeed;
+    public float timeBtwShots;
+    public float startTimeBtwShot;
+    public GameObject projectile;
+
+
 
     private void Start()
     {
+
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void LookAtTarget()
@@ -19,9 +25,23 @@ public class Lance_pieu_aim : Lance_pieu
         // rotate toward the target rotation, never rotating farther than "lookSpeed" in one frame.
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, lookSpeed);
     }
-    private void Update()
+    private void Shoot()
     {
-        Shoot();
-        LookAtTarget();
+        if (timeBtwShots < +0)
+        {
+            Instantiate(projectile, transform.position, transform.rotation);
+            timeBtwShots = startTimeBtwShot;
+        }
+        else
+        {
+            timeBtwShots -= Time.deltaTime;
+        }
     }
+
+
+    private void Update()
+        {
+            Shoot();
+            LookAtTarget();
+        }
 }

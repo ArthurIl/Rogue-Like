@@ -8,10 +8,12 @@ public class ARGEnnemiSpawner : ARGEnnemi
     private float waitTime = 5f;
     public bool canInvoke = true;
     public float timeBetweenInvoke;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -27,11 +29,20 @@ public class ARGEnnemiSpawner : ARGEnnemi
 
     IEnumerator Invoke()
     {
+        anim.SetBool("isSpawned", true);
         canInvoke = false;
-        Instantiate(little, transform.position, Quaternion.identity);
+        StartCoroutine(Instantiate());
 
+        yield return new WaitForSeconds(1.2f);
+        anim.SetBool("isSpawned", false);
         yield return new WaitForSeconds(timeBetweenInvoke);
 
         canInvoke = true;
+    }
+
+    IEnumerator Instantiate()
+    {
+        yield return new WaitForSeconds(0.45f);
+        Instantiate(little, transform.position, Quaternion.identity);
     }
 }

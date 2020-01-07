@@ -10,12 +10,16 @@ public class ARGEnnemiDistance : ARGEnnemi
     private float timeBtwShots;
     public float startTimeBtwShot;
 
+    private Vector2 direction;
+
     public GameObject projectile;
+    public Animator anim;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         canShoot = true;
         ennemiCanMove = true;
         target = GameObject.FindGameObjectWithTag("Player");
@@ -24,6 +28,14 @@ public class ARGEnnemiDistance : ARGEnnemi
     // Update is called once per frame
     void Update()
     {
+        if (ennemiCanMove == false)
+        {
+            StartCoroutine(ShlagStagger());
+        }
+
+        direction = (target.transform.position - transform.position).normalized;
+        anim.SetFloat("ennemiDMoveX", direction.x);
+        //Debug.Log(direction.x);
         Follow();
         Shoot();
         Death();
@@ -35,6 +47,7 @@ public class ARGEnnemiDistance : ARGEnnemi
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
             canShoot = false;
+            
 
 
         }
@@ -42,6 +55,7 @@ public class ARGEnnemiDistance : ARGEnnemi
         {
             transform.position = this.transform.position;
             canShoot = true;
+
 
         }
         else if (Vector2.Distance(transform.position, target.transform.position) < retreatDistance && ennemiCanMove)
@@ -54,11 +68,25 @@ public class ARGEnnemiDistance : ARGEnnemi
     {
         if (timeBtwShots <+0 && canShoot == true)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            anim.SetBool("isAttack", true);
+            StartCoroutine(FixAnimation());
             timeBtwShots = startTimeBtwShot;
         } else
         {
+            anim.SetBool("isAttack", false);
             timeBtwShots -= Time.deltaTime;
         }
+    }
+    private IEnumerator FixAnimation()
+    {
+        yield return new WaitForSeconds(0.4f);
+        Instantiate(projectile, transform.position, Quaternion.identity);
+        //Debug.Log(transform.position);
+    }
+    private IEnumerator ShlagStagger()
+    {
+        anim.SetBool("isStagger", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("isStagger", false);
     }
 }
