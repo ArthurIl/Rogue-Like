@@ -8,7 +8,7 @@ public class ARGSouls : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameManager.Instance.GetSouls(Random.Range(20, 50));
+            GameManager.Instance.GetSouls(Random.Range(5, 20));
             Destroy(this.gameObject);
         }
     }
