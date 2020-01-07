@@ -100,7 +100,9 @@ MonoBehaviour:
   speed: 0
   target: {fileID: 0}
   damage: 0
-  ennemiHealth: 10
+  ennemiHealth: 100000000
+  explosionSplat: {fileID: 1297441044996283228, guid: 4f027d81f5754714fb1436c21ebf8e44,
+    type: 3}
   souls: {fileID: 0}
 --- !u!61 &4697767149137525233
 BoxCollider2D:
@@ -115,7 +117,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02410438, y: 0.046486974}
+  m_Offset: {x: -0.02410438, y: -0.00084582716}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -126,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.11179124, y: 0.25297394}
+  m_Size: {x: 0.11179124, y: 0.15830834}
   m_EdgeRadius: 0
 --- !u!50 &4697767149137524749
 Rigidbody2D:

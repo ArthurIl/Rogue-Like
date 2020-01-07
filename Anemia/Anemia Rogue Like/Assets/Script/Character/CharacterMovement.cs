@@ -8,7 +8,7 @@ public class CharacterMovement : MonoBehaviour
     //Statement déplacement
     public float acceleration;
     public float stockAcceleration;
-    private Rigidbody2D playerRb;
+    public Rigidbody2D playerRb;
 
     //Statement Dash
     public float dashSpeed;

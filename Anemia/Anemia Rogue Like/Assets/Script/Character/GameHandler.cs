@@ -18,6 +18,7 @@ public class GameHandler : MonoBehaviour
     public float attrition;
     public float stockAttrition;
     public float drainHeal;
+    private CharacterMovement cm;
     
     public float storeDrainHeal;
 
@@ -68,6 +69,7 @@ public class GameHandler : MonoBehaviour
         storeDrainHeal = drainHeal;
         stockAttrition = attrition;
         vignette = GameObject.FindWithTag("Vignette");
+        cm = GetComponent<CharacterMovement>();
     }
    
 
@@ -130,7 +132,8 @@ public class GameHandler : MonoBehaviour
             health += drainHeal;
             uiBar.fillAmount = health;
             ennemis.GetComponent<ARGEnnemi>().EnnemisTakeDamage(drainDammage);
-            gameObject.GetComponent<CharacterMovement>().Paralysis();
+            //gameObject.GetComponent<CharacterMovement>().Paralysis();
+            cm.playerRb.velocity = Vector2.zero;
             if (health >= healthMax)
             {
                 health = healthMax;
@@ -140,7 +143,7 @@ public class GameHandler : MonoBehaviour
         {
             useDrain = false;
             anim.SetBool("isDrain", false);
-            gameObject.GetComponent<CharacterMovement>().Unparalysed();
+           // gameObject.GetComponent<CharacterMovement>().Unparalysed();
         }
         if (health == healthMax && !immuned)
         {

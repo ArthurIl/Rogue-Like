@@ -11,6 +11,7 @@ public class ARGEnnemi : MonoBehaviour
     public GameObject target;
     public float damage ;
     public float ennemiHealth;
+    public GameObject explosionSplat;
 
     public GameObject souls;
 
@@ -28,6 +29,7 @@ public class ARGEnnemi : MonoBehaviour
         if (ennemiHealth <= 0)
         {
             Instantiate(souls, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Instantiate(explosionSplat, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

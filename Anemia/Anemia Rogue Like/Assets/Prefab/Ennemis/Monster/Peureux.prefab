@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0008211732, y: 0.0057486594}
+  m_Offset: {x: 0.0071086287, y: 0.003652867}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14222324, y: 0.1145463}
+  m_Size: {x: 0.10030711, y: 0.07682175}
   m_EdgeRadius: 0
 --- !u!1 &8827575792749595309
 GameObject:
@@ -159,6 +159,8 @@ MonoBehaviour:
   target: {fileID: 0}
   damage: 0
   ennemiHealth: 5
+  explosionSplat: {fileID: 7290789722521363869, guid: 64ad168dfd99f2d439a619f5332113b7,
+    type: 3}
   souls: {fileID: 2459590833298785680, guid: 62cedebb0dff25748b0383aa246e59bf, type: 3}
   retreatDistancePeureux: 0.5
 --- !u!61 &8827575792749595305
