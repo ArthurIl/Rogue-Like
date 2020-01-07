@@ -1,38 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &2258022487450937408
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6010536030183939096}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 456148a0291aea04bae7895e20ac1793, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7557211925527375790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6010536030183939096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f558d8234f1494fa2ddbd568648844, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LancePieu: {fileID: 4872280102874565498}
-  LancePieuAim: {fileID: 7178165792091486540}
 --- !u!1 &7178165792091486540
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +234,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7178165792091486576}
     m_Modifications:
+    - target: {fileID: 3165648444540693690, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
+        type: 3}
+      propertyPath: LancePieu
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165648444540693690, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
+        type: 3}
+      propertyPath: LancePieuAim
+      value: 
+      objectReference: {fileID: 7178165792091486540}
     - target: {fileID: 126919360362216833, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
         type: 3}
       propertyPath: m_Name
@@ -329,12 +306,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e, type: 3}
---- !u!1 &6010536030183939096 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 126919360362216833, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
-    type: 3}
-  m_PrefabInstance: {fileID: 5956959182816977305}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9120114810805912595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3186990293481366922, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
