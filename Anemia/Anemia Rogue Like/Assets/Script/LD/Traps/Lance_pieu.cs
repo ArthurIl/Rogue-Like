@@ -7,27 +7,25 @@ public class Lance_pieu : MonoBehaviour
     protected float timeBtwShots;
     public float startTimeBtwShot;
     public GameObject projectile;
-    private Animator animDroite;
-    private Animator animGauche;
+    private Animator anim;
 
     private void Start()
     {
-        animDroite = GetComponent<Animator>();
-        animGauche = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
-    protected void Shoot()
+    private void Shoot()
     {
         if (timeBtwShots < +0)
         {
-            animDroite.SetBool("isNoArrow", false);
-            animDroite.SetBool("isShooting", true);
-            Instantiate(projectile, transform.localPosition, transform.rotation);
+            anim.SetBool("isShooting", true);
+            anim.SetBool("isNoArrow", false);
+            Instantiate(projectile, transform.position, transform.rotation);
             timeBtwShots = startTimeBtwShot;
         }
         else
         {
+            anim.SetBool("isNoArrow", true);
             timeBtwShots -= Time.deltaTime;
-            animDroite.SetBool("isNoArrow", true);
         }
     }
 
