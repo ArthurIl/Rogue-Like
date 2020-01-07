@@ -5,15 +5,18 @@ using UnityEngine;
 public class CompteurEnnemi : MonoBehaviour
 {
     private int finalCountdown;
-    private Collider2D exitDoor;
+    public Collider2D exitDoor;
     private GameObject door;
     public GameObject[] ennemies;
     public GameObject[] spawn;
+
+    public GameObject Door1;
+    public GameObject Door2;
     void Start()
+
     {
-        door = GameObject.FindGameObjectWithTag("ExitDoor");
-        exitDoor = door.GetComponent<Collider2D>();
-       
+        Door1.SetActive(true);
+        Door2.SetActive(false);
     }
 
     private void Update()
@@ -25,6 +28,8 @@ public class CompteurEnnemi : MonoBehaviour
             if(spawn.Length == 0)
             {
                 exitDoor.enabled = !exitDoor.enabled;
+                Door2.SetActive(true);
+                Door1.SetActive(false);
             }
             
         }
