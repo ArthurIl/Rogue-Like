@@ -19,7 +19,6 @@ public class PauseMenu : MonoBehaviour
             TogglePause();
         }
 
-        //Debug.Log("TimeScale: " + Time.timeScale);
         
     }
 

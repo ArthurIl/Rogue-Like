@@ -80,7 +80,7 @@ public class ARGEnnemiFollow : ARGEnnemi
             player.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         anim.SetBool("isAttack", false);
         rangeDammage.enabled = false;
         canAttack = true;

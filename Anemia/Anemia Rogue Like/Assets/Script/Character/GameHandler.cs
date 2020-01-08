@@ -22,7 +22,7 @@ public class GameHandler : MonoBehaviour
     
     public float storeDrainHeal;
 
-    private bool immuned = false;
+    public bool immuned;
     public GameObject player;
 
     List<GameObject> ennemiesDrainables;
@@ -182,11 +182,13 @@ public class GameHandler : MonoBehaviour
             uiBar.fillAmount = health;
         }
         else if (health <= healthMin) //mit un else if à la place d'un if
-            {
-                health = healthMin;
-                GameManager.Instance.soulsCount = 0;
-                SceneManager.LoadScene("ARG HUB"); //retourne à la scène HUB
-            }
+        {
+            anim.SetBool("isDeath", true);
+            health = healthMin;
+            GameManager.Instance.soulsCount = 0;
+            StartCoroutine(Death());
+
+        }
         
     }
 
@@ -219,7 +221,7 @@ public class GameHandler : MonoBehaviour
     {
         health -= amount;
         anim.SetBool("isStagger", true);
-        StartCoroutine(ImmunedRoutine(1f));
+        StartCoroutine(ImmunedRoutine(1.0f));
         StartCoroutine(StopStagger());
     }
 
@@ -256,6 +258,12 @@ public class GameHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("isStagger", false);
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("ARG HUB"); //retourne à la scène HUB
     }
 }
 
