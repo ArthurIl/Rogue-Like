@@ -72,8 +72,11 @@ public class RoomCreation : MonoBehaviour
             Spawn();
             spawnerEntrance = GameObject.FindGameObjectWithTag("SpawnerEntrance");
             transform.position = spawnerEntrance.transform.position;
-            Destroy(spawnerEntrance.gameObject);
             col.transform.position = transform.position;
+            if(spawnerEntrance != null)
+            {
+                Destroy(spawnerEntrance.gameObject);
+            }
         }
             
     }

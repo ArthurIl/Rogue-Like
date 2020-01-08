@@ -5,8 +5,7 @@ using UnityEngine;
 public class CompteurEnnemi : MonoBehaviour
 {
     private int finalCountdown;
-    public Collider2D exitDoor;
-    public BoxCollider2D door;
+    public GameObject door;
     public GameObject[] ennemies;
     public GameObject[] spawn;
 
@@ -27,7 +26,7 @@ public class CompteurEnnemi : MonoBehaviour
         {
             if(spawn.Length == 0)
             {
-                door.isTrigger = true;
+                door.GetComponent<BoxCollider2D>().isTrigger = true;
                 Door2.SetActive(true);
                 Door1.SetActive(false);
             }

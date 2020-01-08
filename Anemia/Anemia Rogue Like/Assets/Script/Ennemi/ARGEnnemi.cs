@@ -39,8 +39,4 @@ public class ARGEnnemi : MonoBehaviour
         yield return new WaitForSeconds(2);
         ennemiCanMove = true;
     }
-    void SetSize()
-    {
-
-    }
 }

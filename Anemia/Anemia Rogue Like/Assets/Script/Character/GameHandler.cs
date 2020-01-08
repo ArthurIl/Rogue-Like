@@ -25,7 +25,7 @@ public class GameHandler : MonoBehaviour
     public bool immuned;
     public GameObject player;
 
-    List<GameObject> ennemiesDrainables;
+    public List<GameObject> ennemiesDrainables;
     float minDistance = 100f;
     float distanceActive;
     int ennemiProche;
@@ -59,6 +59,8 @@ public class GameHandler : MonoBehaviour
     public GameObject vignette;
     private float pourcentageHealth;
 
+    public Collider2D[] ennemiesToDamage;
+
 
     private Animator anim;
 
@@ -80,6 +82,7 @@ public class GameHandler : MonoBehaviour
         pourcentageHealth = (health*30) / healthMax;
         c.a = 1/pourcentageHealth;
         vignette.GetComponent<RawImage>().color = c;
+        ennemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnnemy);
 
         //if (health < 40f)
         //{
@@ -156,12 +159,13 @@ public class GameHandler : MonoBehaviour
     public IEnumerator Attaque()
     {
             canAttack = false;
-
-           
-                Collider2D[] ennemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnnemy);
                 for (int i = 0; i < ennemiesToDamage.Length; i++)
                 {
-                    ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(attackDammage);
+                    if(ennemiesToDamage[i].GetComponent<ARGEnnemi>() != null)
+                    {
+                        ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(attackDammage);
+                    }
+
                     //Debug.Log("Damage Taken!");
                 }
         yield return new WaitForSeconds(timeBtwAttack);
@@ -239,9 +243,12 @@ public class GameHandler : MonoBehaviour
         
         for (int i = 0; i < ennemiesDrainables.Count; i++)
         {
-            distanceActive = Vector2.Distance(transform.position, ennemiesDrainables[i].transform.position);
+            if(ennemiesDrainables[i] == true)
+            {
+                distanceActive = Vector2.Distance(transform.position, ennemiesDrainables[i].transform.position);
+            }
 
-              if (distanceActive < minDistance)
+            if (distanceActive < minDistance)
             {
                 minDistance = distanceActive;
                 ennemiProche = i;

@@ -42,8 +42,9 @@ public class ARGDrainColliderScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ennemi")
         {
-            canDrain = false;
-            
+            ennemiesDrainables.Remove(collision.gameObject);
+
+            canDrain = false;    
         }
     }
 }
