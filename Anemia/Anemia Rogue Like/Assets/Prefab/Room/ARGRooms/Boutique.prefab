@@ -401,11 +401,22 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 7.9589386
       objectReference: {fileID: 0}
+    - target: {fileID: 929395372275171822, guid: f7922dc6a85eccd4ba4111fd35e4e4d8,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 7640513013659844}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7922dc6a85eccd4ba4111fd35e4e4d8, type: 3}
 --- !u!4 &3391513064035295644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 929395372275171817, guid: f7922dc6a85eccd4ba4111fd35e4e4d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2590962880202481781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7640513013659844 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2589523617065048241, guid: f7922dc6a85eccd4ba4111fd35e4e4d8,
     type: 3}
   m_PrefabInstance: {fileID: 2590962880202481781}
   m_PrefabAsset: {fileID: 0}
@@ -416,56 +427,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2590962880321548842}
     m_Modifications:
-    - target: {fileID: 3716371357311854509, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_Name
-      value: Wall Salle Chest
-      objectReference: {fileID: 0}
-    - target: {fileID: 3716371357311854509, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_UsedByComposite
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.008756638
-      objectReference: {fileID: 0}
-    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 8.136454
-      objectReference: {fileID: 0}
-    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -2.3984394
-      objectReference: {fileID: 0}
-    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.63602257
-      objectReference: {fileID: 0}
-    - target: {fileID: 3716371357311854504, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_UsedByComposite
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3716371357311854504, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 4.2190905
-      objectReference: {fileID: 0}
-    - target: {fileID: 3716371357311854504, guid: 9bc11a179ef4d0e49905f42326ee5a09,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.35820007
-      objectReference: {fileID: 0}
     - target: {fileID: 3716371357311854486, guid: 9bc11a179ef4d0e49905f42326ee5a09,
         type: 3}
       propertyPath: m_UsedByComposite
@@ -480,6 +441,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 0.35571098
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854509, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall Salle Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854509, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3716371357311854506, guid: 9bc11a179ef4d0e49905f42326ee5a09,
         type: 3}
@@ -545,6 +516,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.008756638
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 8.136454
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -2.3984394
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854507, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.63602257
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854504, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854504, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 4.2190905
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716371357311854504, guid: 9bc11a179ef4d0e49905f42326ee5a09,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.35820007
       objectReference: {fileID: 0}
     - target: {fileID: 3716371357311854505, guid: 9bc11a179ef4d0e49905f42326ee5a09,
         type: 3}
@@ -731,11 +742,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2590962880321548842}
     m_Modifications:
-    - target: {fileID: 6370768790742161885, guid: e9b25ba8c40b0ec46a0184bc3d21f22e,
-        type: 3}
-      propertyPath: m_Name
-      value: TeleporterExit
-      objectReference: {fileID: 0}
     - target: {fileID: 6370768790742161884, guid: e9b25ba8c40b0ec46a0184bc3d21f22e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -790,6 +796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6370768790742161885, guid: e9b25ba8c40b0ec46a0184bc3d21f22e,
+        type: 3}
+      propertyPath: m_Name
+      value: TeleporterExit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9b25ba8c40b0ec46a0184bc3d21f22e, type: 3}

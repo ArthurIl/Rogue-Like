@@ -73,6 +73,11 @@ public class CharacterMovement : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
 
+        if(this.transform.position.z != -10f)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
+        }
+
         CDFeedback();
         if (isActive == true)
 

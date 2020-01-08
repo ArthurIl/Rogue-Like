@@ -26,6 +26,7 @@ public class ARGShop2 : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     // Update is called once per frame
@@ -33,8 +34,6 @@ public class ARGShop2 : MonoBehaviour
     {
         if (canBuy2 == true && Input.GetButton("Pick"))
         {
-
-
             newBloods = bloods - price;
             GameManager.Instance.bloodCount = newBloods;
             thisObject.SetActive(false);

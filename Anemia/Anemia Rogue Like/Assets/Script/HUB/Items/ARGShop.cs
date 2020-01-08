@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ARGShop : MonoBehaviour
 {
-    public static ARGShop Instances { get; private set; }
     public int bloods;
     public int price;
     private int newBloods;
@@ -18,18 +18,21 @@ public class ARGShop : MonoBehaviour
 
     private void Awake()
     {
-        if (Instances == null)
+        if (this.gameObject.activeInHierarchy == false)
         {
-            Instances = this;
-        }
-        else
-        {
-            Destroy(gameObject);
+            this.gameObject.SetActive(true);
         }
     }
 
     private void Start()
     {
+        foreach (GameObject go in GameManager.Instance.itemsPicked)
+        {
+            if (this.gameObject.name == go.name)
+            {
+                this.gameObject.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -37,17 +40,18 @@ public class ARGShop : MonoBehaviour
     {
         if (canBuy == true && Input.GetButton("Pick"))
         {
-
             newBloods = bloods - price;
             GameManager.Instance.bloodCount = newBloods;
+            GameManager.Instance.itemsPicked.Add(this.gameObject);
             thisObject.SetActive(false);
             GameManager.Instance.ItemList(itemUnlocked);
             GameManager.Instance.ItemListChest(itemUnlockedChest);
+
             DontDestroyOnLoad(this.gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         bloods = GameManager.Instance.bloodCount;
         priceHeader.SetActive(true);

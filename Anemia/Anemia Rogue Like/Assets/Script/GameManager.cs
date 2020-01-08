@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> itemsUnlockChest;
     private int randomChoice;
 
+    public List<GameObject> itemsPicked = new List<GameObject>();
+
     void Awake()
     {
         if (Instance == null)

@@ -131,13 +131,13 @@ public class GameHandler : MonoBehaviour
     {
         if (health < healthMax && Input.GetButton("Drain") && canDrain == true) 
         {
+            cm.playerRb.velocity = Vector3.zero;
             anim.SetBool("isDrain", true);
             useDrain = true;
             health += drainHeal;
             uiBar.fillAmount = health;
             ennemis.GetComponent<ARGEnnemi>().EnnemisTakeDamage(drainDammage);
             //gameObject.GetComponent<CharacterMovement>().Paralysis();
-            cm.playerRb.velocity = Vector3.zero;
             if (health >= healthMax)
             {
                 health = healthMax;
