@@ -23,10 +23,9 @@ public class ARGBrute : ARGEnnemi
     private Vector2 direction;
     private Animator anim;
     public GameObject brute;
-
     void Start()
     {
-        var bruteColor = brute.GetComponent<Renderer>();
+        //var bruteColor = brute.GetComponent<Renderer>();
         GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         isActive = false;
@@ -42,6 +41,7 @@ public class ARGBrute : ARGEnnemi
     // Update is called once per frame
     void Update()
     {
+
         direction = (target.transform.position - transform.position).normalized;
         anim.SetFloat("BruteMoveX", direction.x);
 
@@ -65,6 +65,7 @@ public class ARGBrute : ARGEnnemi
             transform.position = Vector2.MoveTowards(transform.position, positionTarget, 2 * Time.deltaTime);
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
