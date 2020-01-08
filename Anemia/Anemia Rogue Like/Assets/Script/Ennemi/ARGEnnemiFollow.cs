@@ -72,7 +72,6 @@ public class ARGEnnemiFollow : ARGEnnemi
         anim.SetBool("isAttack", true);
         yield return new WaitForSeconds(0.3f);
 
-        playerCollider.enabled = false;
         canAttack = false;
 
 
@@ -85,7 +84,6 @@ public class ARGEnnemiFollow : ARGEnnemi
         anim.SetBool("isAttack", false);
         rangeDammage.enabled = false;
         canAttack = true;
-        playerCollider.enabled = true;
         speed = 0.2f;
     }
 

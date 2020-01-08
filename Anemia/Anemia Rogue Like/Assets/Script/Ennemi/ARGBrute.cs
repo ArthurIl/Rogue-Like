@@ -71,7 +71,6 @@ public class ARGBrute : ARGEnnemi
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
-            StartCoroutine(PlayerImmuned());
         }
     }
 
@@ -176,15 +175,15 @@ public class ARGBrute : ARGEnnemi
         yield return null;
     }
 
-    private IEnumerator PlayerImmuned()
-    {
-        playerCollider.enabled = false;
+    //private IEnumerator PlayerImmuned()
+    //{
+    //    playerCollider.enabled = false;
 
-        yield return new WaitForSeconds(0.5f);
+    //    yield return new WaitForSeconds(0.5f);
 
-        playerCollider.enabled = true;
+    //    playerCollider.enabled = true;
 
-    }
+    //}
 
     void Drainable()
     {

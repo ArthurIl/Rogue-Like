@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 807869094425254780}
   - component: {fileID: 807869094425254781}
   - component: {fileID: 807869094425254782}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Couloir Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b14ffcd2a11973142843b3aabb676d25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 807869095410958583}
   - component: {fileID: 807869095410958576}
   - component: {fileID: 807869095410958577}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: couloir L Droit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 6dae3992a12d6124db5c6b9efc8ef689, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -586,7 +586,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.42680895, y: 1.5586913}
+  m_Offset: {x: -0.42680895, y: 1.3862178}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -597,7 +597,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16324091, y: 4.3052773}
+  m_Size: {x: 0.16324091, y: 4.650224}
   m_EdgeRadius: 0
 --- !u!61 &807869095410958577
 BoxCollider2D:
@@ -612,7 +612,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.44473436, y: 2.2977273}
+  m_Offset: {x: 0.44473436, y: 2.1072876}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -623,7 +623,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13873369, y: 5.8163486}
+  m_Size: {x: 0.13873369, y: 6.197228}
   m_EdgeRadius: 0
 --- !u!1 &807869095517543107
 GameObject:
@@ -856,7 +856,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: a63317f22f861464d98016e8899d509f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -936,7 +936,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7046336bcdab7cb43a875fe65ed5713d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1003,9 +1003,9 @@ CompositeCollider2D:
         Y: 18028098
       - X: 41599971
         Y: 22399998
-      - X: -21764842
+      - X: -23936786
         Y: 22399969
-      - X: -21764813
+      - X: -23936757
         Y: 18028098
   - m_Collider: {fileID: 3143905365736903810}
     m_ColliderPaths:
@@ -1051,8 +1051,8 @@ CompositeCollider2D:
     m_Paths:
     - - {x: 4.1599946, y: -2.24}
       - {x: 4.1599946, y: 2.24}
-      - {x: -2.176484, y: 2.239994}
-      - {x: -2.1764784, y: 1.8028098}
+      - {x: -2.3936787, y: 2.239994}
+      - {x: -2.393673, y: 1.8028098}
       - {x: 4.00293, y: 1.8028069}
       - {x: 4.0029297, y: -2.108478}
       - {x: -4.002943, y: -2.1084783}
@@ -1102,7 +1102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0.99175787, y: 2.0214047}
+  m_Offset: {x: 0.8831605, y: 2.0214047}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1113,7 +1113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.336484, y: 0.43719006}
+  m_Size: {x: 6.5536785, y: 0.43719006}
   m_EdgeRadius: 0
 --- !u!61 &3143905365736903810
 BoxCollider2D:
@@ -1408,9 +1408,9 @@ CompositeCollider2D:
         Y: 17906242
       - X: 41599971
         Y: 22399998
-      - X: 11420884
+      - X: 10148997
         Y: 22399969
-      - X: 11420913
+      - X: 10149026
         Y: 17906242
   - m_Collider: {fileID: 807869094938974855}
     m_ColliderPaths:
@@ -1446,8 +1446,8 @@ CompositeCollider2D:
       - {x: -4.16, y: 2.2399943}
     - - {x: 4.1599946, y: -0.765078}
       - {x: 4.1599946, y: 2.2399998}
-      - {x: 1.1420884, y: 2.239994}
-      - {x: 1.1420943, y: 1.7906243}
+      - {x: 1.0148997, y: 2.239994}
+      - {x: 1.0149055, y: 1.7906243}
       - {x: 4.0156426, y: 1.7906212}
       - {x: 4.015648, y: -0.765078}
   m_VertexDistance: 0.0005
@@ -1543,7 +1543,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 2.6510441, y: 2.015312}
+  m_Offset: {x: 2.5874498, y: 2.015312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1554,7 +1554,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0179114, y: 0.44937563}
+  m_Size: {x: 3.1451, y: 0.44937563}
   m_EdgeRadius: 0
 --- !u!61 &807869094938974855
 BoxCollider2D:
@@ -1951,7 +1951,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7046336bcdab7cb43a875fe65ed5713d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1975,7 +1975,7 @@ GameObject:
   - component: {fileID: 1649446722094889375}
   - component: {fileID: 4406530822884136022}
   - component: {fileID: 8497158037123659658}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: couloir horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2033,7 +2033,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: ecbff2585d30a5e4d9cef37a79f2344c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5032,6 +5032,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1175792682797302708}
     m_Modifications:
+    - target: {fileID: 4079191380244546228, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066069931373833, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083863907932912929, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400855723754242767, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860256352314612890, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428722197485499066, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5776866850792388576, guid: 19284550a75b19849bbcc42abc577108,
         type: 3}
       propertyPath: m_Name
@@ -7186,6 +7216,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1175792683929170056}
     m_Modifications:
+    - target: {fileID: 4079191380244546228, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066069931373833, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083863907932912929, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400855723754242767, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860256352314612890, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428722197485499066, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5776866850792388576, guid: 19284550a75b19849bbcc42abc577108,
         type: 3}
       propertyPath: m_Name
@@ -8429,6 +8489,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3514501901610794636}
     m_Modifications:
+    - target: {fileID: 4079191380244546228, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066069931373833, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083863907932912929, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400855723754242767, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860256352314612890, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428722197485499066, guid: 19284550a75b19849bbcc42abc577108,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5776866850792388576, guid: 19284550a75b19849bbcc42abc577108,
         type: 3}
       propertyPath: m_Name

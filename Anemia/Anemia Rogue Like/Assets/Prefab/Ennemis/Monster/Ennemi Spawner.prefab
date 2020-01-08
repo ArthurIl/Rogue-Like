@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7094833819595425419}
   - component: {fileID: -4579857538196408274}
   - component: {fileID: 4104649233898596802}
+  - component: {fileID: 6772507479639623551}
   m_Layer: 9
   m_Name: Ennemi Spawner
   m_TagString: Untagged
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 8
   m_Sprite: {fileID: 6810463077589642200, guid: 8ce0c699a3e7a2047a6ff0abdd6852b5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -121,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.19}
+  m_Offset: {x: -0.0054075867, y: -0.21568608}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
@@ -132,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.31}
+  m_Size: {x: 0.25133166, y: 0.25862783}
   m_EdgeRadius: 0
 --- !u!95 &4104649233898596802
 Animator:

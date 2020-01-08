@@ -304,7 +304,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &478633724
 GameObject:
@@ -354,7 +354,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &478633727
 MonoBehaviour:
@@ -1028,7 +1028,7 @@ Transform:
   m_Children:
   - {fileID: 1581533118}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &956933278
 PrefabInstance:
@@ -1085,7 +1085,7 @@ PrefabInstance:
     - target: {fileID: 1160023806157956250, guid: 628b906540fa5fc42904afe40e55ad07,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1160023806157956250, guid: 628b906540fa5fc42904afe40e55ad07,
         type: 3}
@@ -1473,7 +1473,7 @@ Transform:
   - {fileID: 703832460}
   - {fileID: 810890774}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1581533118 stripped
 Transform:
@@ -1637,6 +1637,11 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4631194136078393725, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4631194136078393714, guid: 2b9daea02f432d94fba420e8d2a3e41a,
         type: 3}
       propertyPath: dashBar
@@ -1666,6 +1671,16 @@ PrefabInstance:
         type: 3}
       propertyPath: vignette
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631194136078393727, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: drainHeal
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631194136078393727, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: drainDammage
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6313314249698492288, guid: 2b9daea02f432d94fba420e8d2a3e41a,
         type: 3}
@@ -2035,7 +2050,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2001566753
 BoxCollider2D:
@@ -2420,7 +2435,7 @@ PrefabInstance:
     - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 3863
+      value: 130839
       objectReference: {fileID: 0}
     - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
         type: 3}

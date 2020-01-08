@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4567731127180545906}
   - component: {fileID: 8360952209687771768}
   - component: {fileID: 7101402360594295301}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Projectile_gauche
   m_TagString: Traps
   m_Icon: {fileID: 0}
@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5146bb6c7801982438062075fd2a4596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
-  damage: 1
+  speed: 3
+  damage: 5
 --- !u!61 &8360952209687771768
 BoxCollider2D:
   m_ObjectHideFlags: 0

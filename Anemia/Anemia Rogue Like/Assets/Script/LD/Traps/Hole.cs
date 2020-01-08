@@ -49,7 +49,7 @@ public class Hole : MonoBehaviour
 
     private IEnumerator WaitAndRelease()
     {
-        Debug.Log("Fallen");
+        //Debug.Log("Fallen");
         yield return new WaitForSeconds(0.8f);
         player.transform.position = spawnPoint.transform.position;
         playerVariable.gameObject.GetComponent<GameHandler>().TakeDamage(damage);

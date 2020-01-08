@@ -15,8 +15,8 @@ public class CompteurEnnemi : MonoBehaviour
     void Start()
 
     {
-        Door1.SetActive(true);
-        Door2.SetActive(false);
+        //Door1.SetActive(true);
+        //Door2.SetActive(false);
     }
 
     private void Update()

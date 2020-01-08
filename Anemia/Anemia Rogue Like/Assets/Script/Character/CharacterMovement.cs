@@ -181,7 +181,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Paralysis()
     {
-        Debug.Log("je suis paralyser");
+        //Debug.Log("je suis paralyser");
         isActive = false;
         playerRb.velocity = Vector2.zero;
         anim.SetBool("isFalling", true);

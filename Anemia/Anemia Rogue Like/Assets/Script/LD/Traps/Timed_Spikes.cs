@@ -21,15 +21,13 @@ public class Timed_Spikes : MonoBehaviour
     private void Timer()
     {
         spikes.enabled = !spikes.enabled;
-        Debug.Log("Collider.enabled = " + spikes.enabled);
+        //Debug.Log("Collider.enabled = " + spikes.enabled);
         if (spikes.enabled == false)
         {
-            GetComponent<SpriteRenderer>().color = Color.green;
             anim.SetBool("isBobo", false);
         }
         else
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
     

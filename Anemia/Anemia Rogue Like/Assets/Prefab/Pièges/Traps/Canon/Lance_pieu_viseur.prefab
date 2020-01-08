@@ -234,16 +234,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7178165792091486576}
     m_Modifications:
-    - target: {fileID: 3165648444540693690, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
-        type: 3}
-      propertyPath: LancePieu
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3165648444540693690, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
-        type: 3}
-      propertyPath: LancePieuAim
-      value: 
-      objectReference: {fileID: 7178165792091486540}
     - target: {fileID: 126919360362216833, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
         type: 3}
       propertyPath: m_Name
@@ -304,7 +294,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3165648444540693690, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
+        type: 3}
+      propertyPath: LancePieu
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165648444540693690, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e,
+        type: 3}
+      propertyPath: LancePieuAim
+      value: 
+      objectReference: {fileID: 7178165792091486540}
+    m_RemovedComponents:
+    - {fileID: 587929340837421970, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8eff2a6bbd4b5dc48a0a6481a4beea5e, type: 3}
 --- !u!4 &9120114810805912595 stripped
 Transform:

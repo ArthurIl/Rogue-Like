@@ -68,7 +68,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: a63317f22f861464d98016e8899d509f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -286,7 +286,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: a63317f22f861464d98016e8899d509f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 6586459479672593611}
   - component: {fileID: 169984096972524885}
   - component: {fileID: 7994763501891202166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: couloir horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +587,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1309588321468491021}
   - component: {fileID: 9198564394969361559}
-  m_Layer: 0
+  - component: {fileID: 1333778555224017148}
+  - component: {fileID: 5129347033521144683}
+  m_Layer: 9
   m_Name: couloir horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,6 +659,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1333778555224017148
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228405572223764336}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.312478, y: 0.51234543}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.31, y: 1.48}
+    newSize: {x: 8.31, y: 1.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6850452, y: 0.45530915}
+  m_EdgeRadius: 0
+--- !u!61 &5129347033521144683
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5228405572223764336}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.9524517, y: -0.5954275}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.31, y: 1.48}
+    newSize: {x: 8.31, y: 1.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.9649925, y: 0.12297821}
+  m_EdgeRadius: 0
 --- !u!1 &6124089938242534406
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +721,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3233938872370109664}
   - component: {fileID: 984193024970149544}
-  m_Layer: 0
+  - component: {fileID: 7900209166081977188}
+  - component: {fileID: 4854542380458828715}
+  m_Layer: 8
   m_Name: couloir L droit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,6 +793,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &7900209166081977188
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124089938242534406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.4034838, y: 0.2445836}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 10.43}
+    newSize: {x: 1.01, y: 10.43}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.20303237, y: 7.431405}
+  m_EdgeRadius: 0
+--- !u!61 &4854542380458828715
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124089938242534406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.42590332, y: 0.8613076}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 10.43}
+    newSize: {x: 1.01, y: 10.43}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16049957, y: 8.664853}
+  m_EdgeRadius: 0
 --- !u!1 &6793915376515830619
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +913,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: b53a4e8bb5b6b4648b0b140759e58907, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -991,6 +1099,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480169598915793582, guid: 589f80d86876fe8438301318cf5ed5ee,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.3362665
       objectReference: {fileID: 0}
     - target: {fileID: 3350429450054358687, guid: 589f80d86876fe8438301318cf5ed5ee,
         type: 3}
@@ -1482,22 +1595,11 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[1].m_ColliderPaths.Array.data[0].Array.data[3].Y
       value: 17510290
       objectReference: {fileID: 0}
-    - target: {fileID: 480169598915793582, guid: 589f80d86876fe8438301318cf5ed5ee,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.3362665
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 589f80d86876fe8438301318cf5ed5ee, type: 3}
---- !u!61 &740442188040551121 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3350429450054358687, guid: 589f80d86876fe8438301318cf5ed5ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 2610269098858376270}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &740442188040551122 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3350429450054358684, guid: 589f80d86876fe8438301318cf5ed5ee,
+--- !u!4 &1818086926180613565 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4396266983082365427, guid: 589f80d86876fe8438301318cf5ed5ee,
     type: 3}
   m_PrefabInstance: {fileID: 2610269098858376270}
   m_PrefabAsset: {fileID: 0}
@@ -1507,9 +1609,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2610269098858376270}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1818086926180613565 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4396266983082365427, guid: 589f80d86876fe8438301318cf5ed5ee,
+--- !u!61 &740442188040551122 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3350429450054358684, guid: 589f80d86876fe8438301318cf5ed5ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 2610269098858376270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &740442188040551121 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3350429450054358687, guid: 589f80d86876fe8438301318cf5ed5ee,
     type: 3}
   m_PrefabInstance: {fileID: 2610269098858376270}
   m_PrefabAsset: {fileID: 0}
@@ -1579,6 +1687,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209742716754606206, guid: a23ddfaac36b1cc4fb174d5a230ad817,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.3362665
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209742716754606206, guid: a23ddfaac36b1cc4fb174d5a230ad817,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3661008
       objectReference: {fileID: 0}
     - target: {fileID: 2887743866914276293, guid: a23ddfaac36b1cc4fb174d5a230ad817,
         type: 3}
@@ -2250,21 +2368,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 1.1980622
       objectReference: {fileID: 0}
-    - target: {fileID: 2209742716754606206, guid: a23ddfaac36b1cc4fb174d5a230ad817,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.3362665
-      objectReference: {fileID: 0}
-    - target: {fileID: 2209742716754606206, guid: a23ddfaac36b1cc4fb174d5a230ad817,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.3661008
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23ddfaac36b1cc4fb174d5a230ad817, type: 3}
---- !u!61 &2598451010629431094 stripped
+--- !u!61 &2598451010629431092 stripped
 BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 1981697841986233440, guid: a23ddfaac36b1cc4fb174d5a230ad817,
+  m_CorrespondingSourceObject: {fileID: 1981697841986233442, guid: a23ddfaac36b1cc4fb174d5a230ad817,
     type: 3}
   m_PrefabInstance: {fileID: 4580137582535183190}
   m_PrefabAsset: {fileID: 0}
@@ -2274,9 +2382,9 @@ BoxCollider2D:
     type: 3}
   m_PrefabInstance: {fileID: 4580137582535183190}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &2598451010629431092 stripped
+--- !u!61 &2598451010629431094 stripped
 BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 1981697841986233442, guid: a23ddfaac36b1cc4fb174d5a230ad817,
+  m_CorrespondingSourceObject: {fileID: 1981697841986233440, guid: a23ddfaac36b1cc4fb174d5a230ad817,
     type: 3}
   m_PrefabInstance: {fileID: 4580137582535183190}
   m_PrefabAsset: {fileID: 0}
@@ -2508,6 +2616,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879631708281529862, guid: 7d781217fa775ee44bd9990db8e3a768,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.336266
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879631708281529862, guid: 7d781217fa775ee44bd9990db8e3a768,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3660998
       objectReference: {fileID: 0}
     - target: {fileID: 3185288289009023248, guid: 7d781217fa775ee44bd9990db8e3a768,
         type: 3}
@@ -3034,30 +3152,8 @@ PrefabInstance:
       propertyPath: m_CompositePaths.m_Paths.Array.data[1].Array.data[11].y
       value: -2.2250028
       objectReference: {fileID: 0}
-    - target: {fileID: 7879631708281529862, guid: 7d781217fa775ee44bd9990db8e3a768,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.336266
-      objectReference: {fileID: 0}
-    - target: {fileID: 7879631708281529862, guid: 7d781217fa775ee44bd9990db8e3a768,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.3660998
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d781217fa775ee44bd9990db8e3a768, type: 3}
---- !u!61 &5070016595096819499 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3185288289009023277, guid: 7d781217fa775ee44bd9990db8e3a768,
-    type: 3}
-  m_PrefabInstance: {fileID: 7667444240222055942}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &5070016595096819496 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3185288289009023278, guid: 7d781217fa775ee44bd9990db8e3a768,
-    type: 3}
-  m_PrefabInstance: {fileID: 7667444240222055942}
-  m_PrefabAsset: {fileID: 0}
 --- !u!61 &5070016595096819497 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 3185288289009023279, guid: 7d781217fa775ee44bd9990db8e3a768,
@@ -3079,6 +3175,18 @@ GameObject:
 --- !u!4 &9201899345107681348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1575007916636237378, guid: 7d781217fa775ee44bd9990db8e3a768,
+    type: 3}
+  m_PrefabInstance: {fileID: 7667444240222055942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &5070016595096819499 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3185288289009023277, guid: 7d781217fa775ee44bd9990db8e3a768,
+    type: 3}
+  m_PrefabInstance: {fileID: 7667444240222055942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &5070016595096819496 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3185288289009023278, guid: 7d781217fa775ee44bd9990db8e3a768,
     type: 3}
   m_PrefabInstance: {fileID: 7667444240222055942}
   m_PrefabAsset: {fileID: 0}

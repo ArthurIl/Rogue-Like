@@ -28,24 +28,24 @@ public class RoomCreation : MonoBehaviour
                 Instantiate(template.easyRooms[rand], spawner.transform.position, template.easyRooms[rand].transform.rotation);
                 template.easyRooms.RemoveAt(rand);
             }
-            else if (roomNumber == 3)
+            else if (roomNumber == 2)
             {
 
                 rand = Random.Range(0, template.shop.Count);
                 Instantiate(template.shop[rand], spawner.transform.position, template.shop[rand].transform.rotation);
             }
-            else if (roomNumber > 3 & roomNumber < 6)
+            else if (roomNumber >= 3 & roomNumber < 4)
             {
                 rand = Random.Range(0, template.mediumRooms.Count);
                 Instantiate(template.mediumRooms[rand], spawner.transform.position, template.mediumRooms[rand].transform.rotation);
                 template.mediumRooms.RemoveAt(rand);
             }
-            else if (roomNumber == 6)
+            else if (roomNumber == 4)
             {
                 rand = Random.Range(0, template.shop.Count);
                 Instantiate(template.shop[rand], spawner.transform.position, template.shop[rand].transform.rotation);
             }
-            else if (roomNumber > 6 & roomNumber < 8)
+            else if (roomNumber >= 5 & roomNumber < 6)
             {
                 rand = Random.Range(0, template.hardRooms.Count);
                 Instantiate(template.hardRooms[rand], spawner.transform.position, template.hardRooms[rand].transform.rotation);
@@ -68,7 +68,7 @@ public class RoomCreation : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             
-            spawner = GameObject.FindGameObjectWithTag("Spawner");
+            spawner = GameObject.FindGameObjectWithTag("RoomSpawner");
             Spawn();
             spawnerEntrance = GameObject.FindGameObjectWithTag("SpawnerEntrance");
             transform.position = spawnerEntrance.transform.position;

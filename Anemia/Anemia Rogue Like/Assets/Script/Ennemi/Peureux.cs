@@ -24,6 +24,7 @@ public class Peureux : ARGEnnemi
         anim.SetFloat("PeureuxMoveX", direction.x);
 
         Death();
+
         if (Vector2.Distance(transform.position, target.transform.position) < retreatDistancePeureux && ennemiCanMove)
         {
             anim.SetBool("isMoving", true);

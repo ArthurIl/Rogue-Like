@@ -93,7 +93,7 @@ public class GameHandler : MonoBehaviour
         BarRenderer();
         if (Input.GetButtonDown("Attaque") && canAttack)
         {
-            Debug.Log("PRBA" + "attack");
+            //Debug.Log("PRBA" + "attack");
             anim.SetBool("isAttack", true);
             StartCoroutine("Attaque");
         }
@@ -134,7 +134,7 @@ public class GameHandler : MonoBehaviour
             uiBar.fillAmount = health;
             ennemis.GetComponent<ARGEnnemi>().EnnemisTakeDamage(drainDammage);
             //gameObject.GetComponent<CharacterMovement>().Paralysis();
-            cm.playerRb.velocity = Vector2.zero;
+            cm.playerRb.velocity = Vector3.zero;
             if (health >= healthMax)
             {
                 health = healthMax;
@@ -162,7 +162,7 @@ public class GameHandler : MonoBehaviour
                 for (int i = 0; i < ennemiesToDamage.Length; i++)
                 {
                     ennemiesToDamage[i].GetComponent<ARGEnnemi>().EnnemisTakeDamage(attackDammage);
-                    Debug.Log("Damage Taken!");
+                    //Debug.Log("Damage Taken!");
                 }
         yield return new WaitForSeconds(timeBtwAttack);
         canAttack = true;
@@ -219,6 +219,7 @@ public class GameHandler : MonoBehaviour
     {
         health -= amount;
         anim.SetBool("isStagger", true);
+        StartCoroutine(ImmunedRoutine(1f));
         StartCoroutine(StopStagger());
     }
 
