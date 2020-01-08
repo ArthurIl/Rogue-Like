@@ -221,7 +221,7 @@ public class GameHandler : MonoBehaviour
     {
         health -= amount;
         anim.SetBool("isStagger", true);
-        //StartCoroutine(ImmunedRoutine(1.0f));
+        StartCoroutine(ImmunedRoutine(1.0f));
         StartCoroutine(StopStagger());
     }
 
