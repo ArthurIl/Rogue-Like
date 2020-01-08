@@ -71,7 +71,6 @@ public class ARGBrute : ARGEnnemi
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
-            StartCoroutine(PlayerImmuned());
         }
     }
 

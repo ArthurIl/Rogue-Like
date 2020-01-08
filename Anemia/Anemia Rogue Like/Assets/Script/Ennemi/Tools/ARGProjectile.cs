@@ -40,7 +40,6 @@ public class ARGProjectile : MonoBehaviour
         if (other.CompareTag("Player")) {
 
             other.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
-            StartCoroutine(PlayerImmuned());
             DestroyProjectile();
         }
         else if(other.gameObject.layer == 8){
@@ -52,13 +51,13 @@ public class ARGProjectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator PlayerImmuned()
-    {
-        playerCollider.enabled = false;
+    //private IEnumerator PlayerImmuned()
+    //{
+    //    playerCollider.enabled = false;
 
-        yield return new WaitForSeconds(0.1f);
+    //    yield return new WaitForSeconds(0.1f);
 
-        playerCollider.enabled = true;
+    //    playerCollider.enabled = true;
 
-    }
+    //}
 }

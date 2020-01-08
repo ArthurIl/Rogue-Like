@@ -2139,6 +2139,11 @@ PrefabInstance:
       propertyPath: health
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 4631194136078393727, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: immuned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6279994689456717278, guid: 2b9daea02f432d94fba420e8d2a3e41a,
         type: 3}
       propertyPath: m_Enabled
@@ -4648,15 +4653,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6253856034180738593, guid: 065f2c008225cf643bec493d8c0ce6e7,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 5329300750281252703, guid: 065f2c008225cf643bec493d8c0ce6e7,
         type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253856034180738593, guid: 065f2c008225cf643bec493d8c0ce6e7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6009538582390124863, guid: 065f2c008225cf643bec493d8c0ce6e7,
         type: 3}
