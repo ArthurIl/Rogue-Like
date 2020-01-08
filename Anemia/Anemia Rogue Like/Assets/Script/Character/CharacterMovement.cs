@@ -73,9 +73,9 @@ public class CharacterMovement : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
 
-        if(this.transform.position.z != -10f)
+        if(this.transform.position.z != -9f)
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -10f);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -9f);
         }
 
         CDFeedback();
