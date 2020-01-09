@@ -7,6 +7,7 @@ public class Peureux : ARGEnnemi
     public float retreatDistancePeureux;
     private Vector2 direction;
     private Animator anim;
+    public float drainStock;
 
 
     // Start is called before the first frame update
@@ -35,6 +36,25 @@ public class Peureux : ARGEnnemi
         {
             anim.SetBool("isMoving", false);
             transform.position = this.transform.position;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            drainStock = collision.GetComponent<GameHandler>().storeDrainHeal;
+            collision.GetComponent<GameHandler>().storeDrainHeal *= 2;
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<GameHandler>().storeDrainHeal = drainStock;
+
         }
     }
 }

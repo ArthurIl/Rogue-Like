@@ -175,7 +175,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02354145, y: 0.40841973}
+  m_Offset: {x: -0.0038385391, y: 0.40841973}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -186,7 +186,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.262918, y: 0.66316056}
+  m_Size: {x: 8.302324, y: 0.66316056}
   m_EdgeRadius: 0
 --- !u!61 &7617793798806372749
 BoxCollider2D:
@@ -201,7 +201,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.018017769, y: -0.63980305}
+  m_Offset: {x: 0.0016851425, y: -0.63980305}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -212,7 +212,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.273966, y: 0.20039392}
+  m_Size: {x: 8.313372, y: 0.20039392}
   m_EdgeRadius: 0
 --- !u!1 &785719161358462961
 GameObject:
@@ -1481,11 +1481,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 785719161358462960}
     m_Modifications:
-    - target: {fileID: 441386397822806403, guid: 807d93fadfc0c294a9d86d9b20a66d77,
-        type: 3}
-      propertyPath: m_Name
-      value: SpawnerEntrance
-      objectReference: {fileID: 0}
     - target: {fileID: 1375747039951276012, guid: 807d93fadfc0c294a9d86d9b20a66d77,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1540,6 +1535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 441386397822806403, guid: 807d93fadfc0c294a9d86d9b20a66d77,
+        type: 3}
+      propertyPath: m_Name
+      value: SpawnerEntrance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 807d93fadfc0c294a9d86d9b20a66d77, type: 3}
@@ -3191,11 +3191,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 785719161358462960}
     m_Modifications:
-    - target: {fileID: 5476802482937975097, guid: a9a7251215ace764995f26124abd6853,
-        type: 3}
-      propertyPath: m_Name
-      value: RoomSpawner
-      objectReference: {fileID: 0}
     - target: {fileID: 5476802482937975096, guid: a9a7251215ace764995f26124abd6853,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3250,6 +3245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5476802482937975097, guid: a9a7251215ace764995f26124abd6853,
+        type: 3}
+      propertyPath: m_Name
+      value: RoomSpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9a7251215ace764995f26124abd6853, type: 3}

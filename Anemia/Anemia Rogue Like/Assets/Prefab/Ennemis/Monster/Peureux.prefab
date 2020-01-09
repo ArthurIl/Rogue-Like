@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00091775507, y: 0.07513668}
+  m_Offset: {x: -0.0026368834, y: 0.06853522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13961901, y: 0.11438587}
+  m_Size: {x: 0.112197526, y: 0.062589735}
   m_EdgeRadius: 0
 --- !u!1 &8827575792749595309
 GameObject:
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ennemiCanMove: 0
   canShoot: 0
-  speed: 0.5
+  speed: 0.3
   target: {fileID: 0}
   damage: 0
   ennemiHealth: 5
@@ -164,6 +164,7 @@ MonoBehaviour:
     type: 3}
   souls: {fileID: 2459590833298785680, guid: 62cedebb0dff25748b0383aa246e59bf, type: 3}
   retreatDistancePeureux: 1
+  drainStock: 0
 --- !u!61 &8827575792749595305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,7 +178,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005831316, y: 0.07761039}
+  m_Offset: {x: 0.0048156977, y: 0.061360627}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -188,7 +189,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1976732, y: 0.1675727}
+  m_Size: {x: 0.32157767, y: 0.27725863}
   m_EdgeRadius: 0
 --- !u!95 &7832454927145371606
 Animator:
@@ -221,7 +222,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
