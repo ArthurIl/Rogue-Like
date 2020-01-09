@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 1123499843}
   - component: {fileID: 1123499842}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,7 +315,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d64485b83f2242d4bb461a4077adb4e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7ac06d9e40307954482bd2695cf3d156, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -334,8 +334,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123499841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -0.05, z: 104.617935}
-  m_LocalScale: {x: 0.9, y: 0.92, z: 1}
+  m_LocalPosition: {x: -0.05, y: -0.01, z: 104.617935}
+  m_LocalScale: {x: 1.8, y: 1.85, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -506,7 +506,7 @@ PrefabInstance:
     - target: {fileID: 5422267887527814768, guid: 2fa331c1ad4c85c4a8f83011c9e41aea,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2056256217686142004, guid: 2fa331c1ad4c85c4a8f83011c9e41aea,
         type: 3}
@@ -816,18 +816,24 @@ PrefabInstance:
     - target: {fileID: 57784373499755830, guid: 2fa331c1ad4c85c4a8f83011c9e41aea,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 150
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 57784373499755830, guid: 2fa331c1ad4c85c4a8f83011c9e41aea,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 150
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 57784373499755830, guid: 2fa331c1ad4c85c4a8f83011c9e41aea,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 232
       objectReference: {fileID: 0}
+    - target: {fileID: 6165659130225432427, guid: 2fa331c1ad4c85c4a8f83011c9e41aea,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dc1d8ffba4cd4dc42af9d693736c698b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fa331c1ad4c85c4a8f83011c9e41aea, type: 3}
 --- !u!224 &7588995894570073214 stripped
