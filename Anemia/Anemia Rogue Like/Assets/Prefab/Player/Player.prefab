@@ -261,6 +261,14 @@ MonoBehaviour:
   attrition: 0.05
   stockAttrition: 0
   drainHeal: 0.2
+  allPS:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   storeDrainHeal: 0.2
   immuned: 0
   player: {fileID: 4631194136078393715}
@@ -280,6 +288,8 @@ MonoBehaviour:
   haveMoreBlood: 0
   haveBloodRecycler: 0
   useDrain: 0
+  callsCount: 2
+  particlesQuantity: 1
   vignette: {fileID: 0}
   ennemiesToDamage: []
 --- !u!95 &6786507952811797820

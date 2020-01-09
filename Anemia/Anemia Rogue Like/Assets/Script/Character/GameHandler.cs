@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
 
 public class GameHandler : MonoBehaviour
 {
@@ -19,7 +18,9 @@ public class GameHandler : MonoBehaviour
     public float stockAttrition;
     public float drainHeal;
     private CharacterMovement cm;
-    
+
+    public List<ParticleSystem> allPS = new List<ParticleSystem>();
+
     public float storeDrainHeal;
 
     public bool immuned;
@@ -46,6 +47,7 @@ public class GameHandler : MonoBehaviour
     public float attackRangeX;
     public float attackRangeY;
 
+    public static GameHandler instance;
 
     //Statment soul
     public int soulsCount;
@@ -55,6 +57,11 @@ public class GameHandler : MonoBehaviour
     public bool haveBloodRecycler;
     public bool useDrain;
 
+    [Range(0, 50), Header("How Many Calls For Particle Systems")]
+    public int callsCount;
+    [Range(0, 50), Header("Particles Quantity For The Particle System Selected")]
+    public int particlesQuantity;
+
     //health vignette
     public GameObject vignette;
     private float pourcentageHealth;
@@ -63,6 +70,11 @@ public class GameHandler : MonoBehaviour
 
 
     private Animator anim;
+
+    private void Awake()
+    {
+        instance = this; 
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +90,12 @@ public class GameHandler : MonoBehaviour
 
     void Update()
     {
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            SendBlood(callsCount, particlesQuantity);
+        }
+
         Color c = vignette.GetComponent<RawImage>().color;
         pourcentageHealth = (health*30) / healthMax;
         c.a = 1/pourcentageHealth;
@@ -196,6 +214,16 @@ public class GameHandler : MonoBehaviour
         
     }
 
+   
+
+    public static void SendBlood(int howManyTimes, int amount)
+    {
+        for (int i = 0; i < howManyTimes; i++)
+        {
+            instance.allPS[Random.Range(0, instance.allPS.Count)].Emit(amount);
+        }
+    }
+
     private void BarRenderer()
     {
         uiBar.fillAmount = health / healthMax;
@@ -223,9 +251,9 @@ public class GameHandler : MonoBehaviour
 
     public void TakeDamage(float amount) //prend des dégats
     {
+        SendBlood(callsCount, particlesQuantity);
         health -= amount;
         anim.SetBool("isStagger", true);
-        StartCoroutine(ImmunedRoutine(1.0f));
         StartCoroutine(StopStagger());
     }
 
@@ -247,7 +275,7 @@ public class GameHandler : MonoBehaviour
             {
                 distanceActive = Vector2.Distance(transform.position, ennemiesDrainables[i].transform.position);
             }
-
+            
             if (distanceActive < minDistance)
             {
                 minDistance = distanceActive;
@@ -266,7 +294,7 @@ public class GameHandler : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("isStagger", false);
     }
-
+    
     IEnumerator Death()
     {
         yield return new WaitForSeconds(1f);

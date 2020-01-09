@@ -58,14 +58,14 @@ public class ARGDevelopTool : MonoBehaviour
         //God Mod
         if (Input.GetKeyDown(KeyCode.G))
         {
-            GetComponent<GameHandler>().health = 1000000;
-            GetComponent<GameHandler>().stockAttrition = 0;
+            GameHandler.instance.health = 1000000;
+            GameHandler.instance.stockAttrition = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            GetComponent<GameHandler>().health = 100;
-            GetComponent<GameHandler>().stockAttrition = 0.05f;
+            GameHandler.instance.health = 100;
+            GameHandler.instance.stockAttrition = 0.05f;
         }
     }
 }

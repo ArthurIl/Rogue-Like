@@ -1611,7 +1611,7 @@ PrefabInstance:
     - target: {fileID: 4631194136078393724, guid: 2b9daea02f432d94fba420e8d2a3e41a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4631194136078393724, guid: 2b9daea02f432d94fba420e8d2a3e41a,
         type: 3}
@@ -1642,6 +1642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: dashSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631194136078393714, guid: 2b9daea02f432d94fba420e8d2a3e41a,
+        type: 3}
+      propertyPath: canDash
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4631194136078393727, guid: 2b9daea02f432d94fba420e8d2a3e41a,
         type: 3}
@@ -3027,6 +3032,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: orthographic size
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 130839
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4206092289953393003, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3065,7 +3085,7 @@ PrefabInstance:
     - target: {fileID: 4206092289953393003, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4206092289953393003, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
         type: 3}
@@ -3095,21 +3115,6 @@ PrefabInstance:
     - target: {fileID: 4206092289953393003, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: orthographic size
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 130839
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4206092289953393002, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
@@ -3658,6 +3663,61 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: orthographic size
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_AllowMSAA
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
+        type: 3}
+      propertyPath: m_Depth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4206092289953393003, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3726,61 +3786,6 @@ PrefabInstance:
     - target: {fileID: 4206092289953393003, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: orthographic size
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_ClearFlags
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_OcclusionCulling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_HDR
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_AllowMSAA
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_AllowDynamicResolution
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206092289953393004, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
-        type: 3}
-      propertyPath: m_Depth
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4206092289953393002, guid: b74a8bfb29ffbbb45847f03bf57c9c72,
@@ -5212,7 +5217,7 @@ PrefabInstance:
     - target: {fileID: 347244832137790058, guid: 054fedaad5dd07a41bcc4a64181a979e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 347244832137790058, guid: 054fedaad5dd07a41bcc4a64181a979e,
         type: 3}
@@ -5290,7 +5295,7 @@ PrefabInstance:
     - target: {fileID: 1397174403524974550, guid: be223f078d121e14aa591952e4b76d89,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1397174403524974550, guid: be223f078d121e14aa591952e4b76d89,
         type: 3}
@@ -5368,7 +5373,7 @@ PrefabInstance:
     - target: {fileID: 2316002045502543540, guid: dd08ffd794a3a9e4aa4d7228b953dcc8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2316002045502543540, guid: dd08ffd794a3a9e4aa4d7228b953dcc8,
         type: 3}
@@ -5446,7 +5451,7 @@ PrefabInstance:
     - target: {fileID: 5114334143948727095, guid: c231b20d56945d448a76c9b9d638ec3e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5114334143948727095, guid: c231b20d56945d448a76c9b9d638ec3e,
         type: 3}
@@ -5515,7 +5520,7 @@ PrefabInstance:
     - target: {fileID: 5124018989381181948, guid: b4a167d71412e5c4c8cdc7942fa9e677,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5124018989381181948, guid: b4a167d71412e5c4c8cdc7942fa9e677,
         type: 3}
@@ -5593,7 +5598,7 @@ PrefabInstance:
     - target: {fileID: 5210736222980261243, guid: 78df96186e2473e4897d494f12123635,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5210736222980261243, guid: 78df96186e2473e4897d494f12123635,
         type: 3}

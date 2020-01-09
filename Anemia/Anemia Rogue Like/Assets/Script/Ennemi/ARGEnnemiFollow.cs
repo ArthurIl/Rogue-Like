@@ -43,9 +43,17 @@ public class ARGEnnemiFollow : ARGEnnemi
     {
         if (other.gameObject.tag == "Player" && canAttack == true)
         {
+            inRange = true;
             player = other.gameObject;
-            rangeDammage.enabled = true;
+            //rangeDammage.enabled = true;
             StartCoroutine("Attack");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            inRange = false;
         }
     }
 
@@ -78,12 +86,13 @@ public class ARGEnnemiFollow : ARGEnnemi
 
         if (inRange == true)
         {
-            player.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
+            GameHandler.instance.TakeDamage(damage);
+            //player.gameObject.GetComponent<GameHandler>().TakeDamage(damage);
         }
 
         yield return new WaitForSeconds(1f);
         anim.SetBool("isAttack", false);
-        rangeDammage.enabled = false;
+        //rangeDammage.enabled = false;
         canAttack = true;
         speed = 0.2f;
     }
