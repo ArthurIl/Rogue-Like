@@ -36,7 +36,7 @@ public class ARGEnnemi : MonoBehaviour
 
     IEnumerator CanMoveAgain()
     {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(2f);
         ennemiCanMove = true;
     }
 }

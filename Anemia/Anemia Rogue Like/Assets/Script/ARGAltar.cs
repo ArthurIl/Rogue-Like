@@ -31,7 +31,7 @@ public class ARGAltar : MonoBehaviour
             numberOfBlood = (int)healthPlayer / 10;
             newBlood = blood + numberOfBlood;
             GameManager.Instance.bloodCount = newBlood;
-            player.GetComponent<GameHandler>().health = 0.5f;
+            player.GetComponent<GameHandler>().health = 0;
             
         }
     }

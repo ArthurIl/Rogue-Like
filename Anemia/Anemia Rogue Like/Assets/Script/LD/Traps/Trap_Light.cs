@@ -5,29 +5,29 @@ using UnityEngine;
 public class Trap_Light : MonoBehaviour
 {
     [SerializeField]
-    public float modifier = 2;
+    public float modifier;
     public float originalAttrition;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject Player = GameObject.Find("Player");
-        GameHandler attritionModifier = Player.GetComponent<GameHandler>();       
-        originalAttrition = attritionModifier.attrition;
-        if (collision.gameObject.tag == "Player")
+        if (collision.tag == "Player")
         {
-            attritionModifier.attrition *= modifier;
+            GameHandler attritionModifier = collision.GetComponent<GameHandler>();
+            originalAttrition = attritionModifier.attrition;
+            attritionModifier.stockAttrition *= modifier;
+            
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        GameObject Player = GameObject.Find("Player");
-        GameHandler attritionModifier = Player.GetComponent<GameHandler>();
-        if (collision.gameObject.tag == "Player")
+        if (collision.tag == "Player")
         {
-            attritionModifier.attrition = originalAttrition;
+            GameHandler attritionModifier = collision.GetComponent<GameHandler>();
+            attritionModifier.stockAttrition = originalAttrition;
         }
+
+
     }
-
-
 }
