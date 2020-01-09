@@ -20,7 +20,7 @@ public class Peureux : ARGEnnemi
     // Update is called once per frame
     void Update()
     {
-        direction = (target.transform.position - transform.position).normalized;
+        direction = (target.transform.position - transform.position);
         anim.SetFloat("PeureuxMoveX", direction.x);
 
         Death();

@@ -258,13 +258,15 @@ MonoBehaviour:
   healthMax: 100
   healthMin: 0
   uiBar: {fileID: 7582486299905624644, guid: 2fbb95de7f25f4141b299bbc45ad9c9f, type: 3}
-  attrition: 0.1
+  attrition: 0.05
   stockAttrition: 0
-  drainHeal: 1
-  storeDrainHeal: 0
+  drainHeal: 0.2
+  storeDrainHeal: 0.2
+  immuned: 0
   player: {fileID: 4631194136078393715}
+  ennemiesDrainables: []
   drain: {fileID: 6313314249698492288}
-  drainDammage: 0.1
+  drainDammage: 0.005
   timeBtwAttack: 0
   canAttack: 1
   attackDammage: 1
@@ -279,6 +281,7 @@ MonoBehaviour:
   haveBloodRecycler: 0
   useDrain: 0
   vignette: {fileID: 0}
+  ennemiesToDamage: []
 --- !u!95 &6786507952811797820
 Animator:
   serializedVersion: 3
@@ -505,7 +508,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.33
+  m_Radius: 0.3
 --- !u!114 &8971607111198312735
 MonoBehaviour:
   m_ObjectHideFlags: 0

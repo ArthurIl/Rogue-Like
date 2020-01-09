@@ -42,7 +42,7 @@ public class ARGBrute : ARGEnnemi
     void Update()
     {
 
-        direction = (target.transform.position - transform.position).normalized;
+        direction = (target.transform.position - transform.position);
         anim.SetFloat("BruteMoveX", direction.x);
 
         Follow();

@@ -19,12 +19,13 @@ public class ARGEnnemiFollow : ARGEnnemi
         canAttack = true;
         playerCollider = target.GetComponent<Collider2D>();
         rangeDammage = gameObject.GetComponentInChildren<CircleCollider2D>();
-        direction = (target.transform.position - transform.position).normalized;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        direction = (target.transform.position - transform.position);
         anim.SetFloat("ennemiCMoveX", direction.x);
         //Debug.Log(direction);
 

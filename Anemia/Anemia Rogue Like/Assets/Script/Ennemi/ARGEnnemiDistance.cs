@@ -33,7 +33,7 @@ public class ARGEnnemiDistance : ARGEnnemi
             StartCoroutine(ShlagStagger());
         }
 
-        direction = (target.transform.position - transform.position).normalized;
+        direction = (target.transform.position - transform.position);
         anim.SetFloat("ennemiDMoveX", direction.x);
         //Debug.Log(direction.x);
         Follow();
