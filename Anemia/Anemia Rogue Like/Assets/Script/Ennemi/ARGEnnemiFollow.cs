@@ -63,7 +63,6 @@ public class ARGEnnemiFollow : ARGEnnemi
         {
             inRange = true;
         }
-        else inRange = false;
     }
 
     public void Follow()
