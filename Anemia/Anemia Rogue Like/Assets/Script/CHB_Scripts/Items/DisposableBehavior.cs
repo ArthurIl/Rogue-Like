@@ -22,7 +22,7 @@ public class DisposableBehavior : MonoBehaviour
         {
             if (myDisposable.healthRefill > 0)
             {
-                playerHandler.TakeDamage(0 - myDisposable.healthRefill);
+                playerHandler.HealthDamage(myDisposable.healthRefill);
             }
             else if (myDisposable.dammageBoost > 0)
             {

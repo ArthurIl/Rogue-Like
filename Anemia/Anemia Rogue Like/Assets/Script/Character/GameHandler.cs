@@ -257,6 +257,13 @@ public class GameHandler : MonoBehaviour
         StartCoroutine(StopStagger());
     }
 
+    public void HealthDamage(float amount) //prend des dégats
+    {
+        health += amount;
+    }
+
+
+
 
     /*private void OnTriggerEnter2D(Collider2D other)
     {
@@ -266,7 +273,7 @@ public class GameHandler : MonoBehaviour
         }
     */
 
-     public void CanDrain()
+    public void CanDrain()
     {
         
         for (int i = 0; i < ennemiesDrainables.Count; i++)
